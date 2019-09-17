@@ -1,4 +1,4 @@
-package com.amiko.ymd;
+package com.amiko.ymd.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
