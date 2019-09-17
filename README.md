@@ -1,2 +1,0 @@
-# projectYouManDa
-ㅁㄴㅇㅎㄻㄴㅇㅎㄻㅇㅎㅁㅇㄺㄶ
