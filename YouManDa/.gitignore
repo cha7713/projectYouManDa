@@ -1,1 +1,3 @@
-*/target/*
+*/target/**/*.MF
+*/target/**/*.properties
+*/target/**/*.xml
