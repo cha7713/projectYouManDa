@@ -25,8 +25,8 @@ public class chaMemberService {
 	@Autowired 
 	chaMemberDao dao;
 	
-	 public void join(Map<String, Object> map) {
-		 
+	 public int join(Map<String, Object> map) {
+		 return dao.join(map);
 		
 	}
 	
