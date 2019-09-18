@@ -18,10 +18,10 @@
 	<select name="lang">
 	<option>한국어</option>
 	<option>ENG</option>
-	<option>中國</option>
+	<option>汉语</option>
 	<option>日本語</option> 
 	</select> <br>
-	
+	학교:	<input name="school" required="required">
 	이름:	<input name="name" required="required"> <br>
 	주소:	<input name="address"><button type="button" onclick="searchaddress()">주소검색</button> <br>
 	상세주소:<input name="add2"><br>
