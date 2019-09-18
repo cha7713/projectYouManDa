@@ -21,7 +21,7 @@
 				</property>
 			</bean>
 			<bean
-				class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
 			<bean
 				class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter" />
 		</mvc:message-converters>
