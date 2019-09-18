@@ -4,7 +4,7 @@
 <mapper namespace="member">
 
 	<!-- 자신의 개인정보를 조회 -->
-	<select id="selectUser" resultType="map" parameterType="_int">
+	<select id="selectMyinfo" resultType="map" parameterType="_int">
 		SELECT 
 		 id, lang, email, school, address, phonenum, passnum, sex, name, birthday, nick
 		 FROM `MEMBER`

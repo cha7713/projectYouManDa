@@ -17,9 +17,9 @@ public class JeredMemberController {
 	@Autowired
 	JeredMemberService jeredMemberService;
 	
-	@RequestMapping(value="mypage/{id}") // PathVariable
-	public String show(Model model, @PathVariable("id") Map<String, Object> map) { //위에 중괄호에 있는 id, int로 받음
-		model.addAttribute("board", jeredMemberService.selectUser(map)); // 서비스에서 가져온걸 jsp까지 떠넘겨줌
+	@RequestMapping(value="personal/{id}") // PathVariable
+	public String show(Model model, @PathVariable("id") Map<String, Object> map) { //위에 중괄호에 있는 id를 map으로 받음
+		model.addAttribute("personalinfo", jeredMemberService.selectUser(map)); // 서비스에서 가져온걸 jsp까지 떠넘겨줌
 		return "mypage";
 	}
 	

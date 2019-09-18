@@ -14,7 +14,7 @@ public class JeredMemberDao {
 	SqlSessionTemplate ss;
 	
 	public List<Map<String, Object>> selectUser(Map<String, Object> map) {
-		return ss.selectList("JeredMemebr.selectUser", map);	
+		return ss.selectList("JeredMemebr.selectMyinfo", map);	
 	}
 
 }
