@@ -40,10 +40,6 @@ public class chaMemberDao {
 		return ss.selectOne("member.dupEmail", email);
 	}
 	
-	public Map<String, Object> login(Map<String, Object> map) {
-		return ss.selectOne("member.login", map);
-	}
-	
 	
 	
 	

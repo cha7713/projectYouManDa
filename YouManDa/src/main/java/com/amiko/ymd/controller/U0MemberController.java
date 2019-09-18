@@ -17,19 +17,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class U0MemberController {
 
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String index(Locale locale, Model model) {
+
+		return "index";
+	}
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 
 		return "home";
 	}
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String homee(Locale locale, Model model) {
 
-		return "home";
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Locale locale, Model model) {
+		
+		return "login";
 	}
-
-
-	
 	@RequestMapping(value = "/englishhome", method = RequestMethod.GET)
 	public String englishhome(Locale locale, Model model) {
 

@@ -44,10 +44,5 @@ public class chaMemberService {
 		 return dao.dupEmail(email);
 		
 	}
-	 
-	 public Map<String, Object> login(Map<String, Object> map) {
-		 return dao.login(map);
-		
-	}
 	
 }
