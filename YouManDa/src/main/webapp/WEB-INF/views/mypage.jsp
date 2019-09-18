@@ -5,29 +5,25 @@
 
 <h1>마이 페이지</h1>
 <br><br><br>
-아이디 : ${personalinfo.id}
-이름 : ${personalinfo.name}
-별명 : ${personalinfo.nick}
-성별 : ${personalinfo.sex}
-이메일 : ${personalinfo.email}
-학교 : ${personalinfo.school}
-주소 : ${personalinfo.address}
-전화번호 : ${personalinfo.phonenum}
-여권번호 : ${personalinfo.passnum}
-생년월일 : ${personalinfo.birthday}
-언어 : ${personalinfo.lang}
+아이디 : ${personalinfo.id} <br>
+이름 : ${personalinfo.name} <br>
+별명 : ${personalinfo.nick} <br>
+성별 : ${personalinfo.sex} <br>
+이메일 : ${personalinfo.email} <br>
+학교 : ${personalinfo.school} <br>
+주소 : ${personalinfo.address} <br>
+전화번호 : ${personalinfo.phonenum} <br>
+여권번호 : ${personalinfo.passnum} <br>
+생년월일 : ${personalinfo.birthday} <br>
+언어 : ${personalinfo.lang} <br>
 <br>
 
 
-<button onclick='edit'>edit</button>
-<button onclick='backtolist()'>back</button>
+<button onclick='editmypage()'>수정</button>
 
 <script>
-	function backtolist() {
-		location = '../list';
+	function editmypage() {
+		location = '../mypageedit/${personalinfo.id}';
 	}
-	
-	function deleteFile(){
-		location = 'deleteBoard';
-	}
+
 </script>
