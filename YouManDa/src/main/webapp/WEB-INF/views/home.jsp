@@ -69,7 +69,7 @@
 						</c:if>
 						<c:if test="${a!=null}">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#MyPage">마이페이지</a></li>
+						href="/ymd/mypage/${a}">마이페이지</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/logout">로그아웃</a></li>
 						</c:if>
