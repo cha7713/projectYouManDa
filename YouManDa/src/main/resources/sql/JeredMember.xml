@@ -19,7 +19,6 @@
 	</update>
 	 -->
 	
-
 	<!-- 회원 탈퇴 -->
 	<delete id="deleteMyinfo">
 		DELETE FROM `MEMBER`
