@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +14,14 @@
 	아이디:<input name="id" required="required"><span id="dup"></span> <br>
 	비밀번호:<input name="pw" type="password" required="required"> <br>
 	비밀번호 확인:<input name="pw2" type="password" required="required"> <span id="ppp"></span> <br>
+	사용 언어:
+	<select name="lang">
+	<option>한국어</option>
+	<option>ENG</option>
+	<option>中國</option>
+	<option>日本語</option> 
+	</select> <br>
+	
 	이름:	<input name="name" required="required"> <br>
 	주소:	<input name="address"><button type="button" onclick="searchaddress()">주소검색</button> <br>
 	상세주소:<input name="add2"><br>
