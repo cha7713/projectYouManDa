@@ -17,17 +17,24 @@
 		from `member` where id =
 		#{value}
 	</select>
-	
+
 	<select id="dupEmail" parameterType="string" resultType="string">
-		select name
+		select
+		name
 		from `member` where email =
 		#{value}
 	</select>
-	
+
 	<select id="dupNick" parameterType="string" resultType="string">
-		select name
+		select
+		name
 		from `member` where nick =
 		#{value}
+	</select>
+
+	<select id="login" parameterType="map" resultType="map">
+		select * from `member` where id = #{id} and pw = (HEX(AES_ENCRYPT(#{pw},
+		'hgr')))
 	</select>
 
 </mapper>

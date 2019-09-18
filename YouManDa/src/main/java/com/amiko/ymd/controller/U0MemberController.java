@@ -22,12 +22,14 @@ public class U0MemberController {
 
 		return "home";
 	}
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String homee(Locale locale, Model model) {
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(Locale locale, Model model) {
-		
-		return "login";
+		return "home";
 	}
+
+
+	
 	@RequestMapping(value = "/englishhome", method = RequestMethod.GET)
 	public String englishhome(Locale locale, Model model) {
 
