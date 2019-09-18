@@ -11,6 +11,6 @@
 </head>
 <body>
 중어권
-
+汉语
 </body>
 </html>

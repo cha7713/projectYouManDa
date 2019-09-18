@@ -24,9 +24,24 @@ public class U0MemberController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String join(Locale locale, Model model) {
-
+	public String login(Locale locale, Model model) {
+		
 		return "login";
+	}
+	@RequestMapping(value = "/englishhome", method = RequestMethod.GET)
+	public String englishhome(Locale locale, Model model) {
+
+		return "englishhome";
+	}
+	@RequestMapping(value = "/chinesehome", method = RequestMethod.GET)
+	public String chinesehome(Locale locale, Model model) {
+
+		return "chinesehome";
+	}
+	@RequestMapping(value = "/japanesehome", method = RequestMethod.GET)
+	public String japanesehome(Locale locale, Model model) {
+
+		return "japanesehome";
 	}
 
 }
