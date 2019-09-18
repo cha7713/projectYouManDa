@@ -2,10 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="member">
+
+	<!-- 자신의 개인정보를 조회 -->
 	<select id="selectUser" resultType="map" parameterType="_int">
 		SELECT 
-		 id, lang, pw, email, school, address, phonenum, passnum, sex, name, birthday, nick
-		 FROM MEMBER
+		 id, lang, email, school, address, phonenum, passnum, sex, name, birthday, nick
+		 FROM `MEMBER`
 		 WHERE id = #{value}
 	</select>
 
