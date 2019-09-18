@@ -14,7 +14,7 @@ public class JeredMemberService {
 	@Autowired
 	JeredMemberDao jeredMemberDao;
 	
-	public List<Map<String, Object>> selectUser(Map<String, Object> map) {
+	public Map<String, Object> selectUser(Map<String, Object> map) {
 		return jeredMemberDao.selectUser(map);
 	}
 

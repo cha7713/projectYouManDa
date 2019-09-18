@@ -13,7 +13,7 @@ public class JeredMemberDao {
 	@Autowired
 	SqlSessionTemplate ss;
 	
-	public List<Map<String, Object>> selectUser(Map<String, Object> map) {
+	public Map<String, Object> selectUser(Map<String, Object> map) {
 		return ss.selectOne("JeredMemebr.selectMyinfo", map);	
 	}
 
