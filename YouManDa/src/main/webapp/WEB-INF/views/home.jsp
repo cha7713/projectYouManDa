@@ -1,19 +1,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<<<<<<< HEAD
 <%@ page pageEncoding="utf-8" session="false"%>
-<!doctype html>
-=======
-<%@ page session="false"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<% HttpSession session2 =request.getSession(); 
-String a = (String)session2.getAttribute("id");
-request.setAttribute("a", a);
+<%
+	HttpSession session2 = request.getSession();
+	String a = (String) session2.getAttribute("id");
+	request.setAttribute("a", a);
 %>
->>>>>>> branch 'master' of https://github.com/cha7713/projectYouManDa.git
+
 <html>
 <head>
-<<<<<<< HEAD
+
 
 <meta charset="utf-8">
 <meta name="viewport"
@@ -56,6 +51,31 @@ request.setAttribute("a", a);
 				data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
 				aria-label="Toggle navigation">Menu</button>
+				
+			<i class="fas fa-bars"></i>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav text-uppercase ml-auto">
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#english">영어권</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#chinese">중어권</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#japanese">일어권</a></li>
+						<c:if test="${a==null}">
+						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/ymd/login">로그인</a></li>
+						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/ymd/join">회원가입</a></li>
+						</c:if>
+						<c:if test="${a!=null}">
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#MyPage">마이페이지</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/ymd/logout">로그아웃</a></li>
+						</c:if>
+				</ul>
+			</div>
+		
 		</div>
 	</nav>
 
@@ -64,19 +84,26 @@ request.setAttribute("a", a);
 		<div class="container">
 			<div class="intro-text">
 				<div class="intro-heading text-uppercase">유학생을 만나다</div>
-				<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
-					onclick="loginform()">로그인</a> <a
-					class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
-					onclick="joinform()">회원가입</a>
+				<c:if test="${a==null}">
+					<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
+						onclick="loginform()">로그인</a>
+					<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
+						onclick="joinform()">회원가입</a>
+				</c:if>
 				<script>
 					function loginform() {
 						location = "login";
 					}
-				</script>
-				<script>
 					function joinform() {
 						location = "join";
 					}
+					function logout() {
+						location = "logout";
+					}
+					function mypage(){
+						location = 'mypage/${a}';
+					}
+
 				</script>
 			</div>
 		</div>
@@ -87,7 +114,7 @@ request.setAttribute("a", a);
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<h2 class="section-heading text-uppercase" onclick="enter()">영어권</h2>
+					<h2 class="section-heading text-uppercase" id="english" onclick="enter()">영어권</h2>
 					<script>
 						function enter() {
 							location = "englishhome";
@@ -101,9 +128,9 @@ request.setAttribute("a", a);
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<h2 class="section-heading text-uppercase" onclick="enter2()">중어권</h2>
+					<h2 class="section-heading text-uppercase" id="chinese" onclick="enter2()">중어권</h2>
 					<script>
-						function enter() {
+						function enter2() {
 							location = "chinesehome";
 						}
 					</script>
@@ -115,9 +142,9 @@ request.setAttribute("a", a);
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<h2 class="section-heading text-uppercase" onclick="enter3()">일어권</h2>
+					<h2 class="section-heading text-uppercase" id="japanese" onclick="enter3()">일어권</h2>
 					<script>
-						function enter() {
+						function enter3() {
 							location = "japanesehome";
 						}
 					</script>
@@ -125,59 +152,6 @@ request.setAttribute("a", a);
 			</div>
 		</div>
 	</section>
-=======
-<title>Home</title>
-</head>
-<body>
-	<h1>유</h1>
-	<h3>학생을</h3>
-	<h1>만</h1>
-	<h3>나</h3>
-	<h1>다</h1>
-<c:if test="${a==null}">
-	<button type="button" onclick="loginform()">로그인</button>
-	<button type="button" onclick="joinform()">회원가입</button>
-</c:if>	
-<c:if test="${a!=null}">
-<button type="button" onclick="logout()">로그아웃</button>
-</c:if>
-
-	<script>
-		function loginform() {
-			location = "login";
-		}
-		function joinform() {
-			location = "join";
-		}
-		function logout() {
-			location = "logout";
-		}
-	
-	</script>
-	
-	<br>
-	<button type="button" onclick="enter()">영어권</button>
-	<br>
-	<script>
-		function enter() {
-			location = "englishhome";
-		}
-	</script>
-	<button type="button" onclick="enter2()">중어권</button>
-	<br>
-	<script>
-		function enter2() {
-			location = "chinesehome";
-		}
-	</script>
-	<button type="button" onclick="enter3()">일어권</button>
-	<br>
-	<script>
-		function enter3() {
-			location = "japanesehome";
-		}
-	</script>
->>>>>>> branch 'master' of https://github.com/cha7713/projectYouManDa.git
 
 </body>
 </html>

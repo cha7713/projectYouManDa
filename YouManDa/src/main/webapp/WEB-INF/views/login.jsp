@@ -10,6 +10,7 @@
 <title>로그인</title>
 </head>
 <body>
+
 <form action="login" method="post">
 	로그인 <br> 
 	아이디:<input name="id" type="text"> <br>
@@ -22,6 +23,14 @@
 		function findpw() {
 			location = "findpw";
 		}
+		
+		()=>{
+			var abc = '${msg}';
+			if(abc!=null){
+			alert(abc)
+			}
+		}
+		
 	</script>
 	</form>
 
