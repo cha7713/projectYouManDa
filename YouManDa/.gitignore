@@ -1,2 +1,5 @@
-*/target/**
-/target/
+*/target/**/*.MF
+*/target/**/*.properties
+*/target/**/*.xml
+pom.xml
+
