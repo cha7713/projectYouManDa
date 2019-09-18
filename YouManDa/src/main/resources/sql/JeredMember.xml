@@ -13,11 +13,12 @@
 	
 	
 	<!-- 회원정보 수정 -->
-<!-- 	<update id="updateMyinfo" parameterType="">
+ 	<update id="updateMyinfo" parameterType="map">
 		UPDATE `MEMBER` SET
-		
+			email=#{email}, school=#{school}, address=#{address}, phonenum=#{phonenum}, passnum=#{passnum}, sex=#{sex}, name=#{name}, birthday=#{birthday}, nick=#{nick}
+			WHERE id = #{id}
 	</update>
-	 -->
+	
 	
 	<!-- 회원 탈퇴 -->
 	<delete id="deleteMyinfo">

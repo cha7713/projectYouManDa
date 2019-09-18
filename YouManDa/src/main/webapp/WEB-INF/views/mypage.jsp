@@ -19,11 +19,11 @@
 <br>
 
 
-<button onclick='editmypage'>수정</button>
+<button onclick='editmypage()'>수정</button>
 
 <script>
 	function editmypage() {
-		location = '../list';
+		location = '../mypageedit/${personalinfo.id}';
 	}
 
 </script>

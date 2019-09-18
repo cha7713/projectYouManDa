@@ -16,5 +16,11 @@ public class JeredMemberDao {
 	public Map<String, Object> selectUser(Map<String, Object> map) {
 		return ss.selectOne("JeredMemebr.selectMyinfo", map);	
 	}
+	
+	public int updateUser(Map<String, Object> map) {
+		System.out.println(map);
+		return ss.update("JeredMemebr.updateMyinfo", map);
+		
+	}
 
 }
