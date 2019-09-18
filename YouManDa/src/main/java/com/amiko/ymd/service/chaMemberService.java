@@ -29,5 +29,10 @@ public class chaMemberService {
 		 return dao.join(map);
 		
 	}
+	 
+	 public String idDup(String id) {
+		 return dao.dup(id);
+		
+	}
 	
 }

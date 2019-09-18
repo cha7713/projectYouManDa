@@ -28,6 +28,10 @@ public class chaMemberDao {
 		return ss.insert("member.join", map);
 	}
 	
+	public String dup(String id) {
+		return ss.selectOne("member.dup", id);
+	}
+	
 	
 	
 	
