@@ -3,7 +3,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
+<% HttpSession session2 =request.getSession(); 
+String a = (String)session2.getAttribute("id");
+request.setAttribute("a", a);
+%>
 
+<input type="button" value="MyPage" onclick="mypage()">
 <html>
 <head>
 
@@ -13,3 +18,10 @@
 영어권
 </body>
 </html>
+
+<script>
+	function mypage(){
+		location = 'mypage/${a}';
+	}
+
+</script>

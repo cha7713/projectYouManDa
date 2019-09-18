@@ -48,4 +48,6 @@ public class JeredMemberController {
 		return "redirect:/mypage/" + id;	
 	}
 	
+	
+	
 }

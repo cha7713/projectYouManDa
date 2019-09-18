@@ -15,7 +15,7 @@
 	<!-- 회원정보 수정 -->
  	<update id="updateMyinfo" parameterType="map">
 		UPDATE `MEMBER` SET
-			email=#{email}, school=#{school}, address=#{address}, phonenum=#{phonenum}, passnum=#{passnum}, sex=#{sex}, name=#{name}, birthday=#{birthday}, nick=#{nick}
+			email=#{email}, school=#{school}, address=#{address}, phonenum=#{phonenum}, name=#{name}, nick=#{nick}
 			WHERE id = #{id}
 	</update>
 	
