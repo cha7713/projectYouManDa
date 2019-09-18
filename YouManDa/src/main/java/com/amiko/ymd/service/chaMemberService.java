@@ -34,5 +34,15 @@ public class chaMemberService {
 		 return dao.dup(id);
 		
 	}
+	 
+	 public String nickDup(String nick) {
+		 return dao.dupNick(nick);
+		
+	}
+	 
+	 public String emailDup(String email) {
+		 return dao.dupEmail(email);
+		
+	}
 	
 }

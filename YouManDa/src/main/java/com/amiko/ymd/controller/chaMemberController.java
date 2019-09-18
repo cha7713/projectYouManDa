@@ -56,4 +56,30 @@ public class chaMemberController {
 		return a;
 	}
 	
+	@RequestMapping(value = "/nickDup", method = RequestMethod.GET)
+	@ResponseBody
+	public int dupNick(HttpServletRequest req) {
+		String result =ser.nickDup(req.getParameter("nick"));
+		//중복 검사 해서 닉네임이 존재 할경우 1을 넘기고 없으면 0을넘김
+		int a = 0;
+		if(result != null) {
+			a = 1;
+		}
+		
+		return a;
+	}
+	
+	@RequestMapping(value = "/emailDup", method = RequestMethod.GET)
+	@ResponseBody
+	public int dupEmail(HttpServletRequest req) {
+		String result =ser.emailDup(req.getParameter("email"));
+		//중복 검사 해서 email 존재 할경우 1을 넘기고 없으면 0을넘김
+		int a = 0;
+		if(result != null) {
+			a = 1;
+		}
+		
+		return a;
+	}
+	
 }

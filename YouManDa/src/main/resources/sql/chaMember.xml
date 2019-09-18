@@ -13,9 +13,21 @@
 	</insert>
 
 	<select id="dup" parameterType="string" resultType="string">
-		select name from `member` where id =
+		select name
+		from `member` where id =
 		#{value}
 	</select>
-
+	
+	<select id="dupEmail" parameterType="string" resultType="string">
+		select name
+		from `member` where email =
+		#{value}
+	</select>
+	
+	<select id="dupNick" parameterType="string" resultType="string">
+		select name
+		from `member` where nick =
+		#{value}
+	</select>
 
 </mapper>
