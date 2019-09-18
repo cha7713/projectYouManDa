@@ -32,6 +32,14 @@ public class chaMemberDao {
 		return ss.selectOne("member.dup", id);
 	}
 	
+	public String dupNick(String nick) {
+		return ss.selectOne("member.dupNick", nick);
+	}
+	
+	public String dupEmail(String email) {
+		return ss.selectOne("member.dupEmail", email);
+	}
+	
 	
 	
 	
