@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,28 +8,34 @@
 <title>회원가입</title>
 </head>
 <body>
-<form action="join" method="post">
-	회원가입 <br> 
-	아이디:<input name="id" required="required"><span id="dup"></span> <br>
-	비밀번호:<input name="pw" type="password" required="required"> <br>
-	비밀번호 확인:<input name="pw2" type="password" required="required"> <span id="ppp"></span> <br>
-	사용 언어:
-	<select name="lang">
-	<option>한국어</option>
-	<option>ENG</option>
-	<option>汉语</option>
-	<option>日本語</option> 
-	</select> <br>
-	학교:	<input name="school" required="required">
-	이름:	<input name="name" required="required"> <br>
-	주소:	<input name="address"><button type="button" onclick="searchaddress()">주소검색</button> <br>
-	상세주소:<input name="add2"><br>
-	email:<input name="email" id="email" type="email"><span id="emailCheck"></span>
-	<br>
-	
-	<input type="submit" value="회원가입" id="submit" >
+	<form action="join" method="post">
+		회원가입 <br> 아이디:<input name="id" required="required"><span
+			id="dup"></span> <br> 비밀번호:<input name="pw" type="password"
+			required="required"> <span id="pwCheck"></span><br> 비밀번호 확인:<input name="pw2"
+			type="password" required="required"> <span id="ppp"></span> <br>
+		닉네임: <input name="nick" required="required"> <span id="nick"></span>
+		<br> 사용 언어: <select name="lang">
+			<option value="1">한국어</option>
+			<option value="2">ENG</option>
+			<option value="3">汉语</option>
+			<option value="4">日本語</option>
+		</select> <br> 학교: <input name="school" required="required"><br>
+		이름: <input name="name" required="required"> <br> <label>
+			남성: <input name="sex" type="radio" value="1">
+		</label> <label> 여성: <input name="sex" type="radio" value="2"></label>
+		<br> 핸드폰 번호:<input name="p1" required="required">-<input name="p2" required="required">-<input name="p3" required="required"><br>
+		여권 번호:<input name="passnum" id="passnum" required="required"><span
+			id="passCheck"></span><br> 생년월일:<input name="birthday"
+			type="date" required="required"><br> 주소: <input
+			name="address">
+		<button type="button" onclick="searchaddress()">주소검색</button>
+		<br> 상세주소:<input name="add2"><br> email:<input
+			name="email" id="email" type="email"><span id="emailCheck"></span><br> 
+			<input type="submit" value="회원가입"
+			id="submit">
 	</form>
-	
+
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 
@@ -38,20 +43,25 @@
 	var isId = 0
 	var isPw = 0
 	var isEmail = 0
+	var isNick = 0
 	
 	
 	$("#submit").click(function(event){
 		if(isId==0){
 			event.preventDefault();
-			alert("아이디 중복확인이 필요합니다.")
+			alert("아이디를 확인해 주세요")
 		}
 		if(isPw==0){
 			event.preventDefault();
-			alert("패스워드가 일치하지 않습니다")
+			alert("패스워드를 확인해 주세요")
 		}
 		if(isEmail==0){
 			event.preventDefault();
-			alert("이메일 형식을 확인해 주세요")
+			alert("이메일을 확인해 주세요")
+		}
+		if(isNick==0){
+			event.preventDefault();
+			alert("닉네임을 확인해 주세요")
 		}
 	})
 	
@@ -72,9 +82,30 @@
 				  var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 				  // 검증에 사용할 정규식 변수 regExp에 저장
 				  if (emailVal.match(regExp) != null) {
-					  $("#emailCheck").text("사용가능합니다.")
-					  $("#emailCheck").css("color","blue")
-					  isEmail = 1
+// 					  $("#emailCheck").text("사용가능합니다.")
+// 					  $("#emailCheck").css("color","blue")
+					  
+					  
+				$.ajax({
+			        url:"emailDup",
+			        data : {email : $("[name=email]").val()},
+			        success: function(res){
+			            console.log(res);
+			           
+			           if(res==0 && $("[name=email]").val() !="" ){
+			        	   $("#emailCheck").text("사용가능한 이메일 입니다") 
+			        	   $("#emailCheck").css("color","blue")
+			        	   isEmail = 1
+			           }else {
+			        	   $("#emailCheck").text("중복된 이메일 입니다")
+			        	   $("#emailCheck").css("color","red")
+			        	   isEmail = 0
+					}
+			        } 
+			    });
+			
+					 
+					  			  
 				  }
 				  else {
 					  $("#emailCheck").text("유효한 이메일 형식이 아닙니다.")
@@ -86,31 +117,73 @@
 		})
 		
 			$("[name=id]").focusout(()=>{
+				
+					
+					  // 이메일 검증 스크립트 작성
+					  var passVal = $("[name=id]").val();
+					  var regExp =  /^[A-Za-z0-9]{5,15}$/;
+					// 검증에 사용할 정규식 변수 regExp에 저장
+					  if (passVal.match(regExp) != null) {
+						  $.ajax({
+						        url:"idDup",
+						        data : {id : $("[name=id]").val()},
+						        success: function(res){
+						            console.log(res);
+						           
+						           if(res==0 && $("[name=id]").val() !="" ){
+						        	   $("#dup").text("사용가능한 아이디 입니다") 
+						        	   $("#dup").css("color","blue")
+						        	   isId = 1
+						           }else {
+						        	   $("#dup").text("이미 존재하는 아이디 입니다")
+						        	   $("#dup").css("color","red")
+						        	   isId = 0
+								}
+						        } 
+						    });
+						  
+					  }
+					  else {
+						  $("#dup").text("아이디는 5~15자로 구성되야 합니다")
+						  $("#dup").css("color","red")
+						  isId = 0
+						  
+					  }
+					
+				
+				
+				
+				
+			})
+			
+			$("[name=nick]").focusout(()=>{
 				$.ajax({
-			        url:"dupli",
-			        data : {id : $("[name=id]").val()},
+			        url:"nickDup",
+			        data : {nick : $("[name=nick]").val()},
 			        success: function(res){
 			            console.log(res);
-			           var dup = res.dup
-			           if(dup=='a'&& $("[name=id]").val() !="" ){
-			        	   $("#dup").text("사용가능한 아이디 입니다") 
-			        	   $("#dup").css("color","blue")
-			        	   isId = 1
+			           
+			           if(res==0 && $("[name=nick]").val() !="" ){
+			        	   $("#nick").text("사용가능한 닉네임 입니다") 
+			        	   $("#nick").css("color","blue")
+			        	   isNick = 1
 			           }else {
-			        	   $("#dup").text("이미 존재하는 아이디 입니다")
-			        	   $("#dup").css("color","red")
-			        	   isId = 0
+			        	   $("#nick").text("이미 존재하는 닉네임 입니다")
+			        	   $("#nick").css("color","red")
+			        	   isNick = 0
 					}
 			        } 
 			    });
 			})
 			
 			
+			
+			
 			$("[name=pw2]").focusout(()=>{
 				var pw = $("[name=pw]").val()
 				var pw2 = $("[name=pw2]").val()
 				if(pw == pw2){
-					$("#ppp").text("유효한 비밀 번호 입니다")
+					$("#ppp").text("비밀 번호가 일치 합니다")
 					$("#ppp").css("color","blue")
 					isPw = 1
 				}else {
@@ -119,6 +192,47 @@
 					isPw = 0
 				}	
 			})
+			
+			$("#passnum").focusout(()=>{
+			
+				  // 이메일 검증 스크립트 작성
+				  var passVal = $("#passnum").val();
+				  var regExp = '[a-zA-Z]{1}[0-9a-zA-Z]{1}[0-9]{7}';
+				  // 검증에 사용할 정규식 변수 regExp에 저장
+				  if (passVal.match(regExp) != null) {
+					  $("#passCheck").text("사용가능합니다.")
+					  $("#passCheck").css("color","blue")
+					  
+				  }
+				  else {
+					  $("#passCheck").text("유효한 여권번호 형식이 아닙니다.")
+					  $("#passCheck").css("color","red")
+					  
+				  }
+				
+			
+		})
+		
+		$("[name=pw]").focusout(()=>{
+			
+				  // 이메일 검증 스크립트 작성
+				  var passVal = $("[name=pw]").val();
+				  var regExp = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+				// 검증에 사용할 정규식 변수 regExp에 저장
+				  if (passVal.match(regExp) != null) {
+					  $("#pwCheck").text("사용가능합니다.")
+					  $("#pwCheck").css("color","blue")
+					  isPw = 1
+					  
+				  }
+				  else {
+					  $("#pwCheck").text("비밀번호는 8~15자로 영어,숫자,특수문자를 포함해야 합니다")
+					  $("#pwCheck").css("color","red")
+					  isPw = 0
+				  }
+				
+			
+		})
 			
 	</script>
 </body>

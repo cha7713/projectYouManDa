@@ -35,12 +35,21 @@ public class chaMemberController {
 	
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
 	public String join(Locale locale, Model model,@RequestParam Map<String,Object> map) {
+		String addr = (String) map.get("address");
+		addr += " ";
+		addr += (String) map.get("add2") ;
+		map.put("address",addr);
 		
+		String p1 = (String) map.get("p1");
+		String p2 = (String) map.get("p2");
+		String p3 = (String) map.get("p3");
+		map.put("phonenum",p1+p2+p3);
+	
 	 int result = ser.join(map);
 	 
 	 model.addAttribute("result",result);
 		
-		return "main";
+		return "home";
 	}
 	
 	@RequestMapping(value = "/idDup", method = RequestMethod.GET)
