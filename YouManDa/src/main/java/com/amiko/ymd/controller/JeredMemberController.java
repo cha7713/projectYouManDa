@@ -59,6 +59,10 @@ public class JeredMemberController {
 		return "redirect:/";
 	}
 	
+	///////////////////////////////////BoardPart////////////////////////////////////////////
 	
-	
+	@RequestMapping(value = "/freeboard", method = RequestMethod.GET)
+	public String realfree() {
+		return "freeboard";
+	}
 }
