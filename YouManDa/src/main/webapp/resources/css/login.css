@@ -17,7 +17,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 	display: block;
 }
-
+.login{
+	font-color: white;
+}
 body {
 	line-height: 1;
 }
@@ -122,11 +124,7 @@ body {
 	font-family: sans-serif;
 	
 	background-color: #323B55;
-	background-image: -webkit-linear-gradient(bottom, #323B55 0%, #424F71 100%);
-	background-image: -moz-linear-gradient(bottom, #323B55 0%, #424F71 100%);
-	background-image: -o-linear-gradient(bottom, #323B55 0%, #424F71 100%);
-	background-image: -ms-linear-gradient(bottom, #323B55 0%, #424F71 100%);
-	background-image: linear-gradient(bottom, #323B55 0%, #424F71 100%);
+	background-image: url("../img/header-bg.jpg");
 }
 
 #slick-login {
@@ -138,11 +136,7 @@ body {
 	margin-left: -110px;
 	margin-top: -75px;
 
-	-webkit-animation: login 1s ease-in-out;
-	-moz-animation: login 1s ease-in-out;
-	-ms-animation: login 1s ease-in-out;
-	-o-animation: login 1s ease-in-out;
-	animation: login 1s ease-in-out;
+
 }
 
 #slick-login label {
@@ -170,20 +164,10 @@ body {
 	background-clip: padding-box;
 	border-radius: 6px;
 
-	background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #F2F2F2 100%);
-	background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #F2F2F2 100%);
-	background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #F2F2F2 100%);
-	background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #F2F2F2 100%);
-	background-image: linear-gradient(bottom, #FFFFFF 0%, #F2F2F2 100%);
-
 	-webkit-box-shadow: inset 0px 2px 0px #d9d9d9;
 	box-shadow: inset 0px 2px 0px #d9d9d9;
 
-	-webkit-transition: all .1s ease-in-out;
-	-moz-transition: all .1s ease-in-out;
-	-o-transition: all .1s ease-in-out;
-	-ms-transition: all .1s ease-in-out;
-	transition: all .1s ease-in-out;
+
 }
 
 #slick-login input[type="text"]:focus,#slick-login input[type="password"]:focus {
@@ -212,31 +196,18 @@ body {
 	border-radius: 6px;
 
 	background-color: #5466da;
-	background-image: -webkit-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
-	background-image: -moz-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
-	background-image: -o-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
-	background-image: -ms-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
-	background-image: linear-gradient(bottom, #5466da 0%, #768ee4 100%);
 	
 	-webkit-box-shadow: inset 0px 1px 0px #9ab1ec;
 	box-shadow: inset 0px 1px 0px #9ab1ec;
 	
 	cursor: pointer;
 
-	-webkit-transition: all .1s ease-in-out;
-	-moz-transition: all .1s ease-in-out;
-	-o-transition: all .1s ease-in-out;
-	-ms-transition: all .1s ease-in-out;
-	transition: all .1s ease-in-out;
+
 }
 
 #slick-login input[type="submit"]:hover {
 	background-color: #5f73e9;
-	background-image: -webkit-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
-	background-image: -moz-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
-	background-image: -o-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
-	background-image: -ms-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
-	background-image: linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
+
 
 	-webkit-box-shadow: inset 0px 1px 0px #aab9f4;
 	box-shadow: inset 0px 1px 0px #aab9f4;
@@ -245,12 +216,72 @@ body {
 
 #slick-login input[type="submit"]:active {
 	background-color: #7588e1;
-	background-image: -webkit-linear-gradient(bottom, #7588e1 0%, #7184df 100%);
-	background-image: -moz-linear-gradient(bottom, #7588e1 0%, #7184df 100%);
-	background-image: -o-linear-gradient(bottom, #7588e1 0%, #7184df 100%);
-	background-image: -ms-linear-gradient(bottom, #7588e1 0%, #7184df 100%);
-	background-image: linear-gradient(bottom, #7588e1 0%, #7184df 100%);
+
 
 	-webkit-box-shadow: inset 0px 1px 0px #93a9e9;
 	box-shadow: inset 0px 1px 0px #93a9e9;
+}
+
+
+
+
+
+body{
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #e0f2f1 !important;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+html, body {
+    height: 100%;
+}
+
+.medium-small {
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+}
+
+.login-form {
+    width: 280px;
+}
+
+.login-form-text {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+.login-text {
+    margin-top: -6px;
+    margin-left: -6px !important;
+}
+
+.margin {
+    margin: 0 !important;
+}
+
+.pointer-events {
+    pointer-events: auto !important;
+}
+
+.input-field >.material-icons  {
+    padding-top:10px;
+}
+
+.input-field div.error{
+    position: relative;
+    top: -1rem;
+    left: 3rem;
+    font-size: 0.8rem;
+    color:#FF4081;
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%);
 }
