@@ -79,4 +79,29 @@
 		<constructor-arg ref="sqlSessionFactory" />
 	</bean>
 	
+	<bean id="LoginInterceptor" class="com.amiko.ymd.interceptor.LoginInterceptor"></bean>
+    	<bean id="LoginInterceptor2" class="com.amiko.ymd.interceptor.LoginInterceptor2"></bean>
+    
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/login"/>
+            <mvc:mapping path="/join"/>
+            <mvc:mapping path="/insertId"/>
+            <mvc:mapping path="/pwFind"/>
+            
+            <ref bean="LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/logout"/>
+            <mvc:mapping path="/mypage/{id}"/>
+            <mvc:mapping path="/mypageedit/{id}"/>
+            <mvc:mapping path="deleteMyAccount"/>
+            
+            <ref bean="LoginInterceptor2"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+	
 </beans>
