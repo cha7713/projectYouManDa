@@ -21,5 +21,9 @@ public class JeredMemberService {
 	public int updateUser(Map<String, Object> map) {
 		return jeredMemberDao.updateUser(map);
 	}
+	
+	public int deleteMyAccount(Map<String, Object> map) {
+		return jeredMemberDao.deleteMyAccount(map);
+	}
 
 }

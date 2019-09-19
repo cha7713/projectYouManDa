@@ -14,13 +14,18 @@ public class JeredMemberDao {
 	SqlSessionTemplate ss;
 	
 	public Map<String, Object> selectUser(Map<String, Object> map) {
-		return ss.selectOne("JeredMemebr.selectMyinfo", map);	
+		return ss.selectOne("JeredMember.selectMyinfo", map);	
 	}
 	
 	public int updateUser(Map<String, Object> map) {
 		System.out.println(map);
-		return ss.update("JeredMemebr.updateMyinfo", map);
+		return ss.update("JeredMember.updateMyinfo", map);
 		
 	}
+	
+	public int deleteMyAccount(Map<String, Object> map) {
+		return ss.delete("JeredMember.deleteMyAccount", map);
+	}
+	
 
 }

@@ -3,6 +3,8 @@ package com.amiko.ymd.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,10 +23,10 @@ public class JeredMemberController {
 	JeredMemberService jeredMemberService;
 	
 	@RequestMapping(value="mypage/{id}", method=RequestMethod.GET) // PathVariable
-	public String mypage(Model model, @PathVariable("id") String id) { //ìœ„ì— ì¤‘ê´„í˜¸ì— ìˆëŠ” idë¥¼ mapìœ¼ë¡œ ë°›ìŒ
+	public String mypage(Model model, @PathVariable("id") String id) { //À§¿¡ Áß°ıÈ£¿¡ ÀÖ´Â id¸¦ mapÀ¸·Î ¹ŞÀ½
 		Map<String, Object> map = new HashMap<>();
 		map.put("id", id);
-		model.addAttribute("personalinfo", jeredMemberService.selectUser(map)); // ì„œë¹„ìŠ¤ì—ì„œ ê°€ì ¸ì˜¨ê±¸ jspê¹Œì§€ ë– ë„˜ê²¨ì¤Œ
+		model.addAttribute("personalinfo", jeredMemberService.selectUser(map)); // ¼­ºñ½º¿¡¼­ °¡Á®¿Â°É jsp±îÁö ¶°³Ñ°ÜÁÜ
 		return "mypage";
 	}
 	
@@ -39,13 +41,22 @@ public class JeredMemberController {
 	@RequestMapping(value="mypageedit/{id}", method=RequestMethod.POST)
 	public String mypageeditpost(Model model,@PathVariable("id") String id,
 			@RequestParam Map<String, Object> map,
-			// í´ë¼ì´ì–¸íŠ¸ê°€ ìš”ì²­ì„ ë³´ë‚¼ ë•Œ íŒŒë¼ë¯¸í„°ë¡œ ë„˜ì–´ ì˜¨ ê²ƒë“¤ì„ ë‹¤ ë°›ì•„ ì£¼ëŠ”ê²ƒ -db
+			// Å¬¶óÀÌ¾ğÆ®°¡ ¿äÃ»À» º¸³¾ ¶§ ÆÄ¶ó¹ÌÅÍ·Î ³Ñ¾î ¿Â °ÍµéÀ» ´Ù ¹Ş¾Æ ÁÖ´Â°Í -db
 			@ModelAttribute MemberVO vo) {
 		// getter setter
 		System.out.println(vo);
 		map.put("id", id);
 		model.addAttribute("personalinfo",jeredMemberService.updateUser(map));
 		return "redirect:/mypage/" + id;	
+	}
+	
+	@RequestMapping(value="deleteMyAccount", method = RequestMethod.GET)
+	public String deleteMyAccount (@RequestParam Map<String,Object> map, HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		map.put("id", id);
+		jeredMemberService.deleteMyAccount(map);
+		session.invalidate();
+		return "redirect:/";
 	}
 	
 	
