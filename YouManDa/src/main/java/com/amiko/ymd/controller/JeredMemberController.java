@@ -61,8 +61,17 @@ public class JeredMemberController {
 	
 	///////////////////////////////////BoardPart////////////////////////////////////////////
 	
-	@RequestMapping(value = "/freeboard", method = RequestMethod.GET)
-	public String realfree() {
+	@RequestMapping(value = "englishhome/freeboard", method = RequestMethod.GET)
+	public String freeboardListGET() {
 		return "freeboard";
 	}
+	
+	@RequestMapping(value = "freeboard/freeboardwrite", method = RequestMethod.GET)
+	public String freeboardGET() {
+		return "freeboardwrite";
+	}
+	
+
+	
+	
 }

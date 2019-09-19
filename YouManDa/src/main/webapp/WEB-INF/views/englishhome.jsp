@@ -8,7 +8,17 @@
 	request.setAttribute("a", a);
 %>
 	
-<input type="button" value="MyPage" id="MyPage" onclick="mypage()">
+<input type="button" value="MyPage" id="MyPage" onclick="mypage()"><br>
+
+
+<input type="button" value="freeboard" id="freeboard" onclick="freeboard()"><br>
+<input type="button" value="homeboard" id="homeboard" onclick="homeboard()"><br>
+<input type="button" value="infoboard" id="infoboard" onclick="infoboard()"><br>
+<input type="button" value="marketboard" id="marketboard" onclick="marketboard()"><br>
+<input type="button" value="meetboard" id="meetboard" onclick="meetboard()"><br>
+<input type="button" value="nonameboard" id="nonameboard" onclick="nonameboard()"><br>
+
+
 <html>
 <head>
 
@@ -20,6 +30,30 @@
 </html>
 <script>
 	function mypage(){
+		location = 'mypage/${a}';
+	}
+
+	function freeboard(){
+		location = 'englishhome/freeboard';
+	}
+
+	function homeboard(){
+		location = 'mypage/${a}';
+	}
+
+	function infoboard(){
+		location = 'mypage/${a}';
+	}
+
+	function marketboard(){
+		location = 'mypage/${a}';
+	}
+
+	function meetboard(){
+		location = 'mypage/${a}';
+	}
+
+	function nonameboard(){
 		location = 'mypage/${a}';
 	}
 
