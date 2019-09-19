@@ -37,7 +37,7 @@
 	rel='stylesheet' type='text/css'>
 
 <!-- Custom styles for this template -->
-<link href="resources/css/agency.min.css" rel="stylesheet">
+<link href="resources/css/agency.min.css?var=2" rel="stylesheet">
 
 </head>
 

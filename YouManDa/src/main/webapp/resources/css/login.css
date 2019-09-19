@@ -62,14 +62,14 @@ body {
 		'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
 		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
 		'Noto Color Emoji';
+
 }
 
 #mainNav .navbar-brand {
-	font-size: 1.75em;
-	transition: all .3s;
-	margin-top: 20px
+	font-size: 60px;
+	margin-top: 20px;
+	text-align: center;
 }
-
 #mainNav .navbar-nav .nav-item .nav-link {
 	padding: 1.1em 1em !important
 }
