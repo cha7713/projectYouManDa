@@ -45,6 +45,7 @@
 			<div class="row">
 				<div class="input-field col s6 m6 l6">
 					<p class="margin medium-small">
+					<span>유만다에 처음이신가요?</span>
 						<a href="/ymd/join">회원가입</a>
 					</p>
 				</div>

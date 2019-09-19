@@ -7,12 +7,22 @@
 
 
 <!-- Custom fonts for this template -->
-
+<link href="resources/vendor/fontawesome-free/css/join.css"
+	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script'
+	rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic'
+	rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700'
 	rel='stylesheet' type='text/css'>
 
 <!-- Bootstrap core CSS -->
-<link href="resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="resources/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="resources/css/join.css" rel="stylesheet">
@@ -22,39 +32,53 @@
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="/ymd/home">YouManDa</a>
 		</div>
+</nav>
 
-	<form action="join" method="post">
-		회원가입 <br> 아이디:<input name="id" required="required"><span
-			id="dup"></span> <br> 비밀번호:<input name="pw" type="password"
-			required="required"> <span id="pwCheck"></span><br> 비밀번호 확인:<input name="pw2"
-			type="password" required="required"> <span id="ppp"></span> <br>
-		닉네임: <input name="nick" required="required"> <span id="nick"></span>
-		<br> 사용 언어: <select name="lang">
-			<option value="1">한국어</option>
-			<option value="2">ENG</option>
-			<option value="3">汉语</option>
-			<option value="4">日本語</option>
-		</select> <br> 학교: <input name="school" required="required"><br>
-		이름: <input name="name" required="required"> <br> <label>
-			남성: <input name="sex" type="radio" value="1">
-		</label> <label> 여성: <input name="sex" type="radio" value="2"></label>
-		<br> 핸드폰 번호:<input name="p1" required="required">-<input name="p2" required="required">-<input name="p3" required="required"><br>
-		여권 번호:<input name="passnum" id="passnum" required="required"><span
-			id="passCheck"></span><br> 생년월일:<input name="birthday"
-			type="date" required="required"><br> 주소: <input
-			name="address">
-		<button type="button" onclick="searchaddress()">주소검색</button>
-		<br> 상세주소:<input name="add2"><br> email:<input
-			name="email" id="email" type="email"><span id="emailCheck"></span><br> 
-			<input type="submit" value="회원가입"
-			id="submit">
-	</form>
+			<form id="slick-login" action="join" method="post">
 
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
-	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<input type="hidden" name="kakao">
+<input type="hidden" name="google">
 
-	<script>
+				<br> 아이디 <input name="id" required="required" type="text">
+				<span id="dup"></span> <br> 비밀번호 <input name="pw"
+					type="password" required="required"> <br> <span
+					id="pwCheck"></span><br> 비밀번호 확인<input name="pw2"
+					type="password" required="required"> <span id="ppp"></span>
+				<br> 닉네임 <input name="nick" required="required" type="text">
+				<span id="nick"></span> <br> 사용 언어 <select name="lang">
+					<option value="1">한국어</option>
+					<option value="2">ENG</option>
+					<option value="3">汉语</option>
+					<option value="4">日本語</option>
+				</select> <br> 학교 <input name="school" required="required" type="text"><br>
+				이름 <input name="name" required="required" type="text"> <br>
+				<label> 남성 <input name="sex" type="radio" value="1">
+				</label> <label> 여성 <input name="sex" type="radio" value="2">
+				</label> <br> 핸드폰 번호<br><input name="p1" required="required" type="textarea">-<input
+					name="p2" required="required" type="textarea">-<input name="p3"
+					required="required" type="textarea"><br> 여권 번호<input name="passnum"
+					id="passnum" required="required" type="text"> <span
+					id="passCheck"></span><br> 생년월일<input name="birthday"
+					type="date" required="required"><br> 주소 <input
+					name="address" type="text">
+				<button type="button" onclick="searchaddress()">주소검색</button>
+				<br> 상세주소<input name="add2" type="text"><br>
+				email<input name="email" id="email" type="email"><span
+					id="emailCheck"></span><br> <input type="submit" value="회원가입"
+					id="submit">
+
+
+			</form>
+	
+</body>
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+
+<script>
 	var isId = 0
 	var isPw = 0
 	var isEmail = 0
@@ -248,8 +272,8 @@
 				
 			
 		})
-			
+		
 	</script>
-	</nav>
+</nav>
 </body>
 </html>
