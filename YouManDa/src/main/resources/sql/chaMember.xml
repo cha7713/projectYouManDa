@@ -6,10 +6,10 @@
 
 	<insert id="join" parameterType="map">
 		insert into `member` (id, pw,
-		name, address, email,school,phonenum,passnum,sex,birthday,nick,lang)
+		name, address, email,school,phonenum,passnum,sex,birthday,nick,lang,kakao,google)
 		values
 		(#{id},(HEX(AES_ENCRYPT(#{pw},
-		'hgr'))),#{name},#{address},#{email},#{school},#{phonenum},#{passnum},#{sex},#{birthday},#{nick},#{lang})
+		'hgr'))),#{name},#{address},#{email},#{school},#{phonenum},#{passnum},#{sex},#{birthday},#{nick},#{lang},#{kakao},#{google})
 	</insert>
 
 	<select id="dup" parameterType="string" resultType="string">

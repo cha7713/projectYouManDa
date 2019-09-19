@@ -50,6 +50,12 @@ public class chaMemberController {
 		session.invalidate();
 		return "redirect:home";
 	}
+	
+	@RequestMapping(value = "/loginKakao", method = RequestMethod.GET)
+	public String loginKakao(Model model, @RequestParam Map<String, Object> map) {
+
+		return "home";
+	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
