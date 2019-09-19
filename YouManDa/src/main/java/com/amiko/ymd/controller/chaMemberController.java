@@ -24,6 +24,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,10 +40,10 @@ public class chaMemberController {
 
 	@Autowired
 	chaMemberService ser;
-	
+
 	@Autowired
 	JeredMemberService jeredMemberService;
-	
+
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(Model model, HttpServletRequest req) {
 		HttpSession session = req.getSession();
@@ -66,11 +67,11 @@ public class chaMemberController {
 			session.setAttribute("id", user.get("id"));
 			return "home";
 		} else {
-			model.addAttribute("msg","로그인 실패");
+			model.addAttribute("msg", "로그인 실패");
 			return "login";
-			
+
 		}
-		
+
 	}
 
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
@@ -136,17 +137,19 @@ public class chaMemberController {
 
 		return a;
 	}
+
 	@RequestMapping(value = "/insertId", method = RequestMethod.GET)
 	public String insertId(Model model, HttpServletRequest req) {
-		
+
 		return "insertId";
-	
+
 	}
-	
+
 	@RequestMapping(value = "/pwFind", method = RequestMethod.GET)
+	@ResponseBody
 	public String pwFind(Model model, HttpServletRequest req) {
 		String id = (String) req.getParameter("id");
-		
+		String code = "";
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		map.put("id",id);
@@ -154,8 +157,8 @@ public class chaMemberController {
 		map=jeredMemberService.selectUser(map);
 		
 		if (map == null) {
-			model.addAttribute("msg","존재하지 않는 아이디 입니다");
-			return "insertId";
+//			model.addAttribute("msg","존재하지 않는 아이디 입니다");
+			return "-1";
 		}
 		
 		String uesrEmail=(String) map.get("email");
@@ -187,7 +190,7 @@ public class chaMemberController {
 	            int ran=r.nextInt(10000);
 	            
 	            ShaPassword sha256 = new ShaPassword();
-	            String code =sha256.sha256(ran);
+	            code =sha256.sha256(ran);
 	            
 	            msg.setContent("<h3>아래의 코드를 사이트에 입력해 주세요</h3>"+"<br><br>"+code, "text/html;charset=UTF-8"); // 내용과 인코딩
 	            
@@ -209,9 +212,19 @@ public class chaMemberController {
 	        }
 
 	
-		return "codeIn";
+		return code;
 	}
+
+
+	@RequestMapping(value = "/editPw/{id}", method = RequestMethod.GET)
+	public String editPw(Model model, HttpServletRequest req, @PathVariable("id") String id) {
+		
+		return "login";
+	
+		
+	}
+}
 	
 	
 
-}
+
