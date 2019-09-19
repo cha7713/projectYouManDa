@@ -36,5 +36,12 @@
 		select * from `member` where id = #{id} and pw = (HEX(AES_ENCRYPT(#{pw},
 		'hgr')))
 	</select>
+	
+	<update id="editPw" parameterType="map">
+		UPDATE `MEMBER` SET
+			pw=(HEX(AES_ENCRYPT(#{pw},'hgr')))
+			WHERE id = #{id}
+	</update>
+	
 
 </mapper>
