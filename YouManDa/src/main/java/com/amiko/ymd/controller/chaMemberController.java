@@ -81,8 +81,8 @@ public class chaMemberController {
 	}
 
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
-	public String join(Locale locale, Model model) {
-
+	public String join1(Locale locale, Model model, @RequestParam Map<String, Object> map) {
+		model.addAttribute(map);
 		return "join";
 	}
 
