@@ -24,12 +24,14 @@
 			location = "findpw";
 		}
 		
-		()=>{
+		function msg(){
 			var abc = '${msg}';
-			if(abc!=null){
-			alert(abc)
+			if(abc!=""){
+				alert(abc)
 			}
-		}
+		};
+		msg()
+		
 		
 	</script>
 	</form>
