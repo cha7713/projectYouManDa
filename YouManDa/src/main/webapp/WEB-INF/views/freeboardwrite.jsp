@@ -20,9 +20,8 @@
 		<form action="/realfree" method="post">
 			title : <input type="text" name="addtitle" placeholder="제목을 입력하시오">
 			<textarea id="summernote" name="content""></textarea>
-			<input type="button" value="취소" style="float: right;"
-				onclick="backtolist()"> <input type="submit" value="작성완료"
-				style="float: right;">
+			<input type="button" value="취소" style="float: right;" onclick="backtolist()"> 
+			<input type="submit" value="작성완료"	style="float: right;">
 		</form>
 	</div>
 
