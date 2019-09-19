@@ -3,6 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script src="http://code.jquery.com/jquery-3.1.1.min.js" ></script>
 
+
+<button onclick="checkMyPost()">내 게시물 확인</button>
+<button onclick="checkMyReply()">내 댓글 확인</button>
 <h1>마이 페이지</h1>
 <br><br><br>
 아이디 : ${personalinfo.id} <br>
@@ -53,8 +56,17 @@
 	function editmypage() {
 		location = '../mypageedit/${personalinfo.id}';
 	}
+	
 	function deleteMyAccount() {
 		location = '../deleteMyAccount';
 	}
+
+	function checkMyPost(){
+
+	};
+
+	function checkMyReply(){
+
+	};
 
 </script>
