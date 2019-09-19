@@ -18,7 +18,7 @@ public class JeredMemberDao {
 	}
 	
 	public int updateUser(Map<String, Object> map) {
-		System.out.println(map);
+		//System.out.println(map);
 		return ss.update("JeredMember.updateMyinfo", map);
 		
 	}
