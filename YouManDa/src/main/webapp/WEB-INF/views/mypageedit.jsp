@@ -42,5 +42,14 @@
 	
 
 	<input type="submit" value="수정완료">
+	<button onclick="backToMypage()">취소</button>
 </form>
+
+<script>
+
+	function backToMypage(){
+			location = "../mypage/${personalinfo.id}"
+		}
+
+</script>
 
