@@ -111,7 +111,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<h2 class="section-heading text-uppercase" id="english" onclick="enter()">영어권</h2>
+					<h2 class="section-heading text-uppercase" id="english" onclick="enter()">English</h2>
 					<script>
 						function enter() {
 							location = "englishhome";
@@ -125,7 +125,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<h2 class="section-heading text-uppercase" id="chinese" onclick="enter2()">중어권</h2>
+					<h2 class="section-heading text-uppercase" id="chinese" onclick="enter2()">汉语</h2>
 					<script>
 						function enter2() {
 							location = "chinesehome";
@@ -139,7 +139,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<h2 class="section-heading text-uppercase" id="japanese" onclick="enter3()">일어권</h2>
+					<h2 class="section-heading text-uppercase" id="japanese" onclick="enter3()">日本語</h2>
 					<script>
 						function enter3() {
 							location = "japanesehome";

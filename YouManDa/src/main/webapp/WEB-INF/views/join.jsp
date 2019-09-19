@@ -1,13 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
+<%@ page pageEncoding="utf-8" session="false"%>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>회원가입</title>
+
+<meta charset="utf-8">
+
+
+<!-- Custom fonts for this template -->
+
+<link href='https://fonts.googleapis.com/css?family=Kaushan+Script'
+	rel='stylesheet' type='text/css'>
+
+<!-- Bootstrap core CSS -->
+<link href="resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="resources/css/join.css" rel="stylesheet">
 </head>
 <body>
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+		<div class="container">
+			<a class="navbar-brand js-scroll-trigger" href="/ymd/home">YouManDa</a>
+		</div>
+
 	<form action="join" method="post">
 		회원가입 <br> 아이디:<input name="id" required="required"><span
 			id="dup"></span> <br> 비밀번호:<input name="pw" type="password"
@@ -235,5 +250,6 @@
 		})
 			
 	</script>
+	</nav>
 </body>
 </html>
