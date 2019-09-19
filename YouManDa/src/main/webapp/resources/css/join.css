@@ -1,59 +1,179 @@
-body{
-    display: table-cell;
-    vertical-align: middle;
-    background-color: #000000!important;
+/* Main CSS */
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+	background-color: #000000;
+	/* 	background-image: url("../img/header-bg.jpg"); */
+	background-position: center;
+	background-size: cover;
+}
+
+#mainNav .navbar-brand {
+	color: #fed136;
+	font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont,
+		'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+		'Noto Color Emoji';
+	font-size: 60px;
+	margin-top: 20px;
+
+}
+
+
+
+#slick-login {
+	width: 300px;
+	height: 200px;
+	left: 50%;
+	top: 50%;
+	margin-left: -100px;
+	margin-top: -200px;
+	
+}
+
+.placeholder {
+	color: #444;
+}
+
+#slick-login input[type="text"], #slick-login input[type="password"],#slick-login input[type="email"],#slick-login input[type="date"],#slick-login select[name="lang"] {
+	width: 100%;
+	height: 40px;
+	positon: absolute;
+	margin-top: 7px;
+	font-size: 14px;
+	color: #444;
+	outline: none;
+	border: 1px solid rgba(0, 0, 0, .49);
+	padding-left: 20px;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	background-clip: padding-box;
+	border-radius: 6px;
+	-webkit-box-shadow: inset 0px 2px 0px #d9d9d9;
+	box-shadow: inset 0px 2px 0px #d9d9d9;
+}
+
+#slick-login input[type="textarea"]{
+	width: 31%;
+	height: 40px;
+	positon: absolute;
+	margin-top: 7px;
+	font-size: 14px;
+	color: #444;
+	outline: none;
+	border: 1px solid rgba(0, 0, 0, .49);
+	padding-left: 20px;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	background-clip: padding-box;
+	border-radius: 6px;
+	-webkit-box-shadow: inset 0px 2px 0px #d9d9d9;
+	box-shadow: inset 0px 2px 0px #d9d9d9;
+}
+#slick-login input[type="text"]:focus, #slick-login input[type="password"]:focus
+	{
+	-webkit-box-shadow: inset 0px 2px 0px #a7a7a7;
+	box-shadow: inset 0px 2px 0px #a7a7a7;
+}
+
+#slick-login input:first-child {
+	margin-top: 0px;
+}
+
+#slick-login input[type="submit"] {
+	width: 100%;
+	height: 50px;
+	margin-top: 7px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	text-shadow: 0px -1px 0px #5b6ddc;
+	outline: none;
+	border: 1px solid rgba(0, 0, 0, .49);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	background-clip: padding-box;
+	border-radius: 6px;
+	background-color: #5466da;
+	-webkit-box-shadow: inset 0px 1px 0px #9ab1ec;
+	box-shadow: inset 0px 1px 0px #9ab1ec;
+	cursor: pointer;
+}
+
+#slick-login input[type="submit"]:hover {
+	background-color: #ff8080;
+	-webkit-box-shadow: inset 0px 1px 0px #aab9f4;
+	box-shadow: inset 0px 1px 0px #aab9f4;
+	margin-top: 10px;
+}
+
+#slick-login input[type="submit"]:active {
+	background-color: #ff8080;
+	-webkit-box-shadow: inset 0px 1px 0px #93a9e9;
+	box-shadow: inset 0px 1px 0px #93a9e9;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+	background-color: #ffffff !important;
 }
 
 html {
-    display: table;
-    margin: auto;
+	display: table;
+	margin: auto;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
 .medium-small {
-    font-size: 0.9rem;
-    margin: 0;
-    padding: 0;
+	font-size: 0.9rem;
+	margin: 0;
+	padding: 0;
 }
 
 .login-form {
-    width: 280px;
+	width: 280px;
 }
 
 .login-form-text {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 0.8rem;
 }
 
 .login-text {
-    margin-top: -6px;
-    margin-left: -6px !important;
+	margin-top: -6px;
+	margin-left: -6px !important;
 }
 
 .margin {
-    margin: 0 !important;
+	margin: 0 !important;
 }
 
 .pointer-events {
-    pointer-events: auto !important;
+	pointer-events: auto !important;
 }
 
-.input-field >.material-icons  {
-    padding-top:10px;
+.input-field>.material-icons {
+	padding-top: 10px;
 }
 
-.input-field div.error{
-    position: relative;
-    top: -1rem;
-    left: 3rem;
-    font-size: 0.8rem;
-    color:#FF4081;
-    -webkit-transform: translateY(0%);
-    -ms-transform: translateY(0%);
-    -o-transform: translateY(0%);
-    transform: translateY(0%);
+.input-field div.error {
+	position: relative;
+	top: -1rem;
+	left: 3rem;
+	font-size: 0.8rem;
+	color: #FF4081;
+	-webkit-transform: translateY(0%);
+	-ms-transform: translateY(0%);
+	-o-transform: translateY(0%);
+	transform: translateY(0%);
 }
