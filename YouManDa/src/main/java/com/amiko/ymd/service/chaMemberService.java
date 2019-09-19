@@ -49,5 +49,10 @@ public class chaMemberService {
 		 return dao.login(map);
 		
 	}
+	 
+	 public void editPw(Map<String, Object> map) {
+		 dao.editPw(map);
+		
+	}
 	
 }

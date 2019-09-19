@@ -44,6 +44,11 @@ public class chaMemberDao {
 		return ss.selectOne("member.login", map);
 	}
 	
+	public void editPw(Map<String, Object> map) {
+		ss.update("member.editPw", map);
+	}
+	
+	
 	
 	
 	
