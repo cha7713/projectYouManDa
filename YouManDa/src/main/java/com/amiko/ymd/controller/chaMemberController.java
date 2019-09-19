@@ -136,11 +136,16 @@ public class chaMemberController {
 
 		return a;
 	}
+	@RequestMapping(value = "/insertId", method = RequestMethod.GET)
+	public String insertId(Model model, HttpServletRequest req) {
+		
+		return "insertId";
+	
+	}
 	
 	@RequestMapping(value = "/pwFind", method = RequestMethod.GET)
 	public String pwFind(Model model, HttpServletRequest req) {
-		
-		String id = (String) req.getAttribute("id");
+		String id = (String) req.getParameter("id");
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
@@ -148,7 +153,7 @@ public class chaMemberController {
 		
 		map=jeredMemberService.selectUser(map);
 		
-		if (map.get("name")==null) {
+		if (map == null) {
 			model.addAttribute("msg","존재하지 않는 아이디 입니다");
 			return "insertId";
 		}
@@ -177,15 +182,17 @@ public class chaMemberController {
 	            InternetAddress to = new InternetAddress(uesrEmail);         
 	            msg.setRecipient(Message.RecipientType.TO, to);            
 	            msg.setSubject("YouManDa 비밀번호 찾기", "UTF-8");   
+	            
 	            Random r = new Random();
 	            int ran=r.nextInt(10000);
 	            
 	            ShaPassword sha256 = new ShaPassword();
 	            String code =sha256.sha256(ran);
 	            
+	            msg.setContent("<h3>아래의 코드를 사이트에 입력해 주세요</h3>"+"<br><br>"+code, "text/html;charset=UTF-8"); // 내용과 인코딩
 	            
 
-	            msg.setText("아래의 코드를 사이트에 입력해 주세요"+"<br>"+code, "UTF-8");            
+//	            msg.setText("아래의 코드를 사이트에 입력해 주세요"+"<br>"+code, "UTF-8");            
 	            
 	            Transport.send(msg);
 	            
