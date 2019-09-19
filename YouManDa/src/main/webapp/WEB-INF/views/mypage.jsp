@@ -47,10 +47,14 @@
 
 
 <button onclick='editmypage()'>수정</button>
+<button onclick='deleteMyAccount()'>회원탈퇴</button>
 
 <script>
 	function editmypage() {
 		location = '../mypageedit/${personalinfo.id}';
+	}
+	function deleteMyAccount() {
+		location = '../deleteMyAccount';
 	}
 
 </script>

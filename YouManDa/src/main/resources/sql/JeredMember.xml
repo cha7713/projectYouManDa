@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="JeredMemebr">
+<mapper namespace="JeredMember">
 
 	<!-- 자신의 개인정보를 조회 // resultType => 결과, parameterType => 입력-->
 	<select id="selectMyinfo" resultType="map" parameterType="map">
@@ -21,9 +21,9 @@
 	
 	
 	<!-- 회원 탈퇴 -->
-	<delete id="deleteMyinfo">
+	<delete id="deleteMyAccount" parameterType="map">
 		DELETE FROM `MEMBER`
-		 WHERE id = #{value}		
+		 WHERE id = #{id}		
 	</delete>
 
 </mapper>
