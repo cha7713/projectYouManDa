@@ -219,6 +219,15 @@ public class chaMemberController {
 	@RequestMapping(value = "/editPw/{id}", method = RequestMethod.GET)
 	public String editPw(Model model, HttpServletRequest req, @PathVariable("id") String id) {
 		
+		model.addAttribute("id", id);
+		return "editPw";
+		
+	}
+	
+	@RequestMapping(value = "/editPw", method = RequestMethod.POST)
+	public String editPw(Model model, @RequestParam Map<String, Object>map) {
+		
+		ser.editPw(map);
 		return "login";
 	
 		
