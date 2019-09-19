@@ -47,10 +47,7 @@
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="#page-top">YouManDa</a>
-			<button class="navbar-toggler navbar-toggler-right" type="button"
-				data-toggle="collapse" data-target="#navbarResponsive"
-				aria-controls="navbarResponsive" aria-expanded="false"
-				aria-label="Toggle navigation">Menu</button>
+			
 				
 			<i class="fas fa-bars"></i>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
@@ -69,7 +66,7 @@
 						</c:if>
 						<c:if test="${a!=null}">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="/ymd/mypage/${a}">마이페이지</a></li>
+						href="#MyPage">마이페이지</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/logout">로그아웃</a></li>
 						</c:if>
@@ -152,6 +149,27 @@
 			</div>
 		</div>
 	</section>
+	 <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <span class="copyright">Copyright &copy; (주)</span>
+        </div>
+       
+        <div class="col-md-4">
+          <ul class="list-inline quicklinks">
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
