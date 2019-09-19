@@ -1,24 +1,37 @@
 package com.amiko.ymd.controller;
 
-import java.text.DateFormat;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Properties;
+import java.util.Random;
 
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.amiko.ymd.hash.ShaPassword;
+import com.amiko.ymd.mail.MailAuth;
+import com.amiko.ymd.service.JeredMemberService;
 import com.amiko.ymd.service.chaMemberService;
 
 @Controller
@@ -26,6 +39,9 @@ public class chaMemberController {
 
 	@Autowired
 	chaMemberService ser;
+	
+	@Autowired
+	JeredMemberService jeredMemberService;
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(Model model, HttpServletRequest req) {
@@ -120,5 +136,75 @@ public class chaMemberController {
 
 		return a;
 	}
+	
+	@RequestMapping(value = "/pwFind", method = RequestMethod.GET)
+	public String pwFind(Model model, HttpServletRequest req) {
+		
+		String id = (String) req.getAttribute("id");
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("id",id);
+		
+		map=jeredMemberService.selectUser(map);
+		
+		if (map.get("name")==null) {
+			model.addAttribute("msg","존재하지 않는 아이디 입니다");
+			return "insertId";
+		}
+		
+		String uesrEmail=(String) map.get("email");
+		
+		
+		 Properties prop = System.getProperties();
+	        prop.put("mail.smtp.starttls.enable", "true");
+	        prop.put("mail.smtp.host", "smtp.gmail.com");
+	        prop.put("mail.smtp.auth", "true");
+	        prop.put("mail.smtp.port", "587");
+	        
+	        Authenticator auth = new MailAuth();
+	        
+	        Session session = Session.getDefaultInstance(prop, auth);
+	        
+	        MimeMessage msg = new MimeMessage(session);
+	        
+	        
+	    
+	        try {
+	            msg.setSentDate(new Date());
+	            
+	            msg.setFrom(new InternetAddress("youmanda123@gmail.com", "YouManDa"));
+	            InternetAddress to = new InternetAddress(uesrEmail);         
+	            msg.setRecipient(Message.RecipientType.TO, to);            
+	            msg.setSubject("YouManDa 비밀번호 찾기", "UTF-8");   
+	            Random r = new Random();
+	            int ran=r.nextInt(10000);
+	            
+	            ShaPassword sha256 = new ShaPassword();
+	            String code =sha256.sha256(ran);
+	            
+	            
+
+	            msg.setText("아래의 코드를 사이트에 입력해 주세요"+"<br>"+code, "UTF-8");            
+	            
+	            Transport.send(msg);
+	            
+	            HttpSession session2 = req.getSession();
+	            session2.setAttribute("code", code);
+	            
+	            
+	        } catch(AddressException ae) {            
+	            System.out.println("AddressException : " + ae.getMessage());           
+	        } catch(MessagingException me) {            
+	            System.out.println("MessagingException : " + me.getMessage());
+	        } catch(UnsupportedEncodingException e) {
+	            System.out.println("UnsupportedEncodingException : " + e.getMessage());			
+	        }
+
+	
+		return "codeIn";
+	}
+	
+	
 
 }
