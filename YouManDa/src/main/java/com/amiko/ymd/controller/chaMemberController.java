@@ -50,6 +50,12 @@ public class chaMemberController {
 		session.invalidate();
 		return "redirect:home";
 	}
+	
+	@RequestMapping(value = "/loginKakao", method = RequestMethod.GET)
+	public String loginKakao(Model model, @RequestParam Map<String, Object> map) {
+
+		return "home";
+	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
@@ -75,8 +81,8 @@ public class chaMemberController {
 	}
 
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
-	public String join(Locale locale, Model model) {
-
+	public String join1(Locale locale, Model model, @RequestParam Map<String, Object> map) {
+		model.addAttribute(map);
 		return "join";
 	}
 

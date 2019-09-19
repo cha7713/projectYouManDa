@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page pageEncoding="utf-8" session="false"%>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <html>
 <head>
 
@@ -55,7 +56,45 @@
 					</p>
 
 				</div>
+				
+				<a id="kakao-login-btn"></a>
+				<a href="http://developers.kakao.com/logout"></a>
+				
+				
 				<script>
+				
+				
+				
+				//<![CDATA[
+			    // 사용할 앱의 JavaScript 키를 설정해 주세요.
+			    Kakao.init('602456200ebdad0c58f3bd1860bcd80d');
+			    // 카카오 로그인 버튼을 생성합니다.
+			    Kakao.Auth.createLoginButton({
+			      container: '#kakao-login-btn',
+			      success: function(authObj) {
+			        console.log(JSON.stringify(authObj));
+			        let userCode = JSON.stringify(authObj);
+			       
+			        $.ajax({
+				        url:"kakaoDup",
+				        data : {kakao : userCode},
+				        success: function(res){
+				            console.log(res);
+				           
+				           if(res==0 ){
+				        	   location = 'join?kakao='+userCode+''
+				           }else if(res==1){
+				        	   location = 'loginKakao?kakao='+userCode+''
+						}
+				        } 
+				    });
+			        
+			      },
+			      fail: function(err) {
+			         alert(JSON.stringify(err));
+			      }
+			    });
+			  //]]>
 					function findpw() {
 						location = "insertId";
 					}
