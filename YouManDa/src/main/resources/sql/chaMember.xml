@@ -31,10 +31,21 @@
 		from `member` where nick =
 		#{value}
 	</select>
+	
+	<select id="dupKakao" parameterType="string" resultType="string">
+		select
+		name
+		from `member` where kakao =
+		#{value}
+	</select>
 
 	<select id="login" parameterType="map" resultType="map">
 		select * from `member` where id = #{id} and pw = (HEX(AES_ENCRYPT(#{pw},
 		'hgr')))
+	</select>
+	
+	<select id="loginKakao" parameterType="string" resultType="map">
+		select * from `member` where kakao = #{value} 
 	</select>
 	
 	<update id="editPw" parameterType="map">

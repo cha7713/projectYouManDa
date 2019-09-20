@@ -40,6 +40,11 @@ public class chaMemberService {
 		
 	}
 	 
+	 public String kakaoDup(String kakao) {
+		 return dao.dupKakao(kakao);
+		
+	}
+	 
 	 public String emailDup(String email) {
 		 return dao.dupEmail(email);
 		
@@ -48,6 +53,10 @@ public class chaMemberService {
 	 public Map<String, Object> login(Map<String, Object> map) {
 		 return dao.login(map);
 		
+	}
+	 
+	 public Map<String, Object> loginKakao(String kakao) {
+		 return dao.loginKakao(kakao);	
 	}
 	 
 	 public void editPw(Map<String, Object> map) {
