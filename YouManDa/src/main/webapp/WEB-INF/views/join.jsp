@@ -23,7 +23,7 @@
 	rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="resources/css/join.css?var=7" rel="stylesheet">
+<link href="resources/css/join.css?var=1" rel="stylesheet">
 </head>
 <body>
 	<div class="container" style="margin-left:120%">
@@ -35,7 +35,9 @@
 				<input type="hidden" name="kakao" value="${info.kakao}">
 				<input type="hidden" name="google"value="${info.google}">
 					<br> 아이디 <input name="id" required="required" type="text">
-					<span id="dup"></span> <br> 비밀번호 <input name="pw" type="password" required="required"> <br>
+					<span id="dup"></span>
+					 <br> 
+					 비밀번호 <input name="pw" type="password" required="required"> <br>
 					 <span id="pwCheck"></span><br> 비밀번호 확인
 					 <input name="pw2" type="password" required="required"> 
 					 <span id="ppp"></span>
