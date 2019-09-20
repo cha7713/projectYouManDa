@@ -29,7 +29,7 @@ public class chaMemberDao {
 		return ss.insert("member.join", map);
 	}
 	
-	public String dup(String id) {
+	public int dup(String id) {
 		return ss.selectOne("member.dup", id);
 	}
 	
@@ -68,6 +68,22 @@ public class chaMemberDao {
 	
 	public List<Map<String, Object>> alarm(String id) {
 		return ss.selectList("member.alarm", id);
+	}
+	
+	public void ok(Map<String, Object>map) {
+
+		ss.insert("member.ok",map);
+	}
+	public String frList(String id) {
+		return ss.selectOne("member.friendList",id);
+	}
+	
+	public void reject(String id) {
+		ss.delete("member.reject",id);
+	}
+	
+	public void delReq(Map<String, Object>map ) {
+		ss.delete("member.delReq",map);
 	}
 	
 	

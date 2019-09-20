@@ -138,7 +138,7 @@ public class chaMemberController {
 	@RequestMapping(value = "/idDup", method = RequestMethod.GET)
 	@ResponseBody
 	public int dup(HttpServletRequest req) {
-		String result = ser.idDup(req.getParameter("id"));
+		Integer result = ser.idDup(req.getParameter("id"));
 		// 중복 검사 해서 아이디가 존재 할경우 1을 넘기고 없으면 0을넘김
 		int a = 0;
 		if (result != null) {
@@ -275,13 +275,13 @@ public class chaMemberController {
 		System.out.println("----------------------------------");
 		System.out.println(map.get("id2"));
 		
-		int lang = Integer.parseInt(ser.idDup((String) map.get("id")));
+		int lang = (ser.idDup((String) map.get("id")));
 		map.put("lang", lang);
 		int result =0;
 		try {
-		result = ser.req(map);
+			result = ser.req(map);
 		}catch (Exception e) {
-			result =1;
+			result =0;
 		}
 		return result + "";
 	
@@ -318,6 +318,34 @@ public class chaMemberController {
 	return result;
 
 }
+	
+	@RequestMapping(value = "/ok", method = RequestMethod.GET)
+	@ResponseBody
+	public String ok(Model model,HttpServletRequest req) {
+		HttpSession session2 = req.getSession();
+        String id = (String) session2.getAttribute("id");
+        int lang = (int) session2.getAttribute("lang");
+        String frid = req.getParameter("frid");//친구신청을 한 사람의 아이디
+                
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("id",id);
+		map.put("frid",frid);
+		map.put("lang",lang);
+		
+		ser.ok(map);
+				
+	return "1";
+
+}
+	
+	@RequestMapping(value = "/delReq", method = RequestMethod.GET)
+	@ResponseBody
+	public String del(Model model, @RequestParam Map<String, Object>map) {
+		
+		ser.delreq(map);
+		return "거절";
+	
+	}
 }
 	
 	

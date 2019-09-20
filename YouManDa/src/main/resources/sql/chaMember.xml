@@ -12,7 +12,7 @@
 		'hgr'))),#{name},#{address},#{email},#{school},#{phonenum},#{passnum},#{sex},#{birthday},#{nick},#{lang},#{kakao},#{google})
 	</insert>
 
-	<select id="dup" parameterType="string" resultType="string">
+	<select id="dup" parameterType="string" resultType="_int">
 		select lang
 		from `member` where id =
 		#{value}
@@ -69,6 +69,24 @@
 	<select id="alarm" parameterType="string" resultType="map">
 		select * from `request` where id = #{value} 
 	</select>
+	
+	<insert id="ok" parameterType="map" >
+		insert into `frlist` values (#{lang}, #{id}, #{frid})
+	</insert>
+	
+	<select id="friendList" parameterType="string" resultType="string">
+		select frid from `frlist` where id = #{value} 
+	</select>
+	
+	<delete id="reject" parameterType="string">
+	delete from `frlist` where id = #{value}
+	</delete>
+	
+	<delete id="delReq" parameterType="map">
+	delete from `request` where id = #{id} and id2 = #{id2}
+	</delete>
+	
+	
 	
 
 </mapper>

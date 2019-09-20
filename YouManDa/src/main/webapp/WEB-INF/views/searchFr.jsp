@@ -50,7 +50,7 @@ function friendReq(idx) {
 	    data : {id2 : '${id}', lang2 : ${lang}, req : '친구신청', id : $('#a'+idx).text() },
 	    success: function(res){
 	    	console.log(res)
-	    	    	if(res==0){
+	    	    	if(res==1){
 	    	alert('친구 신청을 완료했습니다')	 		
 	    	    		
 	    	    	}else {

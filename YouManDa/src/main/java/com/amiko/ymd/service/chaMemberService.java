@@ -2,6 +2,7 @@ package com.amiko.ymd.service;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -31,7 +32,7 @@ public class chaMemberService {
 		
 	}
 	 
-	 public String idDup(String id) {
+	 public int idDup(String id) {
 		 return dao.dup(id);
 		
 	}
@@ -76,5 +77,42 @@ public class chaMemberService {
 	 public List<Map<String, Object>> alarm(String id) {
 		return dao.alarm(id);
 	}
+	 
+	 public void ok(Map<String, Object>map) {
+		 
+		 
+		String id=(String) map.get("id");
+		 String list=dao.frList(id);
+		 dao.reject(id);		 
+		 String frid = (String) map.get("frid");
+		 Map<String, Object> m2 = new HashMap<String, Object>();
+		 m2.put("id",id);
+		 m2.put("id2",frid);
+		 dao.delReq(m2);
+		 list += "/"+frid; 
+		 map.put("frid",list);   
+		 dao.ok(map);
+		 
+		 
+		 
+		 id = (String) frid;
+		 frid=(String) map.get("id");
+		 map.put("id",id);
+		 list=dao.frList(id);
+		 dao.reject(id);
+		 
+		 list += "/"+frid; 
+		 map.put("frid",list);
+		 int lang=dao.dup(id);
+		 map.put("lang",lang);
+		 dao.ok(map);
+		 
+		
+	}
+	 
+	 public void delreq(Map<String, Object>map) {
+		dao.delReq(map);
+	}
+	 
 	
 }
