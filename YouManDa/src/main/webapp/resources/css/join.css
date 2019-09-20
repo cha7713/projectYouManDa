@@ -15,10 +15,7 @@
 
 #mainNav .navbar-brand {
 	color: #fed136;
-	font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont,
-		'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
-		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Color Emoji';
+	font-family: 'Kaushan Script'
 
 }
 
@@ -89,31 +86,28 @@
 	width: 100%;
 	height: 50px;
 	margin-top: 7px;
-	color: #fff;
+	color: #000000;
 	font-size: 18px;
-	font-weight: bold;
-	text-shadow: 0px -1px 0px #5b6ddc;
 	outline: none;
-	border: 1px solid rgba(0, 0, 0, .49);
 	-webkit-background-clip: padding-box;
 	-moz-background-clip: padding-box;
 	background-clip: padding-box;
 	border-radius: 6px;
-	background-color: #5466da;
+	background-color: #fed136;
 	-webkit-box-shadow: inset 0px 1px 0px #9ab1ec;
 	box-shadow: inset 0px 1px 0px #9ab1ec;
 	cursor: pointer;
 }
 
 #slick-login input[type="submit"]:hover {
-	background-color: #ff8080;
+	background-color: #80ff00;
 	-webkit-box-shadow: inset 0px 1px 0px #aab9f4;
 	box-shadow: inset 0px 1px 0px #aab9f4;
 	margin-top: 10px;
 }
 
 #slick-login input[type="submit"]:active {
-	background-color: #ff8080;
+	background-color: #80ff00;
 	-webkit-box-shadow: inset 0px 1px 0px #93a9e9;
 	box-shadow: inset 0px 1px 0px #93a9e9;
 }
