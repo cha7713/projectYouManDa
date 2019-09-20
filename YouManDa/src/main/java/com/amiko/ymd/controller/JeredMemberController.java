@@ -1,6 +1,7 @@
 package com.amiko.ymd.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -66,6 +67,7 @@ public class JeredMemberController {
 	@RequestMapping(value = "englishhome/freeboard", method = RequestMethod.GET)
 	public String freeboardListGET(Model model) {
 		model.addAttribute("fblist",jeredMemberService.selectFreeBoardList());
+		List<Map<String, Object>> a=jeredMemberService.selectFreeBoardList();
 		return "freeboard";
 	}
 	
@@ -80,6 +82,20 @@ public class JeredMemberController {
 		return "redirect:/englishhome/freeboard";
 	}
 	
+	@RequestMapping(value="englishhome/freeboard/freeboardin/{bnum}", method=RequestMethod.GET)
+	public String selectFreeBoardOne(Model model,@PathVariable("bnum") int bnum) {
+		model.addAttribute("viewcontent",jeredMemberService.selectFreeBoardOne(bnum));
+		return "freeboardview";
+		
+	}
+	
+	@RequestMapping(value="englishhome/freeboard/freeboardin/freeboardedit/{bnum}", method=RequestMethod.GET)
+	public String freeboardedit(Model model, @PathVariable("bnum") int bnum) {
+		model.addAttribute("editpost",jeredMemberService.freeBoardEdit(bnum));
+		return "freeboardedit";
+	}
+
+
 	
 	
 

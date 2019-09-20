@@ -2,11 +2,7 @@
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-	HttpSession session2 = request.getSession();
-	String a = (String) session2.getAttribute("id");
-	request.setAttribute("a", a);
-%>
+
 	
 <input type="button" value="MyPage" id="MyPage" onclick="mypage()"><br>
 
@@ -30,7 +26,7 @@
 </html>
 <script>
 	function mypage(){
-		location = 'mypage/${a}';
+		location = 'mypage/${id}';
 	}
 
 	function freeboard(){
@@ -38,23 +34,23 @@
 	}
 
 	function homeboard(){
-		location = 'mypage/${a}';
+		location = 'mypage/homeboard';
 	}
 
 	function infoboard(){
-		location = 'mypage/${a}';
+		location = 'mypage/infoboard';
 	}
 
 	function marketboard(){
-		location = 'mypage/${a}';
+		location = 'mypage/marketboard';
 	}
 
 	function meetboard(){
-		location = 'mypage/${a}';
+		location = 'mypage/meetboard';
 	}
 
 	function nonameboard(){
-		location = 'mypage/${a}';
+		location = 'mypage/nonameboard';
 	}
 
 </script>

@@ -38,4 +38,12 @@ public class JeredMemberDao {
 		ss.insert("JeredMember.insertFreeBoard", map);
 	}
 	
+	public Map<String, Object> selectFreeBoardOne(int bnum){
+		return ss.selectOne("JeredMember.selectFreeBoardOne", bnum);
+	}
+	
+	public Map<String, Object> freeBoardEdit(int bnum) {
+		return ss.selectOne("JeredMember.updateFreeBoard", bnum);
+	}
+	
 }

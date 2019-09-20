@@ -31,7 +31,7 @@
 	
 	<select id="selectFreeBoardList" resultType="map" parameterType="map">
 		SELECT
-		 header, title, id, bdate ,hit, recomend
+		 bnum, header, title, id, bdate ,hit, recomend
 		 FROM `freeboard`
 	</select>
 	
@@ -42,5 +42,19 @@
 		 ( #{header},#{title}, #{content}, NOW(),  0, 0, #{id}, #{lang}, #{lnum})
 	</insert>
 	<!-- id, lang, lnum -> hidden -->
+	
+	<select id='selectFreeBoardOne' resultType="map" parameterType="map">
+		SELECT 
+		 header, title, bdate, id, content, hit, recomend, bnum
+		 FROM `freeboard`
+		 WHERE bnum=#{bnum}
+	</select>
+	
+	<!-- 게시물 수정 -->
+ 	<select id="updateFreeBoard" resultType="map" parameterType="_int">
+		select * 
+			FROM `freeboard`
+			WHERE bnum = #{value}
+	</select>
 
 </mapper>

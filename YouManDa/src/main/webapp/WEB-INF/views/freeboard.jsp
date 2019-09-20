@@ -20,24 +20,27 @@
 	<c:forEach items="${fblist}" var="list">
 		<tr>
 			<td>${list.header}</td>
-			<td>${list.title}</td>
+			<td onclick="viewthispost(${list.bnum})"> ${list.title}</td>
 			<td>${list.id}</td>
 			<td>${list.bdate}</td>
 			<td>${list.hit}</td>
 			<td>${list.recomend}</td>
 		</tr>
-	
+		
 	</c:forEach>
 </table>
 	
 	
 	
-	<input type='button' value='create' id='write' onclick='writing()' style="float: right;"><br>
+	<input type='button' value='create' id='write' onclick='writing()'><br>
 </div>
 
 <script>
     function writing(){
 		location = 'freeboard/freeboardwrite';
+	}
+	function viewthispost(bnum){
+		location= "freeboard/freeboardin/"+bnum;
 	}
 	
 </script>
