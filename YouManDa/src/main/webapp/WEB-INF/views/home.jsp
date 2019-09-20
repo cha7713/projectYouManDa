@@ -54,7 +54,7 @@
 					<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#english">영어권</a></li>
+						href="#first">영어권</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="#chinese">중어권</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
@@ -173,7 +173,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-4">
-          <span class="copyright">Copyright &copy; (주)</span>
+          <span class="copyright">Copyright &copy; (주)유만다</span>
         </div>
        
         <div class="col-md-4">
@@ -189,6 +189,56 @@
       </div>
     </div>
   </footer>
+  
+  <script>
+  	$(document).ready(function() {
+  		var w = $(this).width();
+		var size_eng = $('section.eng').css('background-size');
+  		size_eng = w + "px "+ "500px";
+		$('section.eng').css('background-size', size_eng)
+		
+		var size_cng = $('section.cng').css('background-size');
+		size_cng = w + "px "+ "500px";
+		$('section.cng').css('background-size', size_cng)
+		
+		var size_jap = $('section.jap').css('background-size');
+		size_jap = w + "px "+ "500px";	
+		$('section.jap').css('background-size', size_jap)
+  	})
+  
+  	$(window).resize(function() {
+  		var w = $(this).width();
+//   		var section_eng = $('section.eng').height();
+		var size_eng = $('section.eng').css('background-size');
+  		size_eng = w + "px "+ "500px";
+		$('section.eng').css('background-size', size_eng)
+		
+//   		var section_cng = $('section.cng').height();
+		var size_cng = $('section.cng').css('background-size');
+		size_cng = w + "px "+ "500px";
+		$('section.cng').css('background-size', size_cng)
+		
+//   		var section_jap = $('section.jap').height();
+		var size_jap = $('section.jap').css('background-size');
+		size_jap = w + "px "+ "500px";	
+		$('section.jap').css('background-size', size_jap)
+  	})
+  </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

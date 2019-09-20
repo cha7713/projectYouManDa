@@ -18,13 +18,13 @@
 <br><br><br><br><br>
 
 	<div style="width: 50%; margin: auto;">
-		<form action="freeboardwrite" method="post">
+		<form method="post">
 			title : <select name="header">
 						<option value="[자유게시판]">[자유게시판]</option>
 					</select>
 			<br><input type="text" name="title" placeholder="제목을 입력하시오">
 			<textarea id="summernote" name="content""></textarea>
-			<input type="button" value="취소" style="float: right;" onclick="backtolist()"> 
+			<input type="button" value="취소" style="float: right;" onclick="backtoList()"> 
 			<input type="submit" value="작성완료"	style="float: right;">
 			
 			<input type='hidden' name="id" value="${id}">
@@ -44,6 +44,10 @@
         lang : 'ko-KR'
         
       });
+
+      function backtoList(){
+    	  history.back();
+          }
 
     </script>
     

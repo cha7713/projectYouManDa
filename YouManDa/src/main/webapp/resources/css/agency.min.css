@@ -245,7 +245,10 @@ header.masthead .intro-text .intro-heading {
 }
 section.eng{
 	background-image: url(../img/789.jpg);
-	height: 500px 
+	height: 500px;
+	background-size: 1000px 500px;
+	
+	
 }
 #first .section-heading{
 	font-size: 50px;
@@ -255,22 +258,26 @@ section.eng{
 section.cng{
 	background-image: url(../img/123.jpg);
 	height: 500px;
+	background-size: 1000px 500px;
 }
 #portfolio .section-heading{
 	font-size: 50px;
-	margin-top: 90px
+	margin-top: 90px;
+	color: #ffffff
 }
 
 section.jap{
 	background-image: url(../img/456.jpg);
-	height: 500px
+	height: 500px;
+	background-size: 1000px 500px;
 }
 #services .section-heading{
 	font-size: 50px;
-	margin-top: 90px
+	margin-top: 90px;
+	color: #ffffff
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content
+#first .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content
 	{
 	font-size: 20px;
 	position: absolute;
@@ -284,7 +291,7 @@ section.jap{
 
 
 
-#portfolio .portfolio-item .portfolio-caption p {
+#first .portfolio-item .portfolio-caption p {
 	font-size: 16px;
 	font-style: italic;
 	margin: 0;
