@@ -90,9 +90,9 @@
 					주소 
 					<input name="address" type="text">
 					<br> 
-					상세주소<input name="add2" type="text"><br>
-					<input type="button" class="address"  onclick="searchaddress()" value="주소검색">
-					email<input name="email" id="email" type="email">
+					상세주소<input name="add2" type="text" ><br>
+					<input type="button" class="address"  onclick="searchaddress()" value="주소검색"><br>
+					email <input name="email" id="email" type="email">
 					<span id="emailCheck"></span>
 					<br> 
 					<input type="submit" value="회원가입" id="submit">
