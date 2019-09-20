@@ -34,25 +34,40 @@
 
 				<input type="hidden" name="kakao" value="${info.kakao}">
 				<input type="hidden" name="google"value="${info.google}">
-					<br>  <input name="id" required="required" type="text"  placeholder="아이디" >
+					<br> 
+					<c:if test="${info.kakao != null }">
+					<input name="id" required="required" type="hidden" value="k_${info.kakao}">
+					
+					</c:if>
+					<c:if test="${info.kakao == null }">
+					아이디 <input name="id" required="required" type="text">
 					<span id="dup"></span>
+					</c:if>
 					 <br> 
-					 <input name="pw" type="password" required="required"  placeholder="비밀번호"> <br>
-					 <span id="pwCheck"></span><br> 
-					 <input name="pw2" type="password" required="required"  placeholder="비밀번호 확인"> 
+					 <c:if test="${info.kakao != null }">
+					 <input name="pw" type="hidden" required="required" value="pw_${info.kakao}"> <br>
+					 
+					 </c:if>
+					 
+					  <c:if test="${info.kakao == null }">
+					 비밀번호 <input name="pw" type="password" required="required"> <br>
+					 <span id="pwCheck"></span><br> 비밀번호 확인
+					 <input name="pw2" type="password" required="required"> 
 					 <span id="ppp"></span>
-					<br> <input name="nick" required="required" type="text"  placeholder="닉네임">
+					 </c:if>
+					 
+					<br> 닉네임 <input name="nick" required="required" type="text">
 					<span id="nick"></span> <br> 사용 언어 
-					<select name="lang" >
+					<select name="lang">
 						<option value="1">한국어</option>
 						<option value="2">ENG</option>
 						<option value="3">汉语</option>
 						<option value="4">日本語</option>
 					</select> 
 					<br>
-					  <input name="school" required="required" type="text" placeholder="학교">
+					 학교 <input name="school" required="required" type="text">
 					<br>
-					 <input name="name" required="required" type="text"  placeholder="이름"> <br>
+					이름 <input name="name" required="required" type="text"> <br>
 					<label>
 						남성 <input name="sex" type="radio" value="1">
 					</label> 
@@ -65,19 +80,19 @@
 					<input name="p2" required="required" class="phone">-
 					<input name="p3" required="required" class="phone">
 					<br>
-					
-					<input name="passnum" id="passnum" required="required" type="text" placeholder="여권번호"> 
+					여권 번호
+					<input name="passnum" id="passnum" required="required" type="text"> 
 					<span id="passCheck"></span>
 					<br> 
 					생년월일
 					<input name="birthday" type="date" required="required">
 					<br> 
-					
-					<input name="address" type="text" placeholder="주소">
+					주소 
+					<input name="address" type="text">
 					<br> 
-					<input name="add2" type="text" placeholder="상세주소"><br>
+					상세주소<input name="add2" type="text"><br>
 					<input type="button" class="address"  onclick="searchaddress()" value="주소검색">
-					<input name="email" id="email" type="email" placeholder="이메일">
+					email<input name="email" id="email" type="email">
 					<span id="emailCheck"></span>
 					<br> 
 					<input type="submit" value="회원가입" id="submit">
