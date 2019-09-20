@@ -37,8 +37,9 @@
 			<form id="slick-login" action="join" method="post">
 
 
-<input type="hidden" name="kakao" value="${kakao}">
-<input type="hidden" name="google"value="${google}">
+<input type="hidden" name="kakao" value="${info.kakao}">
+
+<input type="hidden" name="google"value="${info.google}">
 
 				<br> 아이디 <input name="id" required="required" type="text">
 				<span id="dup"></span> <br> 비밀번호 <input name="pw"

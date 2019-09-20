@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page pageEncoding="utf-8" session="false"%>
+<%@ page pageEncoding="utf-8"%>
 <%
 	HttpSession session2 = request.getSession();
 	String a = (String) session2.getAttribute("id");
@@ -58,24 +58,25 @@
 						href="#chinese">중어권</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="#japanese">일어권</a></li>
-						<c:if test="${a==null}">
+					<c:if test="${id==null}">
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/login">로그인</a></li>
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/join">회원가입</a></li>
-						</c:if>
-						<c:if test="${a!=null}">
+					</c:if>
+					<c:if test="${id!=null}">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="/ymd/mypage/${a}">마이페이지</a></li>
+						href="/ymd/mypage/${id}">마이페이지</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="/ymd/logout">로그아웃</a></li>
+						href="/ymd/logout" id="logout">로그아웃</a></li>
 						</c:if>
 				</ul>
 			</div>
 		
 		</div>
 	</nav>
-
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	
 	<!-- Header -->
 	<header class="masthead">
 		<div class="container">
