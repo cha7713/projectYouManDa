@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page pageEncoding="utf-8"%>
+<%@ page pageEncoding="utf-8" %>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
 <%
 	HttpSession session2 = request.getSession();
 	String a = (String) session2.getAttribute("id");
@@ -37,7 +39,7 @@
 	rel='stylesheet' type='text/css'>
 
 <!-- Custom styles for this template -->
-<link href="resources/css/agency.min.css" rel="stylesheet">
+<link href="resources/css/agency.min.css?var=2" rel="stylesheet">
 
 </head>
 
@@ -58,13 +60,13 @@
 						href="#chinese">중어권</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="#japanese">일어권</a></li>
-					<c:if test="${id==null}">
+						<c:if test="${id==null}">
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/login">로그인</a></li>
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/join">회원가입</a></li>
-					</c:if>
-					<c:if test="${id!=null}">
+						</c:if>
+						<c:if test="${id!=null}">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/mypage/${id}">마이페이지</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
@@ -75,8 +77,7 @@
 		
 		</div>
 	</nav>
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	
+
 	<!-- Header -->
 	<header class="masthead">
 		<div class="container">
