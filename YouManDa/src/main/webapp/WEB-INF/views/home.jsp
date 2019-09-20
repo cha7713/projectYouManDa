@@ -56,9 +56,9 @@
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="#first">영어권</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#chinese">중어권</a></li>
+						href="#portfolio">중어권</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#japanese">일어권</a></li>
+						href="#services">일어권</a></li>
 						<c:if test="${id==null}">
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/login">로그인</a></li>
