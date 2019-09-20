@@ -112,6 +112,10 @@
 				        
 				        success: function(res){
 				            console.log(res);
+				            for (var i = 0; i < res.length; i++) {
+				            $('#req').append('<option>'+res[i].id2+'님의 친구신청입니다'+'<button>수락</button><button>거절</button>'+'</option>')
+								
+							}
 				           
 				          } 
 				    });
