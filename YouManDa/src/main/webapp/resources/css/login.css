@@ -32,11 +32,15 @@ body {
 	color: #444;
 }
 
+#slick-login{
+	margin-top: 40px;
+}
 #slick-login input[type="text"], #slick-login input[type="password"] {
-	width: 100%;
+	width: 50%;
 	height: 40px;
 	positon: absolute;
-	margin-top: 7px;
+	margin-top: 20px;
+	margin-left: 240px;
 	font-size: 14px;
 	color: #444;
 	outline: none;
@@ -60,9 +64,10 @@ body {
 }
 
 #slick-login input[type="submit"] {
-	width: 100%;
+	width: 50%;
 	height: 50px;
-	margin-top: 7px;
+	margin-top: 30px;
+	margin-left: 240px;
 	color: #000000;
 	font-size: 18px;
 	outline: none;
@@ -71,15 +76,11 @@ body {
 	background-clip: padding-box;
 	border-radius: 6px;
 	background-color: #fed136;
-	-webkit-box-shadow: inset 0px 1px 0px #9ab1ec;
-	box-shadow: inset 0px 1px 0px #9ab1ec;
 	cursor: pointer;
 }
 
 #slick-login input[type="submit"]:hover {
 	background-color: #fed136;
-	-webkit-box-shadow: inset 0px 1px 0px #aab9f4;
-	box-shadow: inset 0px 1px 0px #aab9f4;
 	margin-top: 10px;
 }
 
@@ -94,7 +95,11 @@ body {
 	margin: 0;
 	padding: 0;
 }
-
+.img {
+	width: 50%;
+	height: 50px;
+	margin-left: 240px;
+}
 .login-form {
 	width: 280px;
 }
@@ -108,6 +113,17 @@ body {
 .login-text {
 	margin-top: -6px;
 	margin-left: -6px !important;
+}
+.find{
+	line-height: 14px;
+	padding-top:20px;
+	text-align: center;
+	color:#8e8e8e;
+	border-top-width: 1px;
+	margin-left: 450px;	
+}
+div {
+	display: block;
 }
 
 .margin {
