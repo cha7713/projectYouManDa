@@ -34,13 +34,28 @@
 
 				<input type="hidden" name="kakao" value="${info.kakao}">
 				<input type="hidden" name="google"value="${info.google}">
-					<br> 아이디 <input name="id" required="required" type="text">
+					<br> 
+					<c:if test="${info.kakao != null }">
+					<input name="id" required="required" type="hidden" value="k_${info.kakao}">
+					
+					</c:if>
+					<c:if test="${info.kakao == null }">
+					아이디 <input name="id" required="required" type="text">
 					<span id="dup"></span>
+					</c:if>
 					 <br> 
+					 <c:if test="${info.kakao != null }">
+					 <input name="pw" type="hidden" required="required" value="pw_${info.kakao}"> <br>
+					 
+					 </c:if>
+					 
+					  <c:if test="${info.kakao == null }">
 					 비밀번호 <input name="pw" type="password" required="required"> <br>
 					 <span id="pwCheck"></span><br> 비밀번호 확인
 					 <input name="pw2" type="password" required="required"> 
 					 <span id="ppp"></span>
+					 </c:if>
+					 
 					<br> 닉네임 <input name="nick" required="required" type="text">
 					<span id="nick"></span> <br> 사용 언어 
 					<select name="lang">

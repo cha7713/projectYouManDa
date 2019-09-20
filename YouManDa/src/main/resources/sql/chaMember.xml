@@ -48,6 +48,11 @@
 		select * from `member` where kakao = #{value} 
 	</select>
 	
+	<select id="searchMember" parameterType="string" resultType="map">
+		select * from `member` WHERE id LIKE '%#{value}%'
+
+	</select>
+	
 	<update id="editPw" parameterType="map">
 		UPDATE `MEMBER` SET
 			pw=(HEX(AES_ENCRYPT(#{pw},'hgr')))
