@@ -62,8 +62,8 @@ public class chaMemberDao {
 		return ss.insert("member.req", map);
 	}
 	
-	public List<Map<String, Object>> searchMember(String id) {
-		return ss.selectList("member.searchMember", id);
+	public List<Map<String, Object>> searchMember(String name) {
+		return ss.selectList("member.searchMember", name);
 	}
 	
 	
