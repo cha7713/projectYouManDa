@@ -50,9 +50,8 @@
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="#page-top">YouManDa</a>
 			
-				
 			<i class="fas fa-bars"></i>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
+					<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="#english">영어권</a></li>
@@ -109,7 +108,7 @@
 	</header>
 
 
-	<section class="page-section" id="services">
+	<section class="eng" id="first">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -123,7 +122,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="bg-light page-section" id="portfolio">
+	<section class="cng" id="portfolio">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -137,7 +136,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="page-section" id="services">
+	<section class="jap" id="services">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">

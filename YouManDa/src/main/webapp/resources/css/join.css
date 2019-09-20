@@ -15,8 +15,8 @@
 
 #mainNav .navbar-brand {
 	color: #fed136;
-	font-family: 'Kaushan Script'
-
+	font-family: 'Kaushan Script';
+	margin-top: 100px;
 }
 
 #mainNav .navbar-brand {
@@ -38,7 +38,7 @@
 }
 
 #slick-login input[type="text"], #slick-login input[type="password"],#slick-login input[type="email"],#slick-login input[type="date"],#slick-login select[name="lang"] {
-	width: 100%;
+	width: 99%;
 	height: 40px;
 	positon: absolute;
 	margin-top: 7px;
@@ -56,7 +56,7 @@
 }
 
 #slick-login input[type="textarea"], .phone{
-	width: 31%;
+	width: 31.5%;
 	height: 40px;
 	positon: absolute;
 	margin-top: 7px;
@@ -82,10 +82,28 @@
 	margin-top: 0px;
 }
 
-#slick-login input[type="submit"], .address {
-	width: 100%;
+#slick-login input[type="submit"] {
+	width: 99%;
 	height: 50px;
 	margin-top: 7px;
+	color: #000000;
+	font-size: 18px;
+	outline: none;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	background-clip: padding-box;
+	border-radius: 6px;
+	background-color: #fed136;
+	-webkit-box-shadow: inset 0px 1px 0px #9ab1ec;
+	box-shadow: inset 0px 1px 0px #9ab1ec;
+	cursor: pointer;
+}
+
+#slick-login input[type="button"] {
+	width: 20%;
+	height: 30px;
+	margin-top: 7px;
+	margin-left: 428px;
 	color: #000000;
 	font-size: 18px;
 	outline: none;
