@@ -11,6 +11,7 @@
 			<th>조회</th>
 			<th>추천</th>
 	</tr>
+	<br>
 	<input type='button' value='create' id='write' onclick='writing()' style="float: right;"><br>
 </div>
 
