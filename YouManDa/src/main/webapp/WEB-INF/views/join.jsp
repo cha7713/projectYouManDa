@@ -114,14 +114,7 @@
 	
 	
 	$("#submit").click(function(event){
-		if(isId==0){
-			event.preventDefault();
-			alert("아이디를 확인해 주세요")
-		}
-		if(isPw==0){
-			event.preventDefault();
-			alert("패스워드를 확인해 주세요")
-		}
+		
 		if(isEmail==0){
 			event.preventDefault();
 			alert("이메일을 확인해 주세요")

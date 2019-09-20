@@ -69,8 +69,8 @@ public class chaMemberService {
 		return dao.req(map);
 	}
 	 
-	 public List<Map<String, Object>> searchMember(String id) {
-		return dao.searchMember(id);
+	 public List<Map<String, Object>> searchMember(String name) {
+		return dao.searchMember(name);
 	}
 	
 }

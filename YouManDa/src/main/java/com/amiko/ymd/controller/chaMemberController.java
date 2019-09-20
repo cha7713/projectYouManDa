@@ -5,6 +5,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
@@ -34,6 +35,7 @@ import com.amiko.ymd.hash.ShaPassword;
 import com.amiko.ymd.mail.MailAuth;
 import com.amiko.ymd.service.JeredMemberService;
 import com.amiko.ymd.service.chaMemberService;
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
 @Controller
 public class chaMemberController {
@@ -266,12 +268,43 @@ public class chaMemberController {
 	
 	}
 	
-	@RequestMapping(value = "/friendReq", method = RequestMethod.POST)
+	@RequestMapping(value = "/friendReq", method = RequestMethod.GET)
 	@ResponseBody
-	public int friend(Model model, @RequestParam Map<String, Object>map) {
+	public String friend(Model model, @RequestParam Map<String, Object>map) {
 		
-		int result = ser.req(map);
+		System.out.println("----------------------------------");
+		System.out.println(map.get("id2"));
+		
+		int lang2 = Integer.parseInt(ser.idDup((String) map.get("id2")));
+		map.put("lang2", lang2);
+		int result =0;
+		try {
+		result = ser.req(map);
+		}catch (Exception e) {
+			result =1;
+		}
+		return result + "";
+	
+	}
+	
+	@RequestMapping(value = "/searchfriend", method = RequestMethod.POST)
+	@ResponseBody
+	public List<Map<String, Object>> scFriend(Model model,HttpServletRequest req) {
+		String name =req.getParameter("name");
+		
+		List<Map<String, Object>> result = ser.searchMember(name);
+		
+		
 		return result;
+	
+	}
+	
+	@RequestMapping(value = "/searchfriend", method = RequestMethod.GET)
+		public String scFri(Model model,HttpServletRequest req) {
+		
+		
+		
+		return "searchFr";
 	
 	}
 }

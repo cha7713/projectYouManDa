@@ -13,7 +13,7 @@
 	</insert>
 
 	<select id="dup" parameterType="string" resultType="string">
-		select name
+		select lang
 		from `member` where id =
 		#{value}
 	</select>
@@ -49,7 +49,7 @@
 	</select>
 	
 	<select id="searchMember" parameterType="string" resultType="map">
-		select * from `member` WHERE id LIKE '%#{value}%'
+		select * from `member` WHERE name LIKE CONCAT('%', #{value}, '%')
 
 	</select>
 	
