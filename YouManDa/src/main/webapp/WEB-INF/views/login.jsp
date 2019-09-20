@@ -3,6 +3,7 @@
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
 <meta charset="utf-8">
 <meta name="viewport"
@@ -73,21 +74,34 @@
 			      container: '#kakao-login-btn',
 			      success: function(authObj) {
 			        console.log(JSON.stringify(authObj));
-			        let userCode = JSON.stringify(authObj);
+			        
+			        Kakao.API.request({
+			            url: '/v2/user/me',
+			            success: function(res) {
+			            	var id = res.id;
+			            	
+					        $.ajax({
+						        url:"kakaoDup",
+						        data : {kakao : id},
+						        success: function(res){
+						            console.log(res);
+						           
+						           if(res==0 ){
+						        	   location = 'join?kakao='+id+''
+						           }else if(res==1){
+						        	   location = 'loginKakao?kakao='+id+''
+								}
+						        } 
+						    });
+			              
+			            },
+			            fail: function(error) {
+			              alert(JSON.stringify(error));
+			            }
+			          });
+			        
+// 			        let userCode = JSON.stringify(authObj);
 			       
-			        $.ajax({
-				        url:"kakaoDup",
-				        data : {kakao : userCode},
-				        success: function(res){
-				            console.log(res);
-				           
-				           if(res==0 ){
-				        	   location = 'join?kakao='+userCode+''
-				           }else if(res==1){
-				        	   location = 'loginKakao?kakao='+userCode+''
-						}
-				        } 
-				    });
 			        
 			      },
 			      fail: function(err) {

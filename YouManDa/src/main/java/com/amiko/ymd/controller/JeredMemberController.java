@@ -66,7 +66,7 @@ public class JeredMemberController {
 		return "freeboard";
 	}
 	
-	@RequestMapping(value = "freeboard/freeboardwrite", method = RequestMethod.GET)
+	@RequestMapping(value = "englishhome/freeboard/freeboardwrite", method = RequestMethod.GET)
 	public String freeboardGET() {
 		return "freeboardwrite";
 	}

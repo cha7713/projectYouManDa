@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -24,12 +26,13 @@ public class U0MemberController {
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-
+	public String home(Locale locale, Model model, HttpSession session) {
+		System.out.println(session.getAttribute("id"));
 		return "home";
 	}
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String homee(Locale locale, Model model) {
+	public String homee(Locale locale, Model model, HttpSession session) {
+		System.out.println(session.getAttribute("id"));
 
 		return "home";
 	}

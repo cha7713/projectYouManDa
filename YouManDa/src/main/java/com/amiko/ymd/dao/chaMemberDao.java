@@ -36,6 +36,10 @@ public class chaMemberDao {
 		return ss.selectOne("member.dupNick", nick);
 	}
 	
+	public String dupKakao(String kakao) {
+		return ss.selectOne("member.dupKakao", kakao);
+	}
+	
 	public String dupEmail(String email) {
 		return ss.selectOne("member.dupEmail", email);
 	}
@@ -43,6 +47,11 @@ public class chaMemberDao {
 	public Map<String, Object> login(Map<String, Object> map) {
 		return ss.selectOne("member.login", map);
 	}
+	
+	public Map<String, Object> loginKakao(String kakao) {
+		return ss.selectOne("member.loginKakao", kakao);
+	}
+	
 	
 	public void editPw(Map<String, Object> map) {
 		ss.update("member.editPw", map);

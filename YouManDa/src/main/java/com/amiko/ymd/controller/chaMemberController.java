@@ -48,13 +48,26 @@ public class chaMemberController {
 	public String logout(Model model, HttpServletRequest req) {
 		HttpSession session = req.getSession();
 		session.invalidate();
+//		http://developers.kakao.com/logout
 		return "redirect:home";
 	}
 	
 	@RequestMapping(value = "/loginKakao", method = RequestMethod.GET)
-	public String loginKakao(Model model, @RequestParam Map<String, Object> map) {
-
+	public String loginKakao(Model model, @RequestParam Map<String, Object> map, HttpServletRequest req ) {
+		
+		Map<String, Object> user =ser.loginKakao((String) map.get("kakao"));
+		HttpSession session = req.getSession();
+		System.out.println("map");
+		System.out.println(user);
+		
+		session.setAttribute("id", user.get("id"));
+		
+		System.out.println("session");
+		System.out.println(session.getAttribute("id"));
+		
 		return "home";
+		 
+		
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -82,7 +95,7 @@ public class chaMemberController {
 
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String join1(Locale locale, Model model, @RequestParam Map<String, Object> map) {
-		model.addAttribute(map);
+		model.addAttribute("info", map);
 		return "join";
 	}
 
@@ -103,6 +116,19 @@ public class chaMemberController {
 		model.addAttribute("result", result);
 
 		return "home";
+	}
+	
+	@RequestMapping(value = "/kakaoDup", method = RequestMethod.GET)
+	@ResponseBody
+	public int dupKakao(HttpServletRequest req) {
+		String result = ser.kakaoDup(req.getParameter("kakao"));
+		// 중복 검사 해서 아이디가 존재 할경우 1을 넘기고 없으면 0을넘김
+		int a = 0;
+		if (result != null) {
+			a = 1;
+		}
+
+		return a;
 	}
 
 	@RequestMapping(value = "/idDup", method = RequestMethod.GET)
