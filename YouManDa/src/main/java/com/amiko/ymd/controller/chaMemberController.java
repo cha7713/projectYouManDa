@@ -61,6 +61,7 @@ public class chaMemberController {
 		System.out.println(user);
 		
 		session.setAttribute("id", user.get("id"));
+		session.setAttribute("lang", user.get("lang"));
 		
 		System.out.println("session");
 		System.out.println(session.getAttribute("id"));
