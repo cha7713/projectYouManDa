@@ -39,11 +39,12 @@ public class JeredMemberService {
 	}
 
 	public Map<String, Object> selectFreeBoardOne(int bnum){
+		jeredMemberDao.updateHit(bnum);
 		return jeredMemberDao.selectFreeBoardOne(bnum);
 	}
 	
-	public Map<String, Object> freeBoardEdit(int bnum) {
-		return jeredMemberDao.freeBoardEdit(bnum);
+	public int freeBoardEdit(Map<String, Object> map) {
+		return jeredMemberDao.freeBoardEdit(map);
 	}
 
 }

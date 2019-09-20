@@ -33,6 +33,7 @@
 		SELECT
 		 bnum, header, title, id, bdate ,hit, recomend
 		 FROM `freeboard`
+		 ORDER BY bnum DESC
 	</select>
 	
 	<insert id="insertFreeBoard" parameterType="map">
@@ -51,10 +52,21 @@
 	</select>
 	
 	<!-- 게시물 수정 -->
- 	<select id="updateFreeBoard" resultType="map" parameterType="_int">
-		select * 
-			FROM `freeboard`
-			WHERE bnum = #{value}
-	</select>
+ 	<update id="updateFreeBoard" parameterType="map">
+		UPDATE `freeboard` SET
+			title=#{title}, content=#{content}
+			WHERE bnum = #{bnum}
+	</update>
+	
+	<!-- 조회수 증가 -->
+	<update id="updateHit" parameterType="_int">
+		UPDATE `freeboard` SET
+		 hit = hit +1
+		 WHERE bnum=#{bnum}
+	</update>
+
+
+
+
 
 </mapper>

@@ -42,8 +42,11 @@ public class JeredMemberDao {
 		return ss.selectOne("JeredMember.selectFreeBoardOne", bnum);
 	}
 	
-	public Map<String, Object> freeBoardEdit(int bnum) {
-		return ss.selectOne("JeredMember.updateFreeBoard", bnum);
+	public int freeBoardEdit(Map<String, Object> map) {
+		return ss.update("JeredMember.updateFreeBoard", map);
+	}
+	public int updateHit(int bnum) {
+		return ss.update("JeredMember.updateHit", bnum);
 	}
 	
 }

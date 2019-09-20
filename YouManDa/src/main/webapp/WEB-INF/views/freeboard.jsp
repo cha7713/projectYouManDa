@@ -32,7 +32,8 @@
 	
 	
 	
-	<input type='button' value='create' id='write' onclick='writing()'><br>
+	<input type='button' value='create' id='write' onclick='writing()'>
+	<br>
 </div>
 
 <script>

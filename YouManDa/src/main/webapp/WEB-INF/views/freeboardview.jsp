@@ -12,9 +12,16 @@
 	recomend : ${viewcontent.recomend}<br>
 <input type="hidden" value="${list.bnum}" >
 <input type="button" value="수정하기" onclick="freeboardedit()">
+<input type="button" value="뒤로가기" onclick="backtoList()">
 
 <script>
 	function freeboardedit(bnum){
 			location = "freeboardedit/${viewcontent.bnum}";
 		}
+
+	function backtoList(){
+			history.back();
+			/* 거쳐온 페이지로 뒤로 가기 */
+		}
+	
 </script>
