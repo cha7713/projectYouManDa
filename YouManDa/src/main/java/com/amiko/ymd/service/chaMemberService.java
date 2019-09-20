@@ -63,5 +63,9 @@ public class chaMemberService {
 		 dao.editPw(map);
 		
 	}
+	 
+	 public int req(Map<String, Object> map) {
+		return dao.req(map);
+	}
 	
 }

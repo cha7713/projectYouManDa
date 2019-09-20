@@ -57,6 +57,11 @@ public class chaMemberDao {
 		ss.update("member.editPw", map);
 	}
 	
+	public int req(Map<String, Object> map) {
+		return ss.insert("member.req", map);
+	}
+	
+	
 	
 	
 	

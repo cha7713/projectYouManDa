@@ -54,5 +54,12 @@
 			WHERE id = #{id}
 	</update>
 	
+	<insert id="req" parameterType="map">
+		insert into `request` (id, lang,
+		req, id2,lang2)
+		values
+		(#{id},#{lang},#{req},#{id2},#{lang2})
+	</insert>
+	
 
 </mapper>
