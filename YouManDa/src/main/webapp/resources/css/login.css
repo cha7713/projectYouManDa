@@ -80,7 +80,6 @@
 	background-clip: padding-box;
 	border-radius: 6px;
 	background-color: #fed136;
-	cursor: pointer;
 }
 
 #slick-login input[type="submit"]:hover {
