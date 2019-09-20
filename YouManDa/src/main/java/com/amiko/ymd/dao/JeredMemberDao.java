@@ -12,6 +12,7 @@ public class JeredMemberDao {
 	
 	@Autowired
 	SqlSessionTemplate ss;
+	/////////////////////mylist//////////////////////////////
 	
 	public Map<String, Object> selectUser(Map<String, Object> map) {
 		return ss.selectOne("JeredMember.selectMyinfo", map);	
@@ -27,5 +28,14 @@ public class JeredMemberDao {
 		return ss.delete("JeredMember.deleteMyAccount", map);
 	}
 	
+	///////////////////////freeboard//////////////////////////////
+	
+	public List<Map<String, Object>> selectFreeBoardList(){
+		return ss.selectList("JeredMember.selectFreeBoardList");
+	}
 
+	public void insertFreeBoard(Map<String, Object> map) {
+		ss.insert("JeredMember.insertFreeBoard", map);
+	}
+	
 }

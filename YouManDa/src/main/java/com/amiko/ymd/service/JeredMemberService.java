@@ -14,6 +14,8 @@ public class JeredMemberService {
 	@Autowired
 	JeredMemberDao jeredMemberDao;
 	
+/////////////////////mylist//////////////////////////////
+	
 	public Map<String, Object> selectUser(Map<String, Object> map) {
 		return jeredMemberDao.selectUser(map);
 	}
@@ -24,6 +26,16 @@ public class JeredMemberService {
 	
 	public int deleteMyAccount(Map<String, Object> map) {
 		return jeredMemberDao.deleteMyAccount(map);
+	}
+	
+///////////////////////freeboard//////////////////////////////
+	
+	public List<Map<String, Object>> selectFreeBoardList(){
+		return jeredMemberDao.selectFreeBoardList();
+	}
+	
+	public void insertFreeBoard(Map<String, Object> map) {
+		jeredMemberDao.insertFreeBoard(map);
 	}
 
 }

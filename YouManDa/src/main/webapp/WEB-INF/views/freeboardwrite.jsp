@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
   <head>
     <meta charset="UTF-8">
@@ -18,10 +19,17 @@
 
 	<div style="width: 50%; margin: auto;">
 		<form action="freeboardwrite" method="post">
-			title : <input type="text" name="addtitle" placeholder="제목을 입력하시오">
+			title : <select name="header">
+						<option value="[자유게시판]">[자유게시판]</option>
+					</select>
+			<br><input type="text" name="title" placeholder="제목을 입력하시오">
 			<textarea id="summernote" name="content""></textarea>
 			<input type="button" value="취소" style="float: right;" onclick="backtolist()"> 
 			<input type="submit" value="작성완료"	style="float: right;">
+			
+			<input type='hidden' name="id" value="${id}">
+			<input type="hidden" name="lnum" value='2'>
+			<input type="hidden" name="lang" value="${lang}">
 		</form>
 	</div>
 
