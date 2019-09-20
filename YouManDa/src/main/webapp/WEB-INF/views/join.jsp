@@ -31,8 +31,9 @@
 			<a class="navbar-brand " href="/ymd/home" style="margin-left: 20%">YouManDa</a>
 		</nav>
 			<form id="slick-login" action="join" method="post">
-				<input type="hidden" name="kakao" value="${kakao}">
-				<input type="hidden" name="google"value="${google}">
+
+				<input type="hidden" name="kakao" value="${info.kakao}">
+				<input type="hidden" name="google"value="${info.google}">
 					<br> 아이디 <input name="id" required="required" type="text">
 					<span id="dup"></span> <br> 비밀번호 <input name="pw" type="password" required="required"> <br>
 					 <span id="pwCheck"></span><br> 비밀번호 확인
@@ -78,6 +79,7 @@
 					<span id="emailCheck"></span>
 					<br> 
 					<input type="submit" value="회원가입" id="submit">
+
 			</form>
 		</div>
 </body>
