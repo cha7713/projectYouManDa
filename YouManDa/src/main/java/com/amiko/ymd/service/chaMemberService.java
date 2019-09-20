@@ -72,5 +72,9 @@ public class chaMemberService {
 	 public List<Map<String, Object>> searchMember(String name) {
 		return dao.searchMember(name);
 	}
+	 
+	 public List<Map<String, Object>> alarm(String id) {
+		return dao.alarm(id);
+	}
 	
 }

@@ -275,8 +275,8 @@ public class chaMemberController {
 		System.out.println("----------------------------------");
 		System.out.println(map.get("id2"));
 		
-		int lang2 = Integer.parseInt(ser.idDup((String) map.get("id2")));
-		map.put("lang2", lang2);
+		int lang = Integer.parseInt(ser.idDup((String) map.get("id")));
+		map.put("lang", lang);
 		int result =0;
 		try {
 		result = ser.req(map);
@@ -307,6 +307,17 @@ public class chaMemberController {
 		return "searchFr";
 	
 	}
+	
+	@RequestMapping(value = "/alarm", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Map<String, Object>> alarm(Model model,HttpServletRequest req) {
+		HttpSession session2 = req.getSession();
+        String id = (String) session2.getAttribute("id");
+		List<Map<String, Object>> result=ser.alarm(id);
+				
+	return result;
+
+}
 }
 	
 	

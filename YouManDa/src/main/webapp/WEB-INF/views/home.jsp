@@ -18,7 +18,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Agency - Start Bootstrap Theme</title>
+<title>YouManDa</title>
 
 <!-- Bootstrap core CSS -->
 <link href="resources/vendor/bootstrap/css/bootstrap.min.css"
@@ -71,6 +71,11 @@
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/logout" id="logout">로그아웃</a></li>
 						</c:if>
+						<li class="nav-item">
+						<select id="req">
+						
+						</select>
+						</li>
 				</ul>
 			</div>
 		
@@ -101,6 +106,19 @@
 					function mypage(){
 						location = 'mypage/${a}';
 					}
+					
+					$.ajax({
+				        url:"alarm",
+				        
+				        success: function(res){
+				            console.log(res);
+				            for (var i = 0; i < res.length; i++) {
+				            $('#req').append('<option>'+res[i].id2+'님의 친구신청입니다'+'<button>수락</button><button>거절</button>'+'</option>')
+								
+							}
+				           
+				          } 
+				    });
 
 				</script>
 			</div>

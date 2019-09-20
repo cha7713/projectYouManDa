@@ -90,9 +90,16 @@ public class JeredMemberController {
 	}
 	
 	@RequestMapping(value="englishhome/freeboard/freeboardin/freeboardedit/{bnum}", method=RequestMethod.GET)
-	public String freeboardedit(Model model, @PathVariable("bnum") int bnum) {
-		model.addAttribute("editpost",jeredMemberService.freeBoardEdit(bnum));
+	public String freeboardeditGET(Model model, @PathVariable("bnum") int bnum) {
+		model.addAttribute("editpost",jeredMemberService.selectFreeBoardOne(bnum));
 		return "freeboardedit";
+	}
+	
+	@RequestMapping(value="englishhome/freeboard/freeboardin/freeboardedit/{bnum}",method=RequestMethod.POST)
+	public String freeboardeditPOST(Model model, @PathVariable("bnum") int bnum, @RequestParam Map<String, Object> map) {
+		map.put("bnum", bnum);
+		model.addAttribute("editpost",jeredMemberService.freeBoardEdit(map));
+		return "redirect:/englishhome/freeboard";
 	}
 
 

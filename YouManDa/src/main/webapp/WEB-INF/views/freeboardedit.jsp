@@ -18,7 +18,7 @@
 <br><br><br><br><br>
 
 	<div style="width: 50%; margin: auto;">
-		<form action="freeboardedit" method="post">
+		<form method="post">
 			title : <select name="header">
 						<option value="[자유게시판]">[자유게시판]</option>
 					</select>
@@ -32,7 +32,7 @@
 			
 			
 			<input type="button" value="취소" style="float: right;" onclick="backtolist()"> 
-			<input type="submit" value="작성완료"	style="float: right;">
+			<input type="submit" value="수정완료"	style="float: right;">
 		</form>
 	</div>
 
@@ -46,6 +46,10 @@
         lang : 'ko-KR'
         
       });
+      function backtolist(){
+			/* location= "../freeboardin/${editpost.bnum}"; */
+    	  history.back();
+          }
 
     </script>
     
