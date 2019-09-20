@@ -58,7 +58,9 @@
 
 				</div>
 				
-				<a id="kakao-login-btn"></a>
+				<a id="custom-login-btn" href="javascript:loginWithKakao()">
+<img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="250"/>
+</a>
 				<a href="http://developers.kakao.com/logout"></a>
 				
 				
@@ -70,8 +72,8 @@
 			    // 사용할 앱의 JavaScript 키를 설정해 주세요.
 			    Kakao.init('602456200ebdad0c58f3bd1860bcd80d');
 			    // 카카오 로그인 버튼을 생성합니다.
-			    Kakao.Auth.createLoginButton({
-			      container: '#kakao-login-btn',
+			    function loginWithKakao() {
+			    Kakao.Auth.loginForm({
 			      success: function(authObj) {
 			        console.log(JSON.stringify(authObj));
 			        
@@ -108,6 +110,7 @@
 			         alert(JSON.stringify(err));
 			      }
 			    });
+			    }
 			  //]]>
 					function findpw() {
 						location = "insertId";
