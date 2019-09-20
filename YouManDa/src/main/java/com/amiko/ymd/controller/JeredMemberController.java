@@ -22,6 +22,8 @@ public class JeredMemberController {
 	@Autowired
 	JeredMemberService jeredMemberService;
 	
+///////////////////////////////////MyPagePart////////////////////////////////////////////
+	
 	@RequestMapping(value="mypage/{id}", method=RequestMethod.GET) // PathVariable
 	public String mypage(Model model, @PathVariable("id") String id) { //위에 중괄호에 있는 id를 map으로 받음
 		Map<String, Object> map = new HashMap<>();
@@ -62,14 +64,23 @@ public class JeredMemberController {
 	///////////////////////////////////BoardPart////////////////////////////////////////////
 	
 	@RequestMapping(value = "englishhome/freeboard", method = RequestMethod.GET)
-	public String freeboardListGET() {
+	public String freeboardListGET(Model model) {
+		model.addAttribute("fblist",jeredMemberService.selectFreeBoardList());
 		return "freeboard";
 	}
 	
 	@RequestMapping(value = "englishhome/freeboard/freeboardwrite", method = RequestMethod.GET)
-	public String freeboardGET() {
+	public String freeboardWriteGET() {
 		return "freeboardwrite";
 	}
+	
+	@RequestMapping(value = "englishhome/freeboard/freeboardwrite", method = RequestMethod.POST)
+	public String freeboardWritePost(@RequestParam Map<String, Object> map) {
+		jeredMemberService.insertFreeBoard(map);
+		return "redirect:/englishhome/freeboard";
+	}
+	
+	
 	
 
 	

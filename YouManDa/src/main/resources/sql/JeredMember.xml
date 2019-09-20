@@ -3,6 +3,7 @@
 "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="JeredMember">
 
+	<!-- //////////////////////////////// Mypage Mapper  /////////////////////////////// -->
 	<!-- 자신의 개인정보를 조회 // resultType => 결과, parameterType => 입력-->
 	<select id="selectMyinfo" resultType="map" parameterType="map">
 		SELECT 
@@ -25,5 +26,21 @@
 		DELETE FROM `MEMBER`
 		 WHERE id = #{id}		
 	</delete>
+	
+	<!-- ////////////////////////////// freeboard Mapper ///////////////////////////////// -->
+	
+	<select id="selectFreeBoardList" resultType="map" parameterType="map">
+		SELECT
+		 header, title, id, bdate ,hit, recomend
+		 FROM `freeboard`
+	</select>
+	
+	<insert id="insertFreeBoard" parameterType="map">
+		INSERT INTO `freeboard`
+		 ( header,title, content, bdate,  hit, recomend, id, lang, lnum)
+		 VALUES
+		 ( #{header},#{title}, #{content}, NOW(),  0, 0, #{id}, #{lang}, #{lnum})
+	</insert>
+	<!-- id, lang, lnum -> hidden -->
 
 </mapper>

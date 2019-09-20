@@ -61,6 +61,7 @@ public class chaMemberController {
 		System.out.println(user);
 		
 		session.setAttribute("id", user.get("id"));
+		session.setAttribute("lang", user.get("lang"));
 		
 		System.out.println("session");
 		System.out.println(session.getAttribute("id"));
@@ -84,6 +85,7 @@ public class chaMemberController {
 
 		if (user != null) {
 			session.setAttribute("id", user.get("id"));
+			session.setAttribute("lang", user.get("lang"));
 			return "home";
 		} else {
 			model.addAttribute("msg", "로그인 실패");
@@ -262,7 +264,15 @@ public class chaMemberController {
 		ser.editPw(map);
 		return "login";
 	
+	}
+	
+	@RequestMapping(value = "/friendReq", method = RequestMethod.POST)
+	@ResponseBody
+	public int friend(Model model, @RequestParam Map<String, Object>map) {
 		
+		int result = ser.req(map);
+		return result;
+	
 	}
 }
 	

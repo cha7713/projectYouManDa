@@ -48,11 +48,23 @@
 		select * from `member` where kakao = #{value} 
 	</select>
 	
+	<select id="searchMember" parameterType="string" resultType="map">
+		select * from `member` WHERE id LIKE '%#{value}%'
+
+	</select>
+	
 	<update id="editPw" parameterType="map">
 		UPDATE `MEMBER` SET
 			pw=(HEX(AES_ENCRYPT(#{pw},'hgr')))
 			WHERE id = #{id}
 	</update>
+	
+	<insert id="req" parameterType="map">
+		insert into `request` (id, lang,
+		req, id2,lang2)
+		values
+		(#{id},#{lang},#{req},#{id2},#{lang2})
+	</insert>
 	
 
 </mapper>

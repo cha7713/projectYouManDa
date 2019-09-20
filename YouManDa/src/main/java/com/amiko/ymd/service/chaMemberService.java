@@ -2,6 +2,7 @@ package com.amiko.ymd.service;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -62,6 +63,14 @@ public class chaMemberService {
 	 public void editPw(Map<String, Object> map) {
 		 dao.editPw(map);
 		
+	}
+	 
+	 public int req(Map<String, Object> map) {
+		return dao.req(map);
+	}
+	 
+	 public List<Map<String, Object>> searchMember(String id) {
+		return dao.searchMember(id);
 	}
 	
 }
