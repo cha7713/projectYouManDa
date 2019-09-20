@@ -66,5 +66,9 @@
 		(#{id},#{lang},#{req},#{id2},#{lang2})
 	</insert>
 	
+	<select id="alarm" parameterType="string" resultType="map">
+		select * from `request` where id = #{value} 
+	</select>
+	
 
 </mapper>

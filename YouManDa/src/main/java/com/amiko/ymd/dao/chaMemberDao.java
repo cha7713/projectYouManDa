@@ -66,6 +66,10 @@ public class chaMemberDao {
 		return ss.selectList("member.searchMember", name);
 	}
 	
+	public List<Map<String, Object>> alarm(String id) {
+		return ss.selectList("member.alarm", id);
+	}
+	
 	
 	
 	
