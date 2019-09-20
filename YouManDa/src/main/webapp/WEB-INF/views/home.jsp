@@ -48,7 +48,7 @@
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">YouManDa</a>
+			<a class="navbar-brand js-scroll-trigger" href="/ymd/">YouManDa</a>
 			
 			<i class="fas fa-bars"></i>
 					<div class="collapse navbar-collapse" id="navbarResponsive">
