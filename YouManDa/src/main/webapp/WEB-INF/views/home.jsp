@@ -70,12 +70,12 @@
 						href="/ymd/logout" id="logout">로그아웃</a></li>
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="javascript:popup()" id="scf">친구찾기</a></li>
-						</c:if>
 						<li class="nav-item">
 						<button id="req" onclick="popup2()">
 						알림이
 						</button>
 						</li>
+						</c:if>
 				</ul>
 			</div>
 		
