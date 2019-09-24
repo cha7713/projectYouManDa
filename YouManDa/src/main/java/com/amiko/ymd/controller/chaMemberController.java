@@ -302,10 +302,22 @@ public class chaMemberController {
 		
 		for (int i = 0; i < result.size(); i++) {
 			String user=(String) result.get(i).get("id");
-			if (user.equals(id) ) {
-				continue;
+			String[] a=ser.frLIst(id);
+			
+			int temp = 0;
+			for (int j = 0; j < a.length; j++) {
+				
+				if (user.equals(id) || a[j].equals(user)) {
+					temp = 1;
+					
+					
+				}				
+				
 			}
-			result2.add(result.get(i));
+			if (temp == 0) {
+				result2.add(result.get(i));
+				
+			}
 		}
 		
 		

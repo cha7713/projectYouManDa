@@ -118,5 +118,13 @@ public class chaMemberService {
 			return dao.selectReq(id);
 		}
 	 
+	 public String[] frLIst(String id) {
+		
+		 String frid = dao.frList(id);
+		 String[] arr=frid.split("/");
+		return arr; 
+			
+		}
+	 
 	
 }
