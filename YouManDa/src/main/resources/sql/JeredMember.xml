@@ -87,7 +87,7 @@
 		INSERT INTO `freereply`
 		 content,bnum,id,lang
 		 VALUES
-		 (#{content}, #{bnum}, #{id}, #{lang})		 
+		 (#{replycontent}, #{bnum}, #{id}, #{lang})		 
 	</insert>
 
 

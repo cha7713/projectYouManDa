@@ -74,6 +74,14 @@ public class JeredMemberController {
 		return "freeboard";
 	}
 	
+	@RequestMapping(value = "englishhome/freeboard/ajax", method = RequestMethod.GET) //AJAX¿¬½À
+	@ResponseBody
+	public List<Map<String, Object>> freeboardListGET22() {
+		List<Map<String, Object>> a=jeredMemberService.selectFreeBoardList();
+		
+		return a;
+	}
+	
 	@RequestMapping(value = "englishhome/freeboard/freeboardwrite", method = RequestMethod.GET)
 	public String freeboardWriteGET() {
 		return "freeboardwrite";

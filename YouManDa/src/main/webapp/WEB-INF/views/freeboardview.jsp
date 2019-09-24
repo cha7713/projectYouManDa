@@ -26,12 +26,12 @@
 		작성자 : <td>${replylist.id}</td>
 		내용 : <td>${replylist.content}</td>
 	</tr>
-
 </c:forEach>
 <hr>
-
+<form method='post' action='redirect:englishhome/freeboard/freeboardin/{bnum}'>
 	<input type="text" value="댓글을 입력하세요." name="replycontent">
 	<input type="button" value="댓글 등록" onclick="addfreereply()">
+</form>
 
 <script>
 	function freeboardedit(bnum){
@@ -59,11 +59,9 @@
 	        } 
 	    });
 
-	    function addfreereply(){
+	function addfreereply(){
 
-		    }
-
-
+		}
 
 
 					 

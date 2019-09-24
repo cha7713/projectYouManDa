@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<input type='button' value="버튼" onclick="data()">
+
+
+
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+	function data() {
+		$.ajax({
+			url: 'http://localhost:8080/ymd/englishhome/freeboard/ajax/5',
+			type: 'get',
+			data: {"bnum": 5},
+			success: function(res) {
+				console.log(res);
+				var html = '';
+				for(var i = 0; i < res.length; i++) {
+					var header = res[i].header;
+					var title = res[i].title;
+					html += '<li>' + header + '</li>';
+					html += '<li>' + title + '</li>';
+				}
+				$('input').after(html);
+			}
+		})
+	}
+</script>
+</body>
+</html>
