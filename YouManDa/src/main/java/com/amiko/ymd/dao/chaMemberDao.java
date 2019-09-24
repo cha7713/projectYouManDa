@@ -86,6 +86,10 @@ public class chaMemberDao {
 		ss.delete("member.delReq",map);
 	}
 	
+	public List<Map<String, Object>> selectReq(String id ) {
+		return ss.selectList("member.selectReq",id);
+	}
+	
 	
 	
 	

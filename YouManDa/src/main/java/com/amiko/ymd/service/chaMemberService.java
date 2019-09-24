@@ -114,5 +114,9 @@ public class chaMemberService {
 		dao.delReq(map);
 	}
 	 
+	 public List<Map<String, Object>> selectReq(String id) {
+			return dao.selectReq(id);
+		}
+	 
 	
 }

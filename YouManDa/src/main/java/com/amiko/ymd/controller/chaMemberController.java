@@ -323,6 +323,15 @@ public class chaMemberController {
 	
 	}
 	
+	@RequestMapping(value = "/ar", method = RequestMethod.GET)
+	public String ar(Model model,HttpServletRequest req) {
+	
+	
+	
+	return "ar";
+
+}
+	
 	@RequestMapping(value = "/alarm", method = RequestMethod.GET)
 	@ResponseBody
 	public List<Map<String, Object>> alarm(Model model,HttpServletRequest req) {
@@ -359,6 +368,26 @@ public class chaMemberController {
 		
 		ser.delreq(map);
 		return "거절";
+	
+	}
+	
+	@RequestMapping(value = "/idsc", method = RequestMethod.GET)
+	@ResponseBody
+	public Map<String, Object> idsc(Model model, @RequestParam Map<String, Object>map) {
+		
+		Map<String, Object> a =jeredMemberService.selectUser(map);
+		return a;
+	
+	}
+	
+	@RequestMapping(value = "/selectReq", method = RequestMethod.GET)
+	@ResponseBody
+	public int selectReq(Model model,HttpServletRequest req ) {
+		HttpSession session2 = req.getSession();
+		String id = (String) session2.getAttribute("id");
+		List<Map<String, Object>> list=ser.selectReq(id);
+		int result = list.size();
+		return result;
 	
 	}
 }
