@@ -3,6 +3,7 @@ package com.amiko.ymd.controller;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -292,10 +293,24 @@ public class chaMemberController {
 	public List<Map<String, Object>> scFriend(Model model,HttpServletRequest req) {
 		String name =req.getParameter("name");
 		
+		HttpSession session = req.getSession();
+		String id=(String) session.getAttribute("id");
+		
+		
 		List<Map<String, Object>> result = ser.searchMember(name);
+		List<Map<String, Object>> result2 = new ArrayList<Map<String, Object>>();		
+		
+		for (int i = 0; i < result.size(); i++) {
+			String user=(String) result.get(i).get("id");
+			if (user.equals(id) ) {
+				continue;
+			}
+			result2.add(result.get(i));
+		}
 		
 		
-		return result;
+		
+		return result2;
 	
 	}
 	
@@ -307,6 +322,15 @@ public class chaMemberController {
 		return "searchFr";
 	
 	}
+	
+	@RequestMapping(value = "/ar", method = RequestMethod.GET)
+	public String ar(Model model,HttpServletRequest req) {
+	
+	
+	
+	return "ar";
+
+}
 	
 	@RequestMapping(value = "/alarm", method = RequestMethod.GET)
 	@ResponseBody
@@ -344,6 +368,26 @@ public class chaMemberController {
 		
 		ser.delreq(map);
 		return "거절";
+	
+	}
+	
+	@RequestMapping(value = "/idsc", method = RequestMethod.GET)
+	@ResponseBody
+	public Map<String, Object> idsc(Model model, @RequestParam Map<String, Object>map) {
+		
+		Map<String, Object> a =jeredMemberService.selectUser(map);
+		return a;
+	
+	}
+	
+	@RequestMapping(value = "/selectReq", method = RequestMethod.GET)
+	@ResponseBody
+	public int selectReq(Model model,HttpServletRequest req ) {
+		HttpSession session2 = req.getSession();
+		String id = (String) session2.getAttribute("id");
+		List<Map<String, Object>> list=ser.selectReq(id);
+		int result = list.size();
+		return result;
 	
 	}
 }

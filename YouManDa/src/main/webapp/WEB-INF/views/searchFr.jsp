@@ -20,6 +20,7 @@
 
 <script>
 $('[name=btn]').click(()=>{
+	$("#result").empty();
 	$.ajax({
 	    url:"searchfriend",
 	    type: 'POST',

@@ -48,7 +48,7 @@
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">YouManDa</a>
+			<a class="navbar-brand js-scroll-trigger" href="/ymd/">YouManDa</a>
 			
 			<i class="fas fa-bars"></i>
 					<div class="collapse navbar-collapse" id="navbarResponsive">
@@ -70,11 +70,13 @@
 						href="/ymd/mypage/${id}">마이페이지</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/logout" id="logout">로그아웃</a></li>
+						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="javascript:popup()" id="scf">친구찾기</a></li>
 						</c:if>
 						<li class="nav-item">
-						<select id="req">
-						
-						</select>
+						<button id="req" onclick="popup2()">
+						알림이
+						</button>
 						</li>
 				</ul>
 			</div>
@@ -94,6 +96,12 @@
 						onclick="joinform()">회원가입</a>
 				</c:if>
 				<script>
+				  function popup(){
+			            var url = "/ymd/searchfriend";
+			            var name = "searchfriend";
+			            var option = "width = 500, height = 500, top = 100, left = 200, location = no"
+			            window.open(url, name, option);
+			        }
 					function loginform() {
 						location = "login";
 					}
@@ -107,18 +115,40 @@
 						location = 'mypage/${a}';
 					}
 					
-					$.ajax({
-				        url:"alarm",
-				        
-				        success: function(res){
-				            console.log(res);
-				            for (var i = 0; i < res.length; i++) {
-				            $('#req').append('<option>'+res[i].id2+'님의 친구신청입니다'+'<button>수락</button><button>거절</button>'+'</option>')
-								
-							}
-				           
-				          } 
-				    });
+					 function popup2(){
+				            var url = "/ymd/ar";
+				            var name = "searchfriend";
+				            var option = "width = 500, height = 500, top = 100, left = 200, location = no"
+				            window.open(url, name, option);
+				        }
+					 
+					 
+// 					 function ar() {
+// 						 $.ajax({
+// 						        url:"alarm",
+						        
+// 						        success: function(res){
+// 						            console.log(res);
+// 						            for (var i = 0; i < res.length; i++) {
+//  						            $('#req').append('<option>'+res[i].id2+'님의 친구신청입니다'+'<button>수락</button><button>거절</button>'+'</option>')
+// 									//$(document).append('<option>'+res[i].id2+'님의 친구신청입니다'+'<button>수락</button><button>거절</button>'+'</option>')	
+// 									}
+						           
+// 						          } 
+// 						    });
+// 					}
+
+ 							$.ajax({
+						        url:"selectReq",
+						       
+						        success: function(res){
+						            console.log(res);
+						            $('#req').text("알림"+res+"건")
+						           
+						          } 
+						    });
+					
+					
 
 				</script>
 			</div>

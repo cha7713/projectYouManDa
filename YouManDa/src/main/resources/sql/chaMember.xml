@@ -86,6 +86,10 @@
 	delete from `request` where id = #{id} and id2 = #{id2}
 	</delete>
 	
+	<select id="selectReq" parameterType="string" resultType="map">
+		select * from `request` where id = #{value} 
+	</select>
+	
 	
 	
 
