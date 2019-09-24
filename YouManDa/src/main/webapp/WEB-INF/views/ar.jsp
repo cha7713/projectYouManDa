@@ -17,34 +17,35 @@
 <script>
 
 
-
 let arr = []
 
-$.ajax({
+$(document).ready(function() {
+	$.ajax({
+		
+		url:"alarm",
+	    success: function(res){
+	        console.log(res);
+	        for (var i = 0; i < res.length; i++) {
+	        	arr.push(res[i].id2);
 	
-	url:"alarm",
-    success: function(res){
-        console.log(res);
-        for (var i = 0; i < res.length; i++) {
-        	arr.push(res[i].id2)
-
-        	(function(j) {
-	        	$.ajax({
-				    url:"idsc",
-				    data : {id :res[i].id2},
-				    success: function(res){
-				        console.log(res);
-			        	$('#req').append('<td>'+'<span>'+res.name+'</span>님의 친구신청입니다'+'</td><td>'+'<button onclick="ok('+j+')">수락</button></td><td><button>거절</button></td>')
-		     		 } 
-				});
-        	})(i);
-        	
-        	
-    		
-		}
-       
-      } 
-});
+	        	(function(j) {
+		        	$.ajax({
+					    url:"idsc",
+					    data : {id :res[i].id2},
+					    success: function(res){
+					        console.log(res);
+				        	$('#req').append('<td>'+'<span>'+res.name+'</span>님의 친구신청입니다'+'</td><td>'+'<button onclick="ok('+j+')">수락</button></td><td><button>거절</button></td>')
+			     		 } 
+					});
+	        	})(i);
+	        	
+	        	
+	    		
+			}
+	       
+	      } 
+	});
+})
 
 function ok(i) {
 	
