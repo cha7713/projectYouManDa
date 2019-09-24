@@ -3,6 +3,7 @@ package com.amiko.ymd.controller;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -292,10 +293,24 @@ public class chaMemberController {
 	public List<Map<String, Object>> scFriend(Model model,HttpServletRequest req) {
 		String name =req.getParameter("name");
 		
+		HttpSession session = req.getSession();
+		String id=(String) session.getAttribute("id");
+		
+		
 		List<Map<String, Object>> result = ser.searchMember(name);
+		List<Map<String, Object>> result2 = new ArrayList<Map<String, Object>>();		
+		
+		for (int i = 0; i < result.size(); i++) {
+			String user=(String) result.get(i).get("id");
+			if (user.equals(id) ) {
+				continue;
+			}
+			result2.add(result.get(i));
+		}
 		
 		
-		return result;
+		
+		return result2;
 	
 	}
 	

@@ -70,6 +70,8 @@
 						href="/ymd/mypage/${id}">마이페이지</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/logout" id="logout">로그아웃</a></li>
+						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/ymd/searchfriend" id="scf">친구찾기</a></li>
 						</c:if>
 						<li class="nav-item">
 						<select id="req">
