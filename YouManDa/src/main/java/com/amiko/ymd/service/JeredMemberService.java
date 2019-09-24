@@ -46,5 +46,21 @@ public class JeredMemberService {
 	public int freeBoardEdit(Map<String, Object> map) {
 		return jeredMemberDao.freeBoardEdit(map);
 	}
+	
+	public int recommendation(int bnum) {
+		return jeredMemberDao.recommendation(bnum);
+	}
+	
+	public void insertreply(Map<String, Object> map) {
+		jeredMemberDao.insertreply(map);
+	}
+	
+	public List<Map<String,Object>> selectreply(int bnum){
+		return jeredMemberDao.selectreply(bnum);
+	}
+	
+//	public List<Map<String,Object>> selectreply(Map<String, Object> map){
+//		return jeredMemberDao.selectreply(map);
+//	}
 
 }

@@ -64,7 +64,31 @@
 		 hit = hit +1
 		 WHERE bnum=#{bnum}
 	</update>
+	
+	<!-- 버튼 클릭시 추천수 증가 -->
+	<update id="recommend" parameterType="_int">
+		UPDATE `freeboard` SET
+		 recomend = recomend +1
+		 WHERE bnum=#{bnum}
+	</update>
+	
+	<!-- 댓글 리스트 출력 -->
+	<select id="selectreply" parameterType="_int" resultType="map">
+		SELECT * FROM `freereply` WHERE bnum=#{value}
+	</select>
+	
+	<!-- 댓글 리스트 출력 -->
+<!-- 	<select id="selectreply" parameterType="map" resultType="map"> -->
+<!-- 		SELECT * FROM `freereply` WHERE bnum=#{map} ORDER BY ASC -->
+<!-- 	</select> -->
 
+	<!-- 댓글 입력 -->
+	<insert id="insertreply" parameterType="map">
+		INSERT INTO `freereply`
+		 content,bnum,id,lang
+		 VALUES
+		 (#{content}, #{bnum}, #{id}, #{lang})		 
+	</insert>
 
 
 
