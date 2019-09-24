@@ -17,7 +17,7 @@
 			
 	</tr>
 	<br>
-	<c:forEach items="${fblist}" var="list">
+	<c:forEach items="${fblist}"  var="list">
 		<tr>
 			<td>${list.header}</td>
 			<td onclick="viewthispost(${list.bnum})"> ${list.title}</td>

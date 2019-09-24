@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.amiko.ymd.service.JeredMemberService;
 
@@ -66,8 +67,10 @@ public class JeredMemberController {
 	
 	@RequestMapping(value = "englishhome/freeboard", method = RequestMethod.GET)
 	public String freeboardListGET(Model model) {
-		model.addAttribute("fblist",jeredMemberService.selectFreeBoardList());
+		//model.addAttribute("fblist",jeredMemberService.selectFreeBoardList());
 		List<Map<String, Object>> a=jeredMemberService.selectFreeBoardList();
+		model.addAttribute("fblist",a);
+		
 		return "freeboard";
 	}
 	
@@ -85,9 +88,31 @@ public class JeredMemberController {
 	@RequestMapping(value="englishhome/freeboard/freeboardin/{bnum}", method=RequestMethod.GET)
 	public String selectFreeBoardOne(Model model,@PathVariable("bnum") int bnum) {
 		model.addAttribute("viewcontent",jeredMemberService.selectFreeBoardOne(bnum));
-		return "freeboardview";
 		
+//		Map<String, Object> map = new HashMap<>();
+//		map.put("bnum", bnum);
+//		model.addAttribute("viewreply",jeredMemberService.selectreply(map));
+//		
+		model.addAttribute("viewreply",jeredMemberService.selectreply(bnum));
+
+		return "freeboardview";
 	}
+	
+	@RequestMapping(value="addfreereply")
+	@ResponseBody
+	public String addfreereply(Model model,@RequestParam("bnum") Map<String, Object> map) {
+		jeredMemberService.insertreply(map);
+		return "1";
+	}
+	
+	@RequestMapping(value="recommendation")
+	@ResponseBody
+	public String recommemdation(Model model,@RequestParam("bnum") int bnum) {
+		int result = jeredMemberService.recommendation(bnum);
+		return "1";
+	}
+	
+	
 	
 	@RequestMapping(value="englishhome/freeboard/freeboardin/freeboardedit/{bnum}", method=RequestMethod.GET)
 	public String freeboardeditGET(Model model, @PathVariable("bnum") int bnum) {
