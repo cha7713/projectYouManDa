@@ -27,6 +27,10 @@
 
 	<h1>자유게시판</h1>
 	<table class="table">
+	
+	</tr>
+	<br>
+	<c:forEach items="${fblist}"  var="list">
 		<tr>
 
 			<th>말머리</th>
