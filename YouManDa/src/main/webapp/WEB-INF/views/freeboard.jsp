@@ -55,7 +55,14 @@
 	<table class="table table-bordered">
 	
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> branch 'master' of https://github.com/cha7713/projectYouManDa.git
+>>>>>>> branch 'master' of https://github.com/cha7713/projectYouManDa.git
 		<tr>
 
 			<th>말머리</th>

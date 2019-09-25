@@ -29,8 +29,12 @@ public class chaMemberDao {
 		return ss.insert("member.join", map);
 	}
 	
-	public int dup(String id) {
-		return ss.selectOne("member.dup", id);
+	public Integer dup(String id) {
+		System.out.println("@@@@"+id);
+		Integer result = 0;
+		result = ss.selectOne("member.dup", id);
+//		System.out.println(ss.selectOne("member.dup", id));
+		return result;
 	}
 	
 	public String dupNick(String nick) {
