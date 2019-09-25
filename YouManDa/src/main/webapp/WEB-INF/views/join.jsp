@@ -182,6 +182,7 @@
 					  // 이메일 검증 스크립트 작성
 					  var passVal = $("[name=id]").val();
 					  var regExp =  /^[A-Za-z0-9]{5,15}$/;
+					  console.log(passVal);
 					// 검증에 사용할 정규식 변수 regExp에 저장
 					  if (passVal.match(regExp) != null) {
 						  $.ajax({
