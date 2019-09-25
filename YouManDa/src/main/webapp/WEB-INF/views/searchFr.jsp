@@ -1,16 +1,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page pageEncoding="utf-8" %>
-<html>
-<head>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
 
-</head>
 <body>
 
 
-<input type="text" name="name">
-<input type="button" name="btn" value="친구 검색">
+<input type="text" name="name"  class="placeholder" placeholder="친구 이름을 입력하세요">
+<input type="button" id="findfr" name="btn" value="친구 검색">
 
  <table id="result">
  
@@ -65,4 +62,4 @@ function friendReq(idx) {
 
 
 </script>
-</html>
+
