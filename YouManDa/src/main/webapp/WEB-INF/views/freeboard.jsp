@@ -29,7 +29,10 @@
 	<table class="table">
 	
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/cha7713/projectYouManDa.git
 		<tr>
 
 			<th>말머리</th>
@@ -41,6 +44,7 @@
 
 		</tr>
 		<br>
+	
 		<c:forEach items="${fblist}" var="list">
 			<tr>
 				<td>${list.header}</td>
@@ -52,6 +56,7 @@
 			</tr>
 		</c:forEach>
 	</table>
+	
 
 
 
