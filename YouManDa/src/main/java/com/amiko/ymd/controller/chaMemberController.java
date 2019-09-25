@@ -420,6 +420,7 @@ public class chaMemberController {
 			String frid =frList[i];
 			
 			if(frid.trim().equals("")) continue;
+			if(frid.trim().equals("abc")) continue;
 				
 			map.put("id", frid);
 			String nick=(String)jeredMemberService.selectUser(map).get("nick");
