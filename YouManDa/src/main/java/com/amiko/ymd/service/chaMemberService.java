@@ -34,7 +34,7 @@ public class chaMemberService {
 		
 	}
 	 
-	 public int idDup(String id) {
+	 public Integer idDup(String id) {
 		 return dao.dup(id);
 		
 	}
