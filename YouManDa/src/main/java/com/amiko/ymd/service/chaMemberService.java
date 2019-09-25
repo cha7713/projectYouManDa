@@ -28,7 +28,7 @@ public class chaMemberService {
 	chaMemberDao dao;
 	
 	 public int join(Map<String, Object> map) {
-		 map.put("frid","abc/");
+		 map.put("frid","/abc");
 		
 		 int a=dao.join(map);
 		 dao.ok(map);
