@@ -19,14 +19,40 @@
 	rel="stylesheet">
 </head>
 <body>
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+		<div class="container">
+			<a class="navbar-brand" href="/ymd/">YouManDa</a> <i
+				class="fas fa-bars"></i>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav text-uppercase ml-auto">
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#first">자유게시판</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#portfolio">정보게시판</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#services">모임게시판</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/ymd/mypage/${id}">익명게시판</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/ymd/logout" id="logout">장터</a></li>
+						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#services">같이살자</a></li>
+					
+						<li class="nav-item">
+						<button id="req" onclick="popup2()">
+						채팅
+						</button>
+						</li>
+				</ul>
+			</div>
 
-
-
-<a class="navbar-brand" href="/ymd/">YouManDa</a>
+		</div>
+	</nav>
+	
 			
 
 	<h1>자유게시판</h1>
-	<table class="table">
+	<table class="table table-bordered">
 	
 
 		<tr>
@@ -57,7 +83,7 @@
 
 
 
-	<input type='button' value='create' id='write' onclick='writing()'>
+	<input type='button' value='글쓰기' id='write' onclick='writing()'  class="btn btn-outline-warning btn-sm">
 	<br>
 
 
@@ -74,13 +100,37 @@
 	}
 	
 </script>
+
 <style>
 .navbar-brand {
 	font-family: 'Kaushan Script', cursive;
-	font-size: 28px;
-	margin-left: 400px;
-	margin-top: 10px;
 	color: #fed136;
-	
+	font-size: 27px;
 }
+
+h1 {
+	font-size: 35px;
+	margin-top: 100px;
+	text-align: center
+}
+
+
+@media ( min-width :992px) {
+	#mainNav {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		transition: padding-top .3s, padding-bottom .3s;
+		border: none;
+		background-color: #000000;
+	}
+	#mainNav .navbar-nav .nav-item .nav-link {
+		padding: 1.1em 1em !important
+	}
+}
+
+#write {
+	margin-top: 30px;
+	margin-left: 47%
+}
+
 </style>
