@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -101,16 +102,29 @@ public class JeredMemberController {
 //		map.put("bnum", bnum);
 //		model.addAttribute("viewreply",jeredMemberService.selectreply(map));
 //		
-		model.addAttribute("viewreply",jeredMemberService.selectreply(bnum));
+//		model.addAttribute("viewreply",jeredMemberService.selectreply(bnum));
 
 		return "freeboardview";
 	}
 	
+	@RequestMapping(value="englishhome/freeboard/reply", method=RequestMethod.GET)
+	@ResponseBody
+	public List<Map<String, Object>> selectReply(@RequestParam("bnum") int bnum) {
+		List<Map<String, Object>> list = jeredMemberService.selectreply(bnum);
+		return list;
+	}
+	
 	@RequestMapping(value="addfreereply")
 	@ResponseBody
-	public String addfreereply(Model model,@RequestParam("bnum") Map<String, Object> map) {
+	public String addfreereply(Model model,
+			@RequestParam Map<String, Object> map,
+			HttpServletRequest req, HttpSession session) {
+		String id = (String) session.getAttribute("id"); // TODO
+		int lang = (int) session.getAttribute("lang"); // TODO
+		map.put("id", id);
+		map.put("lang", lang);
 		jeredMemberService.insertreply(map);
-		return "1";
+		return id;
 	}
 	
 	@RequestMapping(value="recommendation")

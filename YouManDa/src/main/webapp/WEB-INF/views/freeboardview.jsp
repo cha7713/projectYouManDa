@@ -21,17 +21,25 @@
 <input type="button" value="추천" onclick="recommendation()">
 <hr>
 댓글<br>
-<c:forEach items="${viewreply}" var="replylist">
-	<tr>
-		작성자 : <td>${replylist.id}</td>
-		내용 : <td>${replylist.content}</td>
-	</tr>
-</c:forEach>
+
+
+<div id="reply_list">
+
+
+</div>
+<%
+// <c:forEach items="${viewreply}" var="replylist">
+//  	<tr>
+//  		작성자 : <td>${replylist.id}</td>
+//  		내용 : <td>${replylist.content}</td>
+//  	</tr>
+// </c:forEach>
+ %>
 <hr>
-<form method='post' action='redirect:englishhome/freeboard/freeboardin/{bnum}'>
-	<input type="text" value="댓글을 입력하세요." name="replycontent">
+
+	<input type="text" placeholder="댓글을 입력하세요." name="replycontent">
 	<input type="button" value="댓글 등록" onclick="addfreereply()">
-</form>
+
 
 <script>
 	function freeboardedit(bnum){
@@ -58,13 +66,48 @@
 	          
 	        } 
 	    });
+	}
 
 	function addfreereply(){
+		$.ajax({
+			url:'../../../addfreereply',
+			data:{
+				"replycontent": $('[name=replycontent]').val(),
+				"bnum":"${viewcontent.bnum}"
+			},
+			success: function(res){
+				console.log(res);
+				getfreereply();
+				}
+			})
 
 		}
 
+	function getfreereply(){
+		$.ajax({
+			url:'../reply',
+			data:{
+				"bnum":"${viewcontent.bnum}"
+			},
+			success: function(res){
+				var html = '';
+				for(var i=0;i<res.length;i++){
+					var id = res[i].id;
+					var content = res[i].content;
+					html += '<li>' + id + '</li>';
+					html += '<li>' + content + '</li>';
+					}
 
+
+				
+				$('#reply_list').append(html);
+			}
+		})
+
+	}
+
+	getfreereply();
 					 
-		}
+		
 	
 </script>
