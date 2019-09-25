@@ -85,7 +85,7 @@
 	<!-- 댓글 입력 -->
 	<insert id="insertreply" parameterType="map">
 		INSERT INTO `freereply`
-		 content,bnum,id,lang
+		 (content,bnum,id,lang)
 		 VALUES
 		 (#{replycontent}, #{bnum}, #{id}, #{lang})		 
 	</insert>

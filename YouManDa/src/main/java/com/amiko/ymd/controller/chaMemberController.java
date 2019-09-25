@@ -376,7 +376,9 @@ public class chaMemberController {
 	
 	@RequestMapping(value = "/delReq", method = RequestMethod.GET)
 	@ResponseBody
-	public String del(Model model, @RequestParam Map<String, Object>map) {
+	public String del(Model model, @RequestParam Map<String, Object>map, HttpSession session) {
+		
+		map.put("id",session.getAttribute("id"));
 		
 		ser.delreq(map);
 		return "거절";

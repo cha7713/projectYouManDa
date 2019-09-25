@@ -55,6 +55,10 @@
 	<table class="table table-bordered">
 	
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> branch 'master' of https://github.com/cha7713/projectYouManDa.git
 		<tr>
 
 			<th>말머리</th>
@@ -76,7 +80,6 @@
 				<td>${list.hit}</td>
 				<td>${list.recomend}</td>
 			</tr>
-
 		</c:forEach>
 	</table>
 	
