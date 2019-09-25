@@ -29,8 +29,11 @@ public class chaMemberService {
 	
 	 public int join(Map<String, Object> map) {
 		 map.put("frid","친구목록/");
+		
+		 int a=dao.join(map);
 		 dao.ok(map);
-		 return dao.join(map);
+		 return a;
+		 
 		
 	}
 	 
