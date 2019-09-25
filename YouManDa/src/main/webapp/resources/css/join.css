@@ -5,13 +5,6 @@
 	box-sizing: border-box;
 }
 
-/* body {
-	font-family: sans-serif;
-	background-color: #000000;
-		background-image: url("../img/header-bg.jpg");
-	background-position: center;
-	background-size: cover;
-} */
 
 #mainNav .navbar-brand {
 	color: #fed136;
@@ -23,15 +16,6 @@
 	font-size: 60px;
    	
 }
-
-/* #slick-login {
-	width: 300px;
-	height: 200px;
-	position: absolute;
-	margin-left: -350px;
-	margin-top: -300px;
-
-} */
 
 .placeholder {
 	color: #444;
@@ -51,12 +35,11 @@
 	-moz-background-clip: padding-box;
 	background-clip: padding-box;
 	border-radius: 6px;
-	-webkit-box-shadow: inset 0px 2px 0px #d9d9d9;
-	box-shadow: inset 0px 2px 0px #d9d9d9;
+
 }
 
-#slick-login input[type="textarea"], .phone{
-	width: 31.5%;
+#slick-login input[name="p1"], #slick-login input[name="p2"], #slick-login input[name="p3"]{
+	width: 31%;
 	height: 40px;
 	positon: absolute;
 	margin-top: 7px;
@@ -69,18 +52,10 @@
 	-moz-background-clip: padding-box;
 	background-clip: padding-box;
 	border-radius: 6px;
-	-webkit-box-shadow: inset 0px 2px 0px #d9d9d9;
-	box-shadow: inset 0px 2px 0px #d9d9d9;
-}
-#slick-login input[type="text"]:focus, #slick-login input[type="password"]:focus
-	{
-	-webkit-box-shadow: inset 0px 2px 0px #a7a7a7;
-	box-shadow: inset 0px 2px 0px #a7a7a7;
+
 }
 
-#slick-login input:first-child {
-	margin-top: 0px;
-}
+
 
 #slick-login input[type="submit"] {
 	width: 99%;
@@ -88,15 +63,8 @@
 	margin-top: 7px;
 	color: #000000;
 	font-size: 18px;
-	outline: none;
-	-webkit-background-clip: padding-box;
-	-moz-background-clip: padding-box;
-	background-clip: padding-box;
-	border-radius: 6px;
 	background-color: #fed136;
-	-webkit-box-shadow: inset 0px 1px 0px #9ab1ec;
-	box-shadow: inset 0px 1px 0px #9ab1ec;
-	cursor: pointer;
+
 }
 
 #slick-login input[type="button"] {
@@ -106,86 +74,10 @@
 	margin-left: 428px;
 	color: #000000;
 	font-size: 18px;
-	outline: none;
-	-webkit-background-clip: padding-box;
-	-moz-background-clip: padding-box;
-	background-clip: padding-box;
-	border-radius: 6px;
 	background-color: #fed136;
-	-webkit-box-shadow: inset 0px 1px 0px #9ab1ec;
-	box-shadow: inset 0px 1px 0px #9ab1ec;
-	cursor: pointer;
-}
-
-#slick-login input[type="submit"]:hover {
-	background-color: #80ff00;
-	-webkit-box-shadow: inset 0px 1px 0px #aab9f4;
-	box-shadow: inset 0px 1px 0px #aab9f4;
-	margin-top: 10px;
-}
-
-#slick-login input[type="submit"]:active {
-	background-color: #80ff00;
-	-webkit-box-shadow: inset 0px 1px 0px #93a9e9;
-	box-shadow: inset 0px 1px 0px #93a9e9;
 }
 
 body {
 	display: table-cell;
 	vertical-align: middle;
-	background-color: #ffffff !important;
-}
-/* 
-html {
-	display: table;
-	margin: auto;
-}
- */
-html, body {
-	/* height: 100%; */
-}
-
-.medium-small {
-	font-size: 0.9rem;
-	margin: 0;
-	padding: 0;
-}
-
-.login-form {
-	width: 280px;
-}
-
-.login-form-text {
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 0.8rem;
-}
-
-.login-text {
-	margin-top: -6px;
-	margin-left: -6px !important;
-}
-
-.margin {
-	margin: 0 !important;
-}
-
-.pointer-events {
-	pointer-events: auto !important;
-}
-
-.input-field>.material-icons {
-	padding-top: 10px;
-}
-
-.input-field div.error {
-	position: relative;
-	top: -1rem;
-	left: 3rem;
-	font-size: 0.8rem;
-	color: #FF4081;
-	-webkit-transform: translateY(0%);
-	-ms-transform: translateY(0%);
-	-o-transform: translateY(0%);
-	transform: translateY(0%);
 }

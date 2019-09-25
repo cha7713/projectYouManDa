@@ -23,7 +23,7 @@
 	rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="resources/css/join.css?var=1" rel="stylesheet">
+<link href="resources/css/join.css?var=8" rel="stylesheet">
 </head>
 <body>
 	<div class="container" style="margin-left:120%">
@@ -68,12 +68,15 @@
 					 학교 <input name="school" required="required" type="text">
 					<br>
 					이름 <input name="name" required="required" type="text"> <br>
-					<label>
-						남성 <input name="sex" type="radio" value="1">
-					</label> 
-					<label> 
-						여성 <input name="sex" type="radio" value="2">
-					</label> 
+					성별
+					<select name="lang">
+					<option value="1">
+						남성
+					</option>
+					<option value="2">
+						여성 
+					</option>
+					</select>
 					<br> 
 					핸드폰 번호<br>
 					<input name="p1" required="required" class="phone">-

@@ -37,13 +37,10 @@
 						href="/ymd/logout" id="logout">장터</a></li>
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="#services">같이살자</a></li>
-					
-						<li class="nav-item">
-						<button id="req" onclick="popup2()">
-						채팅
-						</button>
-						</li>
-				</ul>
+						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/ymd/mypage/${id}">마이페이지</a></li>
+				
+					</ul>
 			</div>
 
 		</div>
@@ -83,7 +80,10 @@
 
 	<input type='button' value='글쓰기' id='write' onclick='writing()'  class="btn btn-outline-warning btn-sm">
 	<br>
-
+<ul class="pagination">  
+    <li class="page-item"><a class="page-link" href="#">이전</a></li> 
+    <li class="page-item2"><a class="page-link" href="#">다음</a></li>  
+</ul>
 
 </body>
 
@@ -130,5 +130,11 @@ h1 {
 	margin-top: 30px;
 	margin-left: 47%
 }
+
+
+#page-item2{
+	flaot : right;
+}
+
 
 </style>

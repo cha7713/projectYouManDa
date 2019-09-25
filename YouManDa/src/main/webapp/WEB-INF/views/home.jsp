@@ -72,7 +72,7 @@
 						href="javascript:popup()" id="scf">친구찾기</a></li>
 						<li class="nav-item">
 						<button id="req" onclick="popup2()">
-						알림이
+						
 						</button>
 						</li>
 						</c:if>

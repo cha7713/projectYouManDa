@@ -39,11 +39,8 @@
 						href="/ymd/logout" id="logout">장터</a></li>
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="#services">같이살자</a></li>
-					
-						<li class="nav-item">
-						<button id="req" onclick="popup2()">
-						채팅
-						</button>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/ymd/mypage/${id}">마이페이지</a></li>
 						</li>
 				</ul>
 			</div>
