@@ -94,13 +94,13 @@
 				for(var i=0;i<res.length;i++){
 					var id = res[i].id;
 					var content = res[i].content;
-					html += '<li>' + id + '</li>';
-					html += '<li>' + content + '</li>';
+					html += '작성자 : ' + id + '&nbsp;&nbsp;&nbsp;&nbsp;'+'내용 : '+ content + '<br>';
+					
 					}
+				$('#reply_list').append(html);
 
 
 				
-				$('#reply_list').append(html);
 			}
 		})
 

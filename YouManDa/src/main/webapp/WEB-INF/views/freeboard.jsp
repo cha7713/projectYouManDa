@@ -54,10 +54,17 @@
 	<h1>자유게시판</h1>
 	<table class="table table-bordered">
 	
+<<<<<<< HEAD
+
+=======
 
 <<<<<<< HEAD
 
 =======
+<<<<<<< HEAD
+
+=======
+>>>>>>> branch 'master' of https://github.com/cha7713/projectYouManDa.git
 >>>>>>> branch 'master' of https://github.com/cha7713/projectYouManDa.git
 		<tr>
 

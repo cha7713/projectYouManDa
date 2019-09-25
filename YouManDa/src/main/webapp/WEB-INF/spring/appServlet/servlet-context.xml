@@ -62,7 +62,7 @@
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
 
 		<property name="url"
-			value="jdbc:log4jdbc:mysql://localhost:3306/ymd" />
+			value="jdbc:log4jdbc:mysql://192.168.0.88:3306/ymd" />
 
 	</bean>
 	<!-- SqlSessionFactionBean -->
