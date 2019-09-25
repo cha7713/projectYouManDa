@@ -34,7 +34,7 @@ $(document).ready(function() {
 					    data : {id :res[i].id2},
 					    success: function(res){
 					        console.log(res);
-				        	$('#req').append('<td>'+'<span>'+res.name+'</span>님의 친구신청입니다'+'</td><td>'+'<button onclick="ok('+j+')">수락</button></td><td><button>거절</button></td>')
+				        	$('#req').append('<td>'+'<span>'+res.name+'</span>님의 친구신청입니다'+'</td><td>'+'<button onclick="ok('+j+')">수락</button></td><td><button onclick="reject('+j+')">거절</button></td>')
 			     		 } 
 					});
 	        	})(i);
@@ -54,11 +54,27 @@ function ok(i) {
 	    data : {frid :arr[i]},
 	    success: function(res){
 	        console.log(res);
-	       alert("친구신청을 완료 했습니다")
-	       window.location.reload()
+	       alert("친구신청을 수락했습니다")
+ 	       window.location.reload()
+			opener.action_reload();
 	      } 
 	});
 } 
+
+function reject(i) {
+	
+	$.ajax({
+	    url:"delReq",
+	    data : {id2 :arr[i]},
+	    success: function(res){
+	        console.log(res);
+	       alert("친구신청을 거절했습니다")
+ 	       window.location.reload()
+			opener.action_reload();
+	      } 
+	});
+} 
+
 
 
 </script>
