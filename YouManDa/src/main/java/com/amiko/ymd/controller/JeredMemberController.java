@@ -111,6 +111,17 @@ public class JeredMemberController {
 	@ResponseBody
 	public List<Map<String, Object>> selectReply(@RequestParam("bnum") int bnum) {
 		List<Map<String, Object>> list = jeredMemberService.selectreply(bnum);
+		for (int i = 0; i < list.size(); i++) {
+			String id=(String) list.get(i).get("id");
+			Map<String, Object> m = new HashMap<String, Object>();
+			m.put("id",id);
+			
+			
+			String nick =(String) jeredMemberService.selectUser(m).get("nick");
+			list.get(i).put("nick", nick);
+			
+		}
+//		jeredMemberService.insertreply(map);
 		return list;
 	}
 	
@@ -124,6 +135,7 @@ public class JeredMemberController {
 		map.put("id", id);
 		map.put("lang", lang);
 		jeredMemberService.insertreply(map);
+		
 		return id;
 	}
 	

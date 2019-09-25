@@ -77,6 +77,7 @@
 			},
 			success: function(res){
 				console.log(res);
+				
 				getfreereply();
 				}
 			})
@@ -92,11 +93,12 @@
 			success: function(res){
 				var html = '';
 				for(var i=0;i<res.length;i++){
-					var id = res[i].id;
+					var nick = res[i].nick;
 					var content = res[i].content;
-					html += '작성자 : ' + id + '&nbsp;&nbsp;&nbsp;&nbsp;'+'내용 : '+ content + '<br>';
+					html += '작성자 : ' + nick + '&nbsp;&nbsp;&nbsp;&nbsp;'+'내용 : '+ content + '<br>';
 					
 					}
+				$('#reply_list').empty();
 				$('#reply_list').append(html);
 
 

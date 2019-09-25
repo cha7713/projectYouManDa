@@ -63,8 +63,9 @@
 			<li class="list-group-item">이름 : ${personalinfo.name}</li>
 			<li class="list-group-item">별명 : ${personalinfo.nick}</li>
 
-			<li class="list-group-item">성별 : <c:choose>
-					<c:when test="${personalinfo.sex} == 1">
+			<li class="list-group-item">성별 : 
+			<c:choose>
+					<c:when test="${personalinfo.sex == 1}">
 		MALE<br>
 					</c:when>
 					<c:otherwise>
