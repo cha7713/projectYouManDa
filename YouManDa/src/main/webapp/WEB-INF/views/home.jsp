@@ -81,6 +81,9 @@
 		
 		</div>
 	</nav>
+	<c:if test="${id!=null}">
+	<jsp:include page="remotecontroller.jsp" flush="false"/>
+</c:if>
 
 	<!-- Header -->
 	<header class="masthead">

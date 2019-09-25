@@ -404,6 +404,32 @@ public class chaMemberController {
 		return result;
 	
 	}
+	
+	@RequestMapping(value = "/frList", method = RequestMethod.GET)
+	@ResponseBody
+	public String[] frList(Model model,HttpServletRequest req ) {
+		HttpSession session2 = req.getSession();
+		String id = (String) session2.getAttribute("id");
+		
+		String[] frList =ser.frLIst(id);
+		
+		
+		return frList;
+	
+	}
+	@RequestMapping(value = "/userNick", method = RequestMethod.GET)
+	@ResponseBody
+	public String userNick(Model model,HttpServletRequest req ) {
+		HttpSession session2 = req.getSession();
+		String id = (String) session2.getAttribute("id");
+		Map<String, Object>map = new HashMap<String, Object>();
+		map.put("id", id);
+		String nick=(String) jeredMemberService.selectUser(map).get("nick");
+		
+		
+		return nick;
+	
+	}
 }
 	
 	
