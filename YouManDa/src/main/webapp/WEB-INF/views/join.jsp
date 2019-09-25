@@ -69,7 +69,7 @@
 					<br>
 					이름 <input name="name" required="required" type="text"> <br>
 					성별
-					<select name="lang">
+					<select name="sex">
 					<option value="1">
 						남성
 					</option>
