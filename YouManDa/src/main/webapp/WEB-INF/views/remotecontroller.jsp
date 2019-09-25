@@ -38,7 +38,7 @@ width: 120px;
          
       success: function(res){
     	  for (var i = 0; i < res.length; i++) {
-    		  if(res[i]!=""){
+    		  if(res[i]!="" || res[i]!="dbc"){
 	          $('#frList').append("<li>"+res[i]+"</li>")
     			  
     		  }

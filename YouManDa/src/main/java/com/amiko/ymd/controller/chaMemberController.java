@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -410,11 +411,23 @@ public class chaMemberController {
 	public String[] frList(Model model,HttpServletRequest req ) {
 		HttpSession session2 = req.getSession();
 		String id = (String) session2.getAttribute("id");
+		Map<String, Object> map = new HashMap<String, Object>();
 		
 		String[] frList =ser.frLIst(id);
+		int a =frList.length;
+		String[] nickList = new String[a];
+		for (int i = 0; i < frList.length; i++) {
+			String frid =frList[i];
+			
+			if(frid.trim().equals("")) continue;
+				
+			map.put("id", frid);
+			String nick=(String)jeredMemberService.selectUser(map).get("nick");
+			nickList[i] = nick;
+		}
 		
 		
-		return frList;
+		return nickList;
 	
 	}
 	@RequestMapping(value = "/userNick", method = RequestMethod.GET)
