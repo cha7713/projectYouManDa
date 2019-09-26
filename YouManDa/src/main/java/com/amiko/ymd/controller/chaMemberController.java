@@ -43,7 +43,7 @@ import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExceptio
 public class chaMemberController {
 	
 	
-	List<String> loginId;
+	List<String> loginId = new ArrayList<String>();
 
 	@Autowired
 	chaMemberService ser;
@@ -54,8 +54,20 @@ public class chaMemberController {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(Model model, HttpServletRequest req) {
 		HttpSession session = req.getSession();
+		String id = (String) session.getAttribute("id");
 		session.invalidate();
 //		http://developers.kakao.com/logout
+		
+		for (int i = 0; i < loginId.size(); i++) {
+			if (loginId.get(i).equals(id)) {
+				loginId.remove(i);	
+				
+			} 
+				
+		}
+		HttpSession session2 = req.getSession();
+		session2.setAttribute("loginList", loginId);
+		
 		return "redirect:home";
 	}
 	
@@ -69,6 +81,10 @@ public class chaMemberController {
 		
 		session.setAttribute("id", user.get("id"));
 		session.setAttribute("lang", user.get("lang"));
+		loginId.add((String) user.get("id"));
+		
+		session.removeAttribute("loginList");
+		session.setAttribute("loginList", loginId);
 		
 		System.out.println("session");
 		System.out.println(session.getAttribute("id"));
@@ -93,7 +109,11 @@ public class chaMemberController {
 		if (user != null) {
 			session.setAttribute("id", user.get("id"));
 			session.setAttribute("lang", user.get("lang"));
+			
 			loginId.add((String) user.get("id"));
+			session.removeAttribute("loginList");
+			session.setAttribute("loginList", loginId);
+			
 			return "home";
 		} else {
 			model.addAttribute("msg", "로그인 실패");
@@ -412,15 +432,17 @@ public class chaMemberController {
 	
 	@RequestMapping(value = "/frList", method = RequestMethod.GET)
 	@ResponseBody
-	public String[] frList(Model model,HttpServletRequest req ) {
+	public List<Map<String, Object>> frList(Model model,HttpServletRequest req ) {
 		HttpSession session2 = req.getSession();
 		String id = (String) session2.getAttribute("id");
-		Map<String, Object> map = new HashMap<String, Object>();
+		Map<String, Object> map = null;
 		
 		String[] frList =ser.frLIst(id);
 		int a =frList.length;
 		String[] nickList = new String[a];
+		List<Map<String, Object>>idNick = new ArrayList<Map<String, Object>>();
 		for (int i = 0; i < frList.length; i++) {
+			map = new HashMap<String, Object>();
 			String frid =frList[i];
 			System.out.println(frid);
 			
@@ -429,11 +451,14 @@ public class chaMemberController {
 				
 			map.put("id", frid);
 			String nick=(String)jeredMemberService.selectUser(map).get("nick");
+			map.put("frid",frid);
+			map.put("nick",nick);
 			nickList[i] = nick;
+			idNick.add(map);
 		}
 		
 		
-		return nickList;
+		return idNick;
 	
 	}
 	@RequestMapping(value = "/userNick", method = RequestMethod.GET)
