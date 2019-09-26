@@ -46,17 +46,16 @@
 			success : function(res) {
 				
 				<%String loginId = "";
-				String sep = "";
+			String sep = "";
 
-				for (int i = 0; i < loginList.size(); i++) {
-					loginId = loginId + sep + "'" + loginList.get(i) + "'";
-					sep += ", ";
-				}%>
+			for (int i = 0; i < loginList.size(); i++) {
+				loginId = loginId + sep + "'" + loginList.get(i) + "'";
+				sep += ", ";
+			}%>
 				var loginList = [<%=loginId%>];
 				
 				for (var i = 0; i < res.length; i++) {
 					if (res[i].frid != "" && res[i].frid != "dbc" && res[i].frid != null) {
-// 						for(let list of ${loginList}){
 
 						let temp = 0;
 						for(let list of loginList){
@@ -70,14 +69,32 @@
 						if(temp==1){
 									$('#frList').append("<li>" + res[i].nick + "(접속중)</li>")
 
-							}else{
-								$('#frList').append("<li>" + res[i].nick + "</li>")
-								}
-						
+							}
 				}
 					}
 			
+			
+
+		for (var i = 0; i < res.length; i++) {
+			if (res[i].frid != "" && res[i].frid != "dbc" && res[i].frid != null) {
+
+				let temp = 0;
+				for(let list of loginList){
+					console.log(list, '    ', res[i].frid)
+						if(list == res[i].frid){
+							temp = 1;
+							}
+				
+
+					}
+				if(temp!=1){
+							$('#frList').append("<li>" + res[i].nick + "</li>")
+
+					}
+		}
 			}
+	
+	}
 		});
 
 		$.ajax({
