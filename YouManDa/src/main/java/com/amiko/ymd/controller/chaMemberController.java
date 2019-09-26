@@ -449,6 +449,13 @@ public class chaMemberController {
 		return nick;
 	
 	}
+	
+	@RequestMapping(value = "/chat", method = RequestMethod.GET)
+	public String chat(Model model,HttpServletRequest req ) {
+		
+		return "chat";
+	
+	}
 }
 	
 	
