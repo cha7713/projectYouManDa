@@ -126,6 +126,7 @@ public class chaMemberService {
 	 public String[] frLIst(String id) {
 		
 		 String frid = dao.frList(id);
+		 System.out.println(frid);
 		 String[] arr=frid.split("/");
 		return arr; 
 			

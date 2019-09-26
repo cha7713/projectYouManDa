@@ -90,6 +90,11 @@
 		 (#{replycontent}, #{bnum}, #{id}, #{lang})		 
 	</insert>
 
+	<!-- 자유 게시물 삭제 -->
+	<delete id="deletefreeboard" parameterType="map">
+		DELETE FROM `freeboard`
+		 WHERE bnum = #{bnum}		
+	</delete>
 
 
 

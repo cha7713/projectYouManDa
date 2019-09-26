@@ -62,6 +62,9 @@ public class JeredMemberDao {
 		return ss.selectList("JeredMember.selectreply", bnum);
 	} 
 	
+	public int deletefreeboard(Map<String, Object> map) {
+		return ss.delete("JeredMember.deletefreeboard", map);
+	}
 //	public List<Map<String, Object>> selectreply(Map<String, Object> map){
 //		return ss.selectList("JeredMember.selectreply", map);
 //	} 

@@ -60,7 +60,7 @@ public class JeredMemberController {
 		String id = (String) session.getAttribute("id");
 		map.put("id", id);
 		jeredMemberService.deleteMyAccount(map);
-		session.invalidate();
+		session.invalidate(); // 세션 지우기
 		return "redirect:/";
 	}
 	
@@ -158,6 +158,12 @@ public class JeredMemberController {
 	public String freeboardeditPOST(Model model, @PathVariable("bnum") int bnum, @RequestParam Map<String, Object> map) {
 		map.put("bnum", bnum);
 		model.addAttribute("editpost",jeredMemberService.freeBoardEdit(map));
+		return "redirect:/englishhome/freeboard";
+	}
+	
+	@RequestMapping(value="deletefreeboard", method=RequestMethod.GET)
+	public String deletefreeboard(@RequestParam Map<String, Object> map) {
+		jeredMemberService.deletefreeboard(map);
 		return "redirect:/englishhome/freeboard";
 	}
 
