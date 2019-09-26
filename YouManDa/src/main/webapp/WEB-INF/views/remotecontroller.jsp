@@ -7,11 +7,11 @@
 <style type="text/css">
 .remote {
 	position: fixed;
-	right: 50%;
+	right: 10%;
 	top: 180px;
-	margin-right: -720px;
 	text-align: center;
-	width: 120px;
+	width: 200px;
+	height: 300px;
 	
 }
 </style>
@@ -19,8 +19,10 @@
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
-	<div class="remote ui-widget-content" id="draggable">
-		메신저 창
+	<div class="remote ui-widget-content" id="draggable"
+		style="background-color: #fec810; border-color: #fec810">
+
+
 		<p id="user">${id}</p>
 		<div>
 			<span>친구목록 </span>

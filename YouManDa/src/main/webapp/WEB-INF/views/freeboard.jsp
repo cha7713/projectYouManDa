@@ -47,7 +47,7 @@
 	</nav>
 	
 			
-
+<div class="container">
 	<h1>자유게시판</h1>
 	<table class="table table-bordered">
 
@@ -74,11 +74,11 @@
 			</tr>
 		</c:forEach>
 	</table>
-	
+		<input type='button' value='글쓰기' id='write' onclick='writing()'
+			class="btn btn-outline-warning btn-sm">
 
 
-
-	<input type='button' value='글쓰기' id='write' onclick='writing()'  class="btn btn-outline-warning btn-sm">
+	</div>
 	<br>
 <ul class="pagination">  
     <li class="page-item"><a class="page-link" href="#">이전</a></li> 
@@ -127,8 +127,8 @@ h1 {
 }
 
 #write {
-	margin-top: 30px;
-	margin-left: 47%
+	margin-top: 5px;
+	margin-left: 94.5%;
 }
 
 
