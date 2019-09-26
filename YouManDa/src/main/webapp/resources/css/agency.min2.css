@@ -113,7 +113,7 @@ img::-moz-selection {
 }
 
 #mainNav {
-	background-color: #212529
+	background-color: #000000
 }
 
 #mainNav .navbar-toggler {
@@ -164,7 +164,7 @@ img::-moz-selection {
 		padding-bottom: 10px;
 		transition: padding-top .3s, padding-bottom .3s;
 		border: none;
-		background-color: #000000;
+		background-color: black;
 	}
 	#mainNav .navbar-brand {
 		font-size: 1.75em;
@@ -176,7 +176,7 @@ img::-moz-selection {
 	#mainNav.navbar-shrink {
 		padding-top: 0;
 		padding-bottom: 0;
-		background-color: #212529
+		background-color: #000000
 	}
 	#mainNav.navbar-shrink .navbar-brand {
 		font-size: 1.25em;
@@ -236,8 +236,19 @@ header.masthead .intro-text .intro-heading {
 			'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
 			'Noto Color Emoji' , 'Cute Font', cursive,'Yeon Sung', cursive;
 	}
-	
+		header.masthead .intro-text .intro-heading {
+		font-size: 75px;
+		font-weight: 700;
+		line-height: 75px;
+		margin-bottom: 50px;
+		font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+			Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+			'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+	}
 }
+	
+	
+
 
 .service-heading {
 	margin: 15px;

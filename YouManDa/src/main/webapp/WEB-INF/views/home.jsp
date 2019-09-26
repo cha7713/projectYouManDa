@@ -15,6 +15,9 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
 
 <title>YouManDa</title>
 
@@ -42,17 +45,23 @@
 	href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap"
 	rel="stylesheet" type='text/css'>
 <!-- Custom styles for this template -->
-<link href="resources/css/agency.min.css?var=3" rel="stylesheet">
+<link href="resources/css/agency.min2.css?var=3" rel="stylesheet">
 
 </head>
 
-<body>
+<body id="page-top">
+
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="/ymd/">YouManDa</a> <i
-				class="fas fa-bars"></i>
+			<a class="navbar-brand js-scroll-trigger" href="/ymd/">YouManDa</a>
+			<button class="navbar-toggler navbar-toggler-right" type="button"
+				data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false"
+				aria-label="Toggle navigation">
+				MENU <i class="fas fa-bars"></i>
+			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
@@ -74,14 +83,13 @@
 							href="/ymd/logout" id="logout">로그아웃</a></li>
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 							href="javascript:popup()" id="scf">친구찾기</a></li>
-						<li>
-							<a id="black" onclick="popup2()"><img id="yellow" style="width:35px"/><span id="req"></span></a>
-							
-						</li>
+							<li><a id="black" onclick="popup2()"><img id="yellow"
+					style="width: 35px" /><span id="req"></span></a></li>
+						
+
 					</c:if>
 				</ul>
 			</div>
-
 		</div>
 	</nav>
 	<c:if test="${id!=null}">
@@ -155,14 +163,16 @@
 						success : function(res) {
 							console.log(res);
 							$('#req').text(res)
-							
+
 							$('#black').css("background-color", "black")
-							if(res!=0){
-								$('#yellow').prop("src","resources/img/853.jpg")
+							if (res != 0) {
+								$('#yellow').prop("src",
+										"resources/img/853.jpg")
 								$('#req').css("color", "yellow")
-							}else{	
-							$('#yellow').prop("src","resources/img/854.jpg")
-							$('#req').css("color", "white")
+							} else {
+								$('#yellow').prop("src",
+										"resources/img/854.jpg")
+								$('#req').css("color", "white")
 							}
 						}
 					});
@@ -178,13 +188,15 @@
 				<div class="col-lg-12 text-center">
 					<h2 class="section-heading text-uppercase" id="english"
 						onclick="enter()">English</h2>
-					<script>
-						function enter() {
-							location = "englishhome";
-						}
-					</script>
 				</div>
 			</div>
+			<script>
+				function enter() {
+					location = "englishhome";
+				}
+			</script>
+
+
 		</div>
 	</section>
 	<section class="cng" id="portfolio">
@@ -269,7 +281,19 @@
 			$('section.jap').css('background-size', size_jap)
 		})
 	</script>
+	<!-- Bootstrap core JavaScript -->
+	<script src="resources/vendor/jquery/jquery.min.js"></script>
+	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+	<!-- Plugin JavaScript -->
+	<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Contact form JavaScript -->
+	<script src="js/jqBootstrapValidation.js"></script>
+	<script src="js/contact_me.js"></script>
+
+	<!-- Custom scripts for this template -->
+	<script src="js/agency.min.js"></script>
 </body>
 </html>
 
@@ -278,7 +302,10 @@
 
 
 
+<style>
 
+
+</style>
 
 
 
