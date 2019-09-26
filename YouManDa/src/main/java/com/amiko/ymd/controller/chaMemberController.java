@@ -41,6 +41,9 @@ import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExceptio
 
 @Controller
 public class chaMemberController {
+	
+	
+	List<String> loginId;
 
 	@Autowired
 	chaMemberService ser;
@@ -90,6 +93,7 @@ public class chaMemberController {
 		if (user != null) {
 			session.setAttribute("id", user.get("id"));
 			session.setAttribute("lang", user.get("lang"));
+			loginId.add((String) user.get("id"));
 			return "home";
 		} else {
 			model.addAttribute("msg", "로그인 실패");
