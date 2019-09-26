@@ -37,11 +37,11 @@
 						href="/ymd/mypage/${id}">익명게시판</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/logout" id="logout">장터</a></li>
-						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="#services">같이살자</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/mypage/${id}">마이페이지</a></li>
-						</li>
+					
 				</ul>
 			</div>
 
@@ -50,8 +50,10 @@
 
 
 	<h1>마이 페이지</h1>
-	<button id="check" onclick="checkMyPost()" class="btn btn-dark btn-sm">내 게시물 확인</button>
-	<button onclick="checkMyReply()" class="btn btn-dark btn-sm">내 댓글 확인</button>
+	<button id="check" onclick="checkMyPost()" class="btn btn-dark btn-sm">내
+		게시물 확인</button>
+	<button id="check2" onclick="checkMyReply()" class="btn btn-dark btn-sm">내
+		댓글 확인</button>
 	<br>
 	<br>
 	<br>
@@ -63,8 +65,7 @@
 			<li class="list-group-item">이름 : ${personalinfo.name}</li>
 			<li class="list-group-item">별명 : ${personalinfo.nick}</li>
 
-			<li class="list-group-item">성별 : 
-			<c:choose>
+			<li class="list-group-item">성별 : <c:choose>
 					<c:when test="${personalinfo.sex == 1}">
 		MALE<br>
 					</c:when>
@@ -161,8 +162,11 @@ h1 {
 		padding: 1.1em 1em !important
 	}
 }
-#check{
-	margin-left : 45%
-}
 
+#check {
+	margin-left: 44%
+}
+#check2 {
+	margin-left: 1%
+}
 </style>

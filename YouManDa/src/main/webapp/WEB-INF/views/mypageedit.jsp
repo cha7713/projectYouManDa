@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -40,11 +41,10 @@
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="#services">같이살자</a></li>
 					
-						<li class="nav-item">
-						<button id="req" onclick="popup2()">
-						채팅
-						</button>
-						</li>
+						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/ymd/mypage/${id}">마이페이지</a></li>
+					
+					
 				</ul>
 			</div>
 

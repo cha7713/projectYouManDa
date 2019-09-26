@@ -23,7 +23,7 @@
 	rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="resources/css/join.css?var=8" rel="stylesheet">
+<link href="resources/css/join.css?var=9" rel="stylesheet">
 </head>
 <body>
 	<div class="container" style="margin-left:120%">

@@ -19,7 +19,15 @@
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
-	<div class="remote ui-widget-content" id="draggable">
+<table style="table-layout:auto;padding:0;margin:0"border="0" cellpadding="0 cellspacing="0
+id="draggable_">
+<tbody>
+<tr>
+	<div class="remote ui-widget-content" id="draggable"style="font-size:0pt;" value="친구와 실시간 채팅">
+		
+
+		
+	
 		메신저 창
 		<p id="user">${id}</p>
 		<div>
@@ -27,6 +35,8 @@
 			<p id="frList"></p>
 		</div>
 	</div>
+	</tbody>
+</table>
 
 	<script>
 		$(function() {
