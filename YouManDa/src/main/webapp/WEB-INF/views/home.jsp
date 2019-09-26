@@ -74,8 +74,9 @@
 							href="/ymd/logout" id="logout">로그아웃</a></li>
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 							href="javascript:popup()" id="scf">친구찾기</a></li>
-						<li class="nav-item">
-							<button id="req" onclick="popup2()"></button>
+						<li>
+							<a id="black" onclick="popup2()"><img id="yellow" style="width:35px"/><span id="req"></span></a>
+							
 						</li>
 					</c:if>
 				</ul>
@@ -94,14 +95,14 @@
 				<div class="title">유학생을 만나다</div>
 				<c:if test="${a==null}">
 					<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
-						onclick="loginform()">로그인</a>
+						href="/ymd/login">로그인</a>
 					<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
-						onclick="joinform()">회원가입</a>
-						</c:if>
-					<c:if test="${a!=null}">
-						<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
-							onclick="mypage()">마이페이지</a>
-					
+						href="/ymd/join">회원가입</a>
+				</c:if>
+				<c:if test="${a!=null}">
+					<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
+						onclick="mypage()">마이페이지</a>
+
 				</c:if>
 				<script>
 					function popup() {
@@ -153,8 +154,16 @@
 
 						success : function(res) {
 							console.log(res);
-							$('#req').text("알림" + res + "건")
-
+							$('#req').text(res)
+							
+							$('#black').css("background-color", "black")
+							if(res!=0){
+								$('#yellow').prop("src","resources/img/853.jpg")
+								$('#req').css("color", "yellow")
+							}else{	
+							$('#yellow').prop("src","resources/img/854.jpg")
+							$('#req').css("color", "white")
+							}
 						}
 					});
 				</script>
