@@ -418,6 +418,7 @@ public class chaMemberController {
 		String[] nickList = new String[a];
 		for (int i = 0; i < frList.length; i++) {
 			String frid =frList[i];
+			System.out.println(frid);
 			
 			if(frid.trim().equals("")) continue;
 			if(frid.trim().equals("abc")) continue;
