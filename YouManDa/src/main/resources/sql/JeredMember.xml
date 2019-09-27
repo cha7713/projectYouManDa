@@ -12,6 +12,19 @@
 		 WHERE id = #{id}
 	</select>
 	
+	<select id="selectMyPost" resultType="map" parameterType="map">
+		SELECT * FROM `FREEBOARD` WHERE id = #{id}
+	</select>
+	
+	<select id="selectMyReply" resultType="map" parameterType="map">
+		SELECT B.BNUM, B.TITLE, R.RNUM, R.CONTENT, R.ID
+		 FROM `FREEBOARD` B
+		 LEFT JOIN `FREEREPLY` R
+		 ON B.BNUM = R.BNUM
+		 WHERE R.ID= #{id}
+		 ORDER BY R.RNUM DESC
+	</select>
+	
 	
 	<!-- 회원정보 수정 -->
  	<update id="updateMyinfo" parameterType="map">

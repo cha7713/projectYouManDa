@@ -28,6 +28,14 @@ public class JeredMemberDao {
 		return ss.delete("JeredMember.deleteMyAccount", map);
 	}
 	
+	public List<Map<String, Object>> checkMyPostInFreeboard(Map<String, Object> map){
+		return ss.selectList("JeredMember.selectMyPost", map);
+	}
+	
+	public List<Map<String, Object>> checkMyReplyInFreeboard(Map<String, Object> map){
+		return ss.selectList("JeredMember.selectMyReply", map);
+	}
+	
 	///////////////////////freeboard//////////////////////////////
 	
 	public List<Map<String, Object>> selectFreeBoardList(){

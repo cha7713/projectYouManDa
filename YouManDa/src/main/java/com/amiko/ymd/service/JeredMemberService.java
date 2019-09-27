@@ -62,6 +62,14 @@ public class JeredMemberService {
 		return jeredMemberDao.deleteMyAccount(map);
 	}
 	
+	public List<Map<String, Object>> checkMyPostInFreeboard(Map<String, Object> map){
+		return jeredMemberDao.checkMyPostInFreeboard(map);
+	}
+	
+	public List<Map<String, Object>> checkMyReplyInFreeboard(Map<String, Object> map){
+		return jeredMemberDao.checkMyReplyInFreeboard(map);
+	}
+	
 ///////////////////////freeboard//////////////////////////////
 	
 	public List<Map<String, Object>> selectFreeBoardList(){

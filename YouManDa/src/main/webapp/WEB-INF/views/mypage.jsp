@@ -122,11 +122,11 @@
 		}
 
 		function checkMyPost() {
-
+			location = '../checkMyPost';
 		};
 
-		function checkMyReply() {
-
+		function checkMyReply() { 
+			location = '../checkMyReply';
 		};
 	</script>
 

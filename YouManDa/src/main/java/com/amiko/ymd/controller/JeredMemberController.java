@@ -1,5 +1,6 @@
 package com.amiko.ymd.controller;
 
+import java.io.Console;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,6 +55,24 @@ public class JeredMemberController {
 		model.addAttribute("personalinfo",jeredMemberService.updateUser(map));
 		return "redirect:/mypage/" + id;	
 	}
+	
+	@RequestMapping(value="checkMyPost", method=RequestMethod.GET)
+	public String checkMyPost(Model model, HttpSession session, @RequestParam Map<String,Object> map) {
+		String id = (String)session.getAttribute("id");
+		System.out.println(id);
+		map.put("id", id);
+		model.addAttribute("checkfreeboardPost", jeredMemberService.checkMyPostInFreeboard(map));
+		return "checkMyPost";	
+	}
+	
+	@RequestMapping(value="checkMyReply", method=RequestMethod.GET)
+	public String checkMyReply(Model model, HttpSession session, @RequestParam Map<String,Object> map) {
+		String id = (String)session.getAttribute("id");
+		map.put("id", id);
+		model.addAttribute("checkfreeboardReply", jeredMemberService.checkMyReplyInFreeboard(map));
+		return "checkMyReply";	
+	}
+	
 	
 	@RequestMapping(value="deleteMyAccount", method = RequestMethod.GET)
 	public String deleteMyAccount (@RequestParam Map<String,Object> map, HttpSession session) {

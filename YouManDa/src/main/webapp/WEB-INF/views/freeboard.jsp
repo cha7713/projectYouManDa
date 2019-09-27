@@ -78,6 +78,8 @@
 	</table>
 		<input type='button' value='글쓰기' id='write' onclick='writing()'
 			class="btn btn-outline-warning btn-sm">
+		<input type='text' placeholder='검색어를 입력하세요' id='textforsearching'>
+		<input type='button' value='검색' onclick='searchingtext()'>
 
 
 	</div>
