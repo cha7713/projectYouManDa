@@ -10,9 +10,9 @@
 
 <div class="container">
 <table>
-<th>보낸사람</th><th>내용</th>
+<tr><th>보낸사람</th><th>내용</th></tr>
 <c:forEach items="${msgList}" var="item">
-<td>${item.id2}</td><td>${item.msgcontent}</td>
+<tr><td>${item.id2}</td><td>${item.msgcontent}</td></tr>
 </c:forEach>
 
 </table>
