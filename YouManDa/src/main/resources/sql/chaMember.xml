@@ -95,7 +95,7 @@
 	</insert>
 	
 	<select id="selectMsg" parameterType="string" resultType="map">
-		select * from `msg` where id = #{value} 
+		select * from `msg` where id = #{value} order by msgno desc
 	</select>
 	
 	<update id="msgCheck" parameterType="string">
