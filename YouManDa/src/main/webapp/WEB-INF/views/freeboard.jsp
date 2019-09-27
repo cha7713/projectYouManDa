@@ -95,10 +95,10 @@
 
 <script>
     function writing(){
-		location = 'freeboardwrite';
+		location = 'freeboard/freeboardwrite';
 	}
 	function viewthispost(bnum){
-		location= "freeboardin/"+bnum;
+		location= "freeboard/freeboardin/"+bnum;
 	}
 	
 </script>
