@@ -105,7 +105,7 @@
 	</update>
 	
 	<select id="msgCount" parameterType="string" resultType="_int">
-		select count(*) from `msg` where id = #{value} and 'check' = 0
+		select count(*) from `msg` where id = #{value} and `check` = 0
 	</select>
 	
 	

@@ -84,13 +84,13 @@
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 							href="javascript:popup()" id="scf">친구찾기</a></li>
 						<li><a onclick="javascript:popMsg()"><img id="letterx"
-								style="width: 35px" /><span id="msg"></span></a></li>
+								style="width: 30px; margin-top:10px" /><span id="msg"></span></a></li>
 						<li><a id="black" onclick="popup2()"><img id="yellow"
-								style="width: 35px" /><span id="req"></span></a></li>
-						
-						
-<!-- 						<li class="nav-item"><a class="nav-link js-scroll-trigger" -->
-<!-- 							href="javascript:popMsg()" id="msg">쪽지함</a></li> -->
+								style="width: 35px;margin-top:10px;margin-left:10px" /><span id="req"></span></a></li>
+
+
+						<!-- 						<li class="nav-item"><a class="nav-link js-scroll-trigger" -->
+						<!-- 							href="javascript:popMsg()" id="msg">쪽지함</a></li> -->
 
 
 					</c:if>
@@ -191,10 +191,13 @@
 
 					$.ajax({
 						url : "msgCount",
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/cha7713/projectYouManDa.git
 						success : function(res) {
-							
-							
+
+							console.log(res, "fadfadfadsf")
 							if (res != 0) {
 								$('#letterx').prop("src",
 										"resources/img/letter.jpg")

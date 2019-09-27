@@ -523,9 +523,8 @@ public class chaMemberController {
 	@ResponseBody
 	public String msgCount(Model model,HttpServletRequest req,HttpSession session) {
 		String id = (String) session.getAttribute("id");
-		System.out.println("==========================================");
 		int count =ser.checkCount(id);
-		System.out.println(count);
+		
 		return count+"";
 	
 	}

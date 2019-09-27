@@ -22,7 +22,18 @@
 
 <script>
 
-
+$('input:submit').click(function() {
+	$.ajax({
+		url: 'msgInput',
+		type: 'post',
+		data: $('form').serialize(),
+		success: function(res) {
+			alert('쪽지 발송 완료');
+			self.close();
+		}
+	})
+	return false;
+});
 
 </script>
 </html>
