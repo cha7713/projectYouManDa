@@ -190,7 +190,7 @@
 					});
 
 					$.ajax({
-						url : "msgList",
+						url : "msgCount",
 
 						success : function(res) {
 							
