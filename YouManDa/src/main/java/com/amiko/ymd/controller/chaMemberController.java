@@ -513,10 +513,23 @@ public class chaMemberController {
 		String id = (String) session.getAttribute("id");
 		List<Map<String, Object>> msgList = ser.selectMsg(id);
 		model.addAttribute("msgList", msgList);
+		ser.checkMsg(id);
 		
 		return "msgView";
 	
 	}
+	
+	@RequestMapping(value = "/msgCount", method = RequestMethod.POST)
+	@ResponseBody
+	public String msgCount(Model model,HttpServletRequest req,HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		int count =ser.checkCount(id);
+		
+		return count+"";
+	
+	}
+	
+	
 }
 	
 	

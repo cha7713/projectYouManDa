@@ -98,6 +98,17 @@
 		select * from `msg` where id = #{value} 
 	</select>
 	
+	<update id="msgCheck" parameterType="string">
+		UPDATE `msg` SET
+			`check` = 1
+			WHERE id = #{value}
+	</update>
+	
+	<select id="msgCount" parameterType="string" resultType="_int">
+		select count(*) from `msg` where id = #{value} and 'check' = 0
+	</select>
+	
+	
 	
 
 </mapper>

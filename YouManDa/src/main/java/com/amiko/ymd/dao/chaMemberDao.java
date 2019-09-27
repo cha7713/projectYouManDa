@@ -101,9 +101,12 @@ public class chaMemberDao {
 	public List<Map<String, Object>> selectMsg(String id) {
 		return ss.selectList("member.selectMsg",id);
 	}
-	
-	
-	
+	public void checkMsg(String id) {
+		ss.update("member.msgCheck",id);
+	}
+	public int checkCount(String id) {
+		return ss.selectOne("member.msgCheck",id);
+	}
 	
 	
 	

@@ -136,7 +136,14 @@ public class chaMemberService {
 		}
 	 public List<Map<String, Object>> selectMsg(String id) {
 		return dao.selectMsg(id);
-	}	 
+	}
+	 
+	 public void checkMsg(String id) {
+			dao.checkMsg(id);
+		}
+	 public int checkCount(String id) {
+			return dao.checkCount(id);
+		}
 	 
 	
 }
