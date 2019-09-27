@@ -191,10 +191,7 @@
 
 					$.ajax({
 						url : "msgCount",
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/cha7713/projectYouManDa.git
 						success : function(res) {
 
 							console.log(res, "fadfadfadsf")
