@@ -62,6 +62,7 @@ public class JeredMemberDao {
 	}
 	
 	public void insertreply(Map<String,Object> map) {
+		
 		ss.insert("JeredMember.insertreply", map);
 	}
 	

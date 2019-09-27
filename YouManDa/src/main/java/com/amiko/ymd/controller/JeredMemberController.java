@@ -151,6 +151,8 @@ public class JeredMemberController {
 			HttpServletRequest req, HttpSession session) {
 		String id = (String) session.getAttribute("id"); // TODO
 		int lang = (int) session.getAttribute("lang"); // TODO
+		System.out.println(id);
+		System.out.println(lang);
 		map.put("id", id);
 		map.put("lang", lang);
 		jeredMemberService.insertreply(map);
@@ -180,10 +182,11 @@ public class JeredMemberController {
 		return "redirect:/englishhome/freeboard";
 	}
 	
-	@RequestMapping(value="deletefreeboard", method=RequestMethod.GET)
+	@RequestMapping(value="englishhome/freeboard/freeboardin/deletefreeboard", method=RequestMethod.GET)
+	@ResponseBody
 	public String deletefreeboard(@RequestParam Map<String, Object> map) {
 		jeredMemberService.deletefreeboard(map);
-		return "redirect:/englishhome/freeboard";
+		return "";
 	}
 
 

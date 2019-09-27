@@ -98,7 +98,7 @@
 		location = 'freeboard/freeboardwrite';
 	}
 	function viewthispost(bnum){
-		location= "freeboard/freeboardin/"+bnum;
+		location= "freeboardin/"+bnum;
 	}
 	
 </script>
