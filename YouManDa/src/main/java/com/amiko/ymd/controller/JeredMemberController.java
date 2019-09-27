@@ -59,7 +59,7 @@ public class JeredMemberController {
 	@RequestMapping(value="checkMyPost", method=RequestMethod.GET)
 	public String checkMyPost(Model model, HttpSession session, @RequestParam Map<String,Object> map) {
 		String id = (String)session.getAttribute("id");
-		System.out.println(id);
+
 		map.put("id", id);
 		model.addAttribute("checkfreeboardPost", jeredMemberService.checkMyPostInFreeboard(map));
 		return "checkMyPost";	

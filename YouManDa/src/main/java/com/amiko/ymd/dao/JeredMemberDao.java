@@ -29,10 +29,13 @@ public class JeredMemberDao {
 	}
 	
 	public List<Map<String, Object>> checkMyPostInFreeboard(Map<String, Object> map){
-		return ss.selectList("JeredMember.selectMyPost");
+		System.out.println("ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss");
+		
+		System.out.println(map.get("id"));
+		return ss.selectList("JeredMember.selectMyPost", map);
 	}
 	public List<Map<String, Object>> checkMyReplyInFreeboard(Map<String, Object> map){
-		return ss.selectList("JeredMember.selectMyReply");
+		return ss.selectList("JeredMember.selectMyReply", map);
 	}
 	
 	///////////////////////freeboard//////////////////////////////
