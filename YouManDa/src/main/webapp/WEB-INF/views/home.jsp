@@ -83,11 +83,15 @@
 							href="/ymd/logout" id="logout">로그아웃</a></li>
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 							href="javascript:popup()" id="scf">친구찾기</a></li>
-							<li><a id="black" onclick="popup2()"><img id="yellow"
-					style="width: 35px" /><span id="req"></span></a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-							href="javascript:popMsg()" id="msg">쪽지함</a></li>
+						<li><a onclick="javascript:popMsg()"><img id="letterx"
+								style="width: 35px" /><span id="msg"></span></a></li>
+						<li><a id="black" onclick="popup2()"><img id="yellow"
+								style="width: 35px" /><span id="req"></span></a></li>
 						
+						
+<!-- 						<li class="nav-item"><a class="nav-link js-scroll-trigger" -->
+<!-- 							href="javascript:popMsg()" id="msg">쪽지함</a></li> -->
+
 
 					</c:if>
 				</ul>
@@ -181,6 +185,24 @@
 								$('#yellow').prop("src",
 										"resources/img/854.jpg")
 								$('#req').css("color", "white")
+							}
+						}
+					});
+
+					$.ajax({
+						url : "msgList",
+
+						success : function(res) {
+							
+							
+							if (res != 0) {
+								$('#letterx').prop("src",
+										"resources/img/letter.jpg")
+								$('#msg').css("color", "yellow")
+							} else {
+								$('#letterx').prop("src",
+										"resources/img/letterno.jpg")
+								$('#msg').css("color", "white")
 							}
 						}
 					});
@@ -310,8 +332,6 @@
 
 
 <style>
-
-
 </style>
 
 
