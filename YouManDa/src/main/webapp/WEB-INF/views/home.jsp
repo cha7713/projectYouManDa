@@ -85,6 +85,8 @@
 							href="javascript:popup()" id="scf">친구찾기</a></li>
 							<li><a id="black" onclick="popup2()"><img id="yellow"
 					style="width: 35px" /><span id="req"></span></a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+							href="javascript:popMsg()" id="msg">쪽지함</a></li>
 						
 
 					</c:if>
@@ -116,6 +118,12 @@
 					function popup() {
 						var url = "/ymd/searchfriend";
 						var name = "searchfriend";
+						var option = "width = 500, height = 500, top = 100, left = 200, location = no"
+						window.open(url, name, option);
+					}
+					function popMsg() {
+						var url = "/ymd/msgList";
+						var name = "msgList";
 						var option = "width = 500, height = 500, top = 100, left = 200, location = no"
 						window.open(url, name, option);
 					}

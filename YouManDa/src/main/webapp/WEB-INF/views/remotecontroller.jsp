@@ -67,7 +67,7 @@
 
 							}
 						if(temp==1){
-									$('#frList').append("<li>" + res[i].nick + "(접속중)</li>")
+							$('#frList').append("<li onclick='pop(\""+res[i].frid+"\")'>" + res[i].nick + "(접속중)</li>")
 
 							}
 				}
@@ -88,7 +88,7 @@
 
 					}
 				if(temp!=1){
-							$('#frList').append("<li>" + res[i].nick + "</li>")
+							$('#frList').append("<li onclick='pop(\""+res[i].frid+"\")'>" + res[i].nick + "</li>")
 
 					}
 		}
@@ -103,6 +103,13 @@
 				$('#user').text(res)
 			}
 		});
+		
+		function pop(i) {
+			var url = "/ymd/msgInput?frid="+i;
+			var name = "msg";
+			var option = "width = 500, height = 500, top = 100, left = 200, location = no"
+			window.open(url, name, option);
+		}
 	</script>
 </body>
 

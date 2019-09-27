@@ -481,6 +481,42 @@ public class chaMemberController {
 		return "chat";
 	
 	}
+	
+	@RequestMapping(value = "/msgInput", method = RequestMethod.GET)
+	public String msg(Model model,HttpServletRequest req, HttpSession session ) {
+		
+		String fromId=(String) session.getAttribute("id");
+		ser.idDup(fromId);	
+		
+		String frid = req.getParameter("frid");
+		
+		model.addAttribute("fromUser",fromId);
+		
+		model.addAttribute("fromUserLang",ser.idDup(fromId));
+				
+		model.addAttribute("toUser", req.getParameter("frid"));
+		
+		model.addAttribute("toUserLang",ser.idDup(frid));
+		return "msgInput";
+	
+	}
+	@RequestMapping(value = "/msgInput", method = RequestMethod.POST)
+	public String msgSend(Model model,HttpServletRequest req, @RequestParam Map<String, Object>map ) {
+		ser.msg(map);
+		
+		return "home";
+	
+	}
+	
+	@RequestMapping(value = "/msgList", method = RequestMethod.GET)
+	public String msgSend(Model model, HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		List<Map<String, Object>> msgList = ser.selectMsg(id);
+		model.addAttribute("msgList", msgList);
+		
+		return "msgView";
+	
+	}
 }
 	
 	

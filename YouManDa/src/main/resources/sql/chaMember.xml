@@ -90,6 +90,14 @@
 		select * from `request` where id = #{value} 
 	</select>
 	
+	<insert id="msg" parameterType="map" >
+		insert into `msg`(msgcontent, id, lang, id2, lang2) values (#{msgcontent}, #{id}, #{lang}, #{id2}, #{lang2})
+	</insert>
+	
+	<select id="selectMsg" parameterType="string" resultType="map">
+		select * from `msg` where id = #{value} 
+	</select>
+	
 	
 
 </mapper>

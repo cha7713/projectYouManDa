@@ -131,6 +131,12 @@ public class chaMemberService {
 		return arr; 
 			
 		}
+	 public void msg(Map<String, Object>map) {
+			dao.msg(map);
+		}
+	 public List<Map<String, Object>> selectMsg(String id) {
+		return dao.selectMsg(id);
+	}	 
 	 
 	
 }

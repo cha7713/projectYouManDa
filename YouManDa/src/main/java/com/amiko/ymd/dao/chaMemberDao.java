@@ -94,6 +94,14 @@ public class chaMemberDao {
 		return ss.selectList("member.selectReq",id);
 	}
 	
+	public void msg(Map<String, Object>map ) {
+		ss.insert("member.msg",map);
+	}
+	
+	public List<Map<String, Object>> selectMsg(String id) {
+		return ss.selectList("member.selectMsg",id);
+	}
+	
 	
 	
 	
