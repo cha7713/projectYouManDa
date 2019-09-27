@@ -519,7 +519,7 @@ public class chaMemberController {
 	
 	}
 	
-	@RequestMapping(value = "/msgCount", method = RequestMethod.POST)
+	@RequestMapping(value = "/msgCount", method = RequestMethod.GET)
 	@ResponseBody
 	public String msgCount(Model model,HttpServletRequest req,HttpSession session) {
 		String id = (String) session.getAttribute("id");

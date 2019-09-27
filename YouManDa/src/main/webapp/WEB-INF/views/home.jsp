@@ -87,10 +87,10 @@
 								style="width: 35px" /><span id="msg"></span></a></li>
 						<li><a id="black" onclick="popup2()"><img id="yellow"
 								style="width: 35px" /><span id="req"></span></a></li>
-						
-						
-<!-- 						<li class="nav-item"><a class="nav-link js-scroll-trigger" -->
-<!-- 							href="javascript:popMsg()" id="msg">쪽지함</a></li> -->
+
+
+						<!-- 						<li class="nav-item"><a class="nav-link js-scroll-trigger" -->
+						<!-- 							href="javascript:popMsg()" id="msg">쪽지함</a></li> -->
 
 
 					</c:if>
@@ -190,11 +190,10 @@
 					});
 
 					$.ajax({
-						url : "msgList",
-
+						url : "msgCount",
 						success : function(res) {
-							
-							
+
+							console.log(res, "fadfadfadsf")
 							if (res != 0) {
 								$('#letterx').prop("src",
 										"resources/img/letter.jpg")

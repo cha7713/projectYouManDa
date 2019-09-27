@@ -105,7 +105,7 @@ public class chaMemberDao {
 		ss.update("member.msgCheck",id);
 	}
 	public int checkCount(String id) {
-		return ss.selectOne("member.msgCheck",id);
+		return ss.selectOne("member.msgCount",id);
 	}
 	
 	

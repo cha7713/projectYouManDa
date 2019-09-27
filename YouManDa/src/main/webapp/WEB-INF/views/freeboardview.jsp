@@ -158,7 +158,10 @@
 
 	getfreereply();
 					 
-		
+	function backtoList(){
+		history.back();
+		/* 거쳐온 페이지로 뒤로 가기 */
+	}	
 	
 </script>
 
