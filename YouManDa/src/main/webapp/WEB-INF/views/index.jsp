@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page pageEncoding="utf-8"%>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <html lang="en">
 
 <head>
@@ -11,10 +13,10 @@
   <title>Agency - Start Bootstrap Theme</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -696,11 +698,11 @@
   </div>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/vendor/jquery/jquery.min.js"></script>
+  <script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Contact form JavaScript -->
   <script src="js/jqBootstrapValidation.js"></script>

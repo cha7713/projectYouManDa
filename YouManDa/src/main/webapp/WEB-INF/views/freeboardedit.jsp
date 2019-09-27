@@ -48,7 +48,8 @@
       });
       function backtolist(){
 			/* location= "../freeboardin/${editpost.bnum}"; */
-    	  history.back();
+			
+     	  history.back();
           }
 
     </script>
