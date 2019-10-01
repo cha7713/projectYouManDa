@@ -56,20 +56,19 @@
 	</nav>
 
 	<div class="container">
-		<ul class="list-group" style="margin-top: 10%; ">
-			<li class="list-group-item"> title : ${viewcontent.title}
-			header : ${viewcontent.header} <br>
-			 date : ${viewcontent.bdate}<br>
-			writer :${viewcontent.id} <br>
-			content : ${viewcontent.content}<br>
-			hit : ${viewcontent.hit}<br>
-			recommend : <p id="recommend">${viewcontent.recommend}</p>
+		<ul class="list-group" style="margin-top: 15%;">
+			<li class="list-group-item"><span style="font-size:25px">${viewcontent.title}</span>
+			<span class="bar" aria-hidden="true">|</span>
+			${viewcontent.header}
+			<span style="text-align:right;"> ${viewcontent.bdate}</span><br>
+			<div class=cut style="border-bottom-style:dashed; border-bottom-width:1px"></div>
+			<div style="margin-top:2%"></div><img src="https://ssl.pstatic.net/static/cafe/cafe_pc/default/cafe_profile_77.png" width="24" height="24"> ${viewcontent.id} <br>
+			<div style="margin-top:5%"></div>${viewcontent.content}
 			</li>
 		</ul>
 	</div>
-	
 
-	<div class="container">
+	<div class="container" style="margin-top: 2%;" >
 		<input type="hidden" value="${list.bnum}"> <input
 			type="button" value="수정" onclick="freeboardedit()"
 			class="btn btn-dark btn-sm"> <input type="button" value="삭제"
@@ -82,23 +81,20 @@
 		<hr>
 		<div>
 			댓글
-			<div id="reply_list"></div>
+			<span class="bar" aria-hidden="true">|</span>
+			조회수 ${viewcontent.hit}
+			<span class="bar" aria-hidden="true">|</span>
+			추천 <p id="recommend">${viewcontent.recommend}</p>
+			
+			<div id="reply_list" style="background-color:#f9f9f9; margin-top:2%"></div>
+			<div class ="filter-30 board-box-line-dashed">
 		</div>
+	
 	</div>
 
+</div>
 
 
-	<input type="hidden" value="${list.bnum}">
-	<c:if test="${id == viewcontent.id}">
-	<input type="button" value="수정" onclick="freeboardedit()">
-	<input type="button" value="삭제" onclick="deletefreeboard()">
-	</c:if>
-	<input type="button" value="뒤로가기" onclick="backtoList()">
-	<input type="button" value="추천" onclick="recommendation()">
-	<hr>
-	댓글
-	<br>
->>>>>>> branch 'master' of https://github.com/cha7713/projectYouManDa.git
 
 	<%
 		// <c:forEach items="${viewreply}" var="replylist">
@@ -108,11 +104,12 @@
 		//  	</tr>
 		// </c:forEach>
 	%>
+<!-- 
+				<textarea class="form-control" rows="5" id="comment"
+					name="replycontent" placeholder="댓글을 입력하세요."></textarea>
+				<input type="button" value="등록" onclick="addfreereply()"
+					class="btn btn-primary" style="margin-top: 2%"> -->
 
-	<!-- 			<textarea class="form-control" rows="5" id="comment" -->
-	<!-- 				name="replycontent" placeholder="댓글을 입력하세요."></textarea> -->
-	<!-- 			<input type="button" value="등록" onclick="addfreereply()" -->
-	<!-- 				class="btn btn-primary" style="margin-top: 2%"> -->
 	<div class="container">
 		<div class="input-group mb-3" style="margin-top: 2%">
 			<input type="text" class="form-control" placeholder="댓글을 입력하세요.">
