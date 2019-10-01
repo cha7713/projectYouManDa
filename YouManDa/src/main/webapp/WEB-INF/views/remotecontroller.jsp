@@ -45,6 +45,7 @@
 
 			success : function(res) {
 				
+
 				<%String loginId = "";
 			String sep = "";
 
@@ -80,7 +81,7 @@
 
 				let temp = 0;
 				for(let list of loginList){
-					console.log(list, '    ', res[i].frid)
+					
 						if(list == res[i].frid){
 							temp = 1;
 							}
