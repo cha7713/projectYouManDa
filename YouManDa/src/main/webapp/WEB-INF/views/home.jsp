@@ -43,6 +43,9 @@
 <link
 	href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap"
 	rel="stylesheet" type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="resources/css/agency.min2.css?var=6" rel="stylesheet">
 </head>
@@ -86,13 +89,13 @@
 						<li><a id="black" onclick="popup2()"><img id="yellow"
 								style="width: 35px; margin-top: 10px; margin-left: 10px" /><span
 								id="req"></span></a></li>
- 					</c:if>
+					</c:if>
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	
+
 	<c:if test="${id!=null}">
 		<jsp:include page="remotecontroller.jsp" flush="false" />
 	</c:if>
@@ -207,7 +210,7 @@
 	</header>
 
 
-	<section class="eng" id="first">
+	<section class="eng"id="first">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -224,7 +227,7 @@
 
 		</div>
 	</section>
-	<section class="cng" id="portfolio">
+	<section class="cng"id="portfolio">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -239,7 +242,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="jap" id="services">
+	<section class="jap"id="services">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -276,15 +279,15 @@
 		$(document).ready(function() {
 			var w = $(this).width();
 			var size_eng = $('section.eng').css('background-size');
-			size_eng = w + "px " + "500px";
+			size_eng = w + "px ";
 			$('section.eng').css('background-size', size_eng)
 
 			var size_cng = $('section.cng').css('background-size');
-			size_cng = w + "px " + "500px";
+			size_cng = w + "px ";
 			$('section.cng').css('background-size', size_cng)
 
 			var size_jap = $('section.jap').css('background-size');
-			size_jap = w + "px " + "500px";
+			size_jap = w + "px ";
 			$('section.jap').css('background-size', size_jap)
 		})
 
@@ -307,33 +310,10 @@
 		})
 	</script>
 
-	<!-- Bootstrap core JavaScript -->
-<!-- 	  <script src="resources/vendor/jquery/jquery.min.js"></script> -->
-
-	<!-- Bootstrap core JavaScript -->
-	<!--   <script src="resources/vendor/jquery/jquery.min.js"></script> -->
-	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-	<!-- Plugin JavaScript -->
-	<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-	<!-- Contact form JavaScript -->
-	<script src="resources/js/jqBootstrapValidation.js"></script>
-	<script src="resources/js/contact_me.js"></script>
-
-	<!-- Custom scripts for this template -->
-	<script src="resources/js/agency.min.js"></script>
-</body>
-</html>
 
 
 
 
-
-
-<style>
-</style>
 
 
 

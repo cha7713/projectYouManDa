@@ -3106,7 +3106,7 @@ input[type="button"].btn-block {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 992) {
   .dropdown-menu-lg-left {
     right: auto;
     left: 0;

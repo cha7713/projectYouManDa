@@ -21,9 +21,7 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap"
 	rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="resources/css/agency.min.css?var=9" rel="stylesheet">
 <!-- Bootstrap core CSS -->
@@ -501,6 +499,6 @@ h1 {
 	margin-top: 70px;
 	font-size: 100px;
 	text-align: center;
-	font-family: 'Kosugi Maru', sans-serif;
+	font-family: 'Sawarabi Mincho', sans-serif;
 }
 </style>

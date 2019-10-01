@@ -3,7 +3,7 @@ body {
 	font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont,
 		'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
 		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Color Emoji', 'Cute Font', cursive, 'Yeon Sung', cursive;
+		'Noto Color Emoji', 'Cute Font', cursive, 'Yeon Sung', cursive, 'Mansalva', cursive;
 }
 
 .title{
@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI',
 		Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
 		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', 'Cute Font', cursive,
-		'Yeon Sung', cursive;
+		'Yeon Sung', cursive 'Mansalva', cursive;
 }
 
 .page-section {
@@ -73,17 +73,6 @@ h1, h2, h3, h4, h5, h6 {
 	text-shadow: none
 }
 
-img::-moz-selection {
-	background: 0 0
-}
-
-img::selection {
-	background: 0 0
-}
-
-img::-moz-selection {
-	background: 0 0
-}
 
 .btn {
 	font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -176,7 +165,7 @@ img::-moz-selection {
 	#mainNav.navbar-shrink {
 		padding-top: 0;
 		padding-bottom: 0;
-		background-color: #212529
+		background-color: #000000
 	}
 	#mainNav.navbar-shrink .navbar-brand {
 		font-size: 1.25em;
@@ -248,7 +237,6 @@ header.masthead .intro-text .intro-heading {
 	
 	
 
-
 .service-heading {
 	margin: 15px;
 	text-transform: none;
@@ -256,38 +244,54 @@ header.masthead .intro-text .intro-heading {
 	
 }
 section.eng{
-	background-image: url(../img/888.jpg);
-	background-size: 1000px 500px;
-	height: 500px;
+	text-align: center;
+	background-image: url(../img/1313.jpg);
+	height: 950px;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	background-size: cover;
+	font-family: 'Dancing Script', cursive;
 	
 	
 }
 #first .section-heading{
-	font-size: 50px;
-	margin-top: 90px;
+	font-size: 150px;
+	margin-top: 20%;
 	color: #ffffff
 }
 section.cng{
-	background-image: url(../img/123.jpg);
-	background-size: 1000px 500px;
-	height: 500px;
+	text-align: center;
+	background-image: url(../img/1111.jpg);
+	height: 950px;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	background-size: cover;
 }
 #portfolio .section-heading{
-	font-size: 50px;
-	margin-top: 90px;
-	color: #ffffff
+	font-size: 150px;
+	margin-top: 20%;
+	color: #ffffff;
+	font-family: 'Ma Shan Zheng', cursive;
 }
 
 section.jap{
-	background-image: url(../img/777.jpg);
-	background-size: 1000px 500px;
-	height: 500px;
+	text-align: center;
+	background-image: url(../img/101.jpg);
+	height: 950px;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	background-size: cover;
 }
 #services .section-heading{
-	font-size: 50px;
-	margin-top: 90px;
-	color: #ffffff
+	font-size: 150px;
+	margin-top: 20%;
+	color: #ffffff;
+	font-family: 'Sawarabi Mincho', sans-serif;
 }
+
 
 #first .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content
 	{
