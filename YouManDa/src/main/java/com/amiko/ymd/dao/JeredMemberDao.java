@@ -1,5 +1,6 @@
 package com.amiko.ymd.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -79,5 +80,12 @@ public class JeredMemberDao {
 //	public List<Map<String, Object>> selectreply(Map<String, Object> map){
 //		return ss.selectList("JeredMember.selectreply", map);
 //	} 
+	
+	public List<Map<String, Object>> searchFreeBoardList(String search_option, String keyword){
+		Map<String, Object> map = new HashMap<>();
+		map.put("search_option", search_option);
+		map.put("keyword", keyword);
+		return ss.selectList("JeredMember.searchingPost", map);
+	}
 	
 }
