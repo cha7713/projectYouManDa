@@ -51,6 +51,7 @@
 	</nav>
 
 
+	<div class="container">
 	<h1>마이 페이지</h1>
 	<button id="check" onclick="checkMyPost()" class="btn btn-dark btn-sm">
 		등록한 게시글</button>
@@ -59,7 +60,6 @@
 	<br>
 	<br>
 	<br>
-	<div class="container">
 		<ul class="list-group">
 
 
@@ -107,9 +107,9 @@
 
 
 
-	<button id="edit" class="btn btn-outline-warning btn-sm"
+	<button id="edit" class="btn btn-warning btn-sm"
 		onclick='editmypage()'>수정</button>
-	<button id="del" class="btn btn-outline-danger btn-sm"
+	<button id="del" class="btn btn-danger btn-sm"
 		onclick='deleteMyAccount()'>회원탈퇴</button>
 
 	<script>
@@ -166,7 +166,7 @@ h1 {
 }
 
 #check {
-	margin-left: 43%
+	margin-left: 40%
 }
 #check2 {
 	margin-left: 1%
