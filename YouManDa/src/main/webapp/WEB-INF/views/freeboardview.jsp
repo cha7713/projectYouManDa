@@ -88,6 +88,17 @@
 
 
 
+	<input type="hidden" value="${list.bnum}">
+	<c:if test="${id == viewcontent.id}">
+	<input type="button" value="수정" onclick="freeboardedit()">
+	<input type="button" value="삭제" onclick="deletefreeboard()">
+	</c:if>
+	<input type="button" value="뒤로가기" onclick="backtoList()">
+	<input type="button" value="추천" onclick="recommendation()">
+	<hr>
+	댓글
+	<br>
+>>>>>>> branch 'master' of https://github.com/cha7713/projectYouManDa.git
 
 	<%
 		// <c:forEach items="${viewreply}" var="replylist">
