@@ -109,6 +109,45 @@
 		 WHERE bnum = #{bnum}		
 	</delete>
 
+	<!-- 게시글 검색 -->
+	<select id="searchingPost" resultType="map" parameterType="map">
+	
+		SELECT
+		 bnum, header, title, id, bdate ,hit, recomend
+		 FROM `freeboard`
+		 
+		 <if test="#{search_option != null and search_option != ''}">
+			 <include refid="search" />
+		 </if>
+		 
+		 
+		 ORDER BY bnum DESC
+	
+	</select>
+	
+	<sql id="search">
+		
+		<choose>
+			<when test="search_option == 'all' ">
+				where
+					id like CONCAT('%',#{keyword},'%')
+					or content like CONCAT('%',#{keyword},'%')
+					or title like CONCAT('%',#{keyword},'%')
+			</when>
+			<when test="search_option == 'user_id' ">
+				where
+					id like CONCAT('%',#{keyword},'%')
+			</when>
+			<when test="search_option == 'title' ">
+				where
+					title like CONCAT('%',#{keyword},'%')
+			</when>
+			<when test="search_option == 'content' ">
+				where
+					content like CONCAT('%',#{keyword},'%')
+			</when>
+		</choose>
+	</sql>
 
 
 </mapper>

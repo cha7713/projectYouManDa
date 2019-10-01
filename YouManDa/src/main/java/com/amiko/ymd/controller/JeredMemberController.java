@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.amiko.ymd.service.JeredMemberService;
 import com.mysql.jdbc.StringUtils;
@@ -88,15 +89,7 @@ public class JeredMemberController {
 	
 	///////////////////////////////////BoardPart////////////////////////////////////////////
 	
-	@RequestMapping(value = "englishhome/freeboard", method = RequestMethod.GET)
-	public String freeboardListGET(Model model) {
-		//model.addAttribute("fblist",jeredMemberService.selectFreeBoardList());
-		List<Map<String, Object>> a=jeredMemberService.selectFreeBoardList();
-		model.addAttribute("fblist",a);
-		
-		return "freeboard";
-	}
-	
+
 	@RequestMapping(value = "englishhome/freeboard/ajax", method = RequestMethod.GET) //AJAX연습
 	@ResponseBody
 	public List<Map<String, Object>> freeboardListGET22() {
@@ -220,11 +213,42 @@ public class JeredMemberController {
 		jeredMemberService.deletefreeboard(map);
 		return "";
 	}
-
-
 	
+	@RequestMapping(value = "englishhome/freeboard", method = RequestMethod.GET)
+	public String freeboardListGET(Model model) {
+		//model.addAttribute("fblist",jeredMemberService.selectFreeBoardList());
+		List<Map<String, Object>> a=jeredMemberService.selectFreeBoardList();
+		model.addAttribute("fblist",a);
+		
+		return "freeboard";
+	}
 	
+	@RequestMapping("englishhome/list.do")
+		public ModelAndView list( // RequestParam으로 옵션,키워드 기본값 설정
+		
+				@RequestParam(defaultValue="") String search_option, //기본 검색 옵션값을 작성자로 한다.
 
+	            @RequestParam(defaultValue="") String keyword   //키워드의 기본값을 ""으로 한다.
+	 
+	            )
+	             throws Exception{
+		
+		//int count=1000;
+		
+		System.out.println(search_option);
+		System.out.println(keyword);
+		
+		List<Map<String,Object>> list = jeredMemberService.searchFreeBoardList(search_option, keyword);
+				
+		ModelAndView mav = new ModelAndView();
+
+		mav.addObject("fblist",list);
+		mav.addObject("search_option",search_option);
+		mav.addObject("keyword",keyword);
+		mav.setViewName("freeboard");
+		
+		return mav;
+	}
 	
 	
 }

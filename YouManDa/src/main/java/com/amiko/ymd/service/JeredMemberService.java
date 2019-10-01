@@ -112,5 +112,9 @@ public class JeredMemberService {
 //	public List<Map<String,Object>> selectreply(Map<String, Object> map){
 //		return jeredMemberDao.selectreply(map);
 //	}
+	
+	public List<Map<String, Object>> searchFreeBoardList(String search_option, String keyword){
+		return jeredMemberDao.searchFreeBoardList(search_option, keyword);
+	}
 
 }
