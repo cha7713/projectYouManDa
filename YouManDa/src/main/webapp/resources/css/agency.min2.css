@@ -164,7 +164,7 @@ img::-moz-selection {
 		padding-bottom: 10px;
 		transition: padding-top .3s, padding-bottom .3s;
 		border: none;
-		background-color: black;
+		background-color:transparent;
 	}
 	#mainNav .navbar-brand {
 		font-size: 1.75em;

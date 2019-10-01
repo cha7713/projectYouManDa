@@ -6,11 +6,17 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <style type="text/css">
+#user {
+	text-align: center;
+}
+#list {
+	text-align: center;
+}
+
 .remote {
 	position: fixed;
 	right: 10%;
 	top: 180px;
-	text-align: center;
 	width: 200px;
 	height: 300px;
 }
@@ -26,11 +32,10 @@
 	%>
 	<div class="remote ui-widget-content" id="draggable"
 		style="background-color: #fec810; border-color: #fec810">
-
-
+		
 		<p id="user">${id}</p>
 		<div>
-			<span>친구목록 </span>
+			<p id="list">친구목록 </p>
 			<p id="frList"></p>
 		</div>
 	</div>

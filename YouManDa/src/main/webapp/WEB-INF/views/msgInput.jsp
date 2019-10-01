@@ -23,9 +23,7 @@
 				name="lang2" value="${fromUserLang}"> <label for="comment">내용</label>
 			<textarea name="msgcontent"></textarea>
 			<input type="submit" value="쪽지보내기">
-
 		</form>
-
 	</div>
 </body>
 

@@ -1,6 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page pageEncoding="utf-8"%>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
 <%
 	HttpSession session2 = request.getSession();
@@ -45,8 +44,7 @@
 	href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap"
 	rel="stylesheet" type='text/css'>
 <!-- Custom styles for this template -->
-<link href="resources/css/agency.min2.css?var=3" rel="stylesheet">
-
+<link href="resources/css/agency.min2.css?var=5" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -60,7 +58,7 @@
 				data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
 				aria-label="Toggle navigation">
-				MENU <i class="fas fa-bars"></i>
+				Menu <i class="fas fa-bars"></i>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ml-auto">
@@ -84,20 +82,17 @@
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 							href="javascript:popup()" id="scf">친구찾기</a></li>
 						<li><a onclick="javascript:popMsg()"><img id="letterx"
-								style="width: 30px; margin-top:10px" /><span id="msg"></span></a></li>
+								style="width: 30px; margin-top: 10px" /><span id="msg"></span></a></li>
 						<li><a id="black" onclick="popup2()"><img id="yellow"
-								style="width: 35px;margin-top:10px;margin-left:10px" /><span id="req"></span></a></li>
-
-
-						<!-- 						<li class="nav-item"><a class="nav-link js-scroll-trigger" -->
-						<!-- 							href="javascript:popMsg()" id="msg">쪽지함</a></li> -->
-
-
-					</c:if>
+								style="width: 35px; margin-top: 10px; margin-left: 10px" /><span
+								id="req"></span></a></li>
+ 					</c:if>
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	
 	<c:if test="${id!=null}">
 		<jsp:include page="remotecontroller.jsp" flush="false" />
 	</c:if>
@@ -312,17 +307,18 @@
 		})
 	</script>
 	<!-- Bootstrap core JavaScript -->
+	  <script src="resources/vendor/jquery/jquery.min.js"></script>
 	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	<!-- Plugin JavaScript -->
 	<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 	<!-- Contact form JavaScript -->
-	<script src="js/jqBootstrapValidation.js"></script>
-	<script src="js/contact_me.js"></script>
+	<script src="resources/js/jqBootstrapValidation.js"></script>
+	<script src="resources/js/contact_me.js"></script>
 
 	<!-- Custom scripts for this template -->
-	<script src="js/agency.min.js"></script>
+	<script src="resources/js/agency.min.js"></script>
 </body>
 </html>
 

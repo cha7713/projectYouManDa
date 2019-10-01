@@ -6,6 +6,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -51,30 +55,40 @@
 		</div>
 	</nav>
 
+	<div class="container">
+		<ul class="list-group" style="margin-top: 10%; ">
+			<li class="list-group-item"> title : ${viewcontent.title}
+			header : ${viewcontent.header} <br>
+			 date : ${viewcontent.bdate}<br>
+			writer :${viewcontent.id} <br>
+			content : ${viewcontent.content}<br>
+			hit : ${viewcontent.hit}<br>
+			recommend : <p id="recommend">${viewcontent.recommend}</p>
+			</li>
+		</ul>
+	</div>
+	
 
-	header : ${viewcontent.header}
-	<br> title : ${viewcontent.title}
-	<br> date : ${viewcontent.bdate}
-	<br> writer : ${viewcontent.id}
-	<br> content : ${viewcontent.content}
-	<br> hit : ${viewcontent.hit}
-	<br> recommend :
-	<p id="recommend">${viewcontent.recommend}</p>
-	<br>
+	<div class="container">
+		<input type="hidden" value="${list.bnum}"> <input
+			type="button" value="수정" onclick="freeboardedit()"
+			class="btn btn-dark btn-sm"> <input type="button" value="삭제"
+			onclick="deletefreeboard()" class="btn btn-dark btn-sm"> <input
+			type="button" value="뒤로가기" onclick="backtoList()"
+			class="btn btn-dark btn-sm"> <input type="button" value="추천"
+			onclick="recommendation()" class="btn btn-dark btn-sm">
+	</div>
+	<div class="container">
+		<hr>
+		<div>
+			댓글
+			<div id="reply_list"></div>
+		</div>
+	</div>
 
 
 
-	<input type="hidden" value="${list.bnum}">
-	<input type="button" value="수정" onclick="freeboardedit()">
-	<input type="button" value="삭제" onclick="deletefreeboard()">
-	<input type="button" value="뒤로가기" onclick="backtoList()">
-	<input type="button" value="추천" onclick="recommendation()">
-	<hr>
-	댓글
-	<br>
 
-
-	<div id="reply_list"></div>
 	<%
 		// <c:forEach items="${viewreply}" var="replylist">
 		//  	<tr>
@@ -83,103 +97,114 @@
 		//  	</tr>
 		// </c:forEach>
 	%>
-	<hr>
 
-	<input type="text" placeholder="댓글을 입력하세요." name="replycontent">
-	<input type="button" value="댓글 등록" onclick="addfreereply()">
+	<!-- 			<textarea class="form-control" rows="5" id="comment" -->
+	<!-- 				name="replycontent" placeholder="댓글을 입력하세요."></textarea> -->
+	<!-- 			<input type="button" value="등록" onclick="addfreereply()" -->
+	<!-- 				class="btn btn-primary" style="margin-top: 2%"> -->
+	<div class="container">
+		<div class="input-group mb-3" style="margin-top: 2%">
+			<input type="text" class="form-control" placeholder="댓글을 입력하세요.">
+			<div class="input-group-append">
+				<button class="btn btn-dark btn-sm" type="submit" value="등록"
+					onclick="addfreereply()">등록</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
 
+<script>
+	function freeboardedit(bnum) {
+		location = "freeboardedit/${viewcontent.bnum}";
+	}
 
-	<script>
-		function freeboardedit(bnum) {
-			location = "freeboardedit/${viewcontent.bnum}";
+	function backtoList() {
+		history.back();
+		/* 거쳐온 페이지로 뒤로 가기 */
+	}
+
+	function recommendation() {
+		let bnum = $
+		{
+			viewcontent.bnum
 		}
+		bnum = Number(bnum)
+		console.log(bnum)
+		$.ajax({
+			url : "../../../recommendation",
+			data : {
+				bnum : bnum
+			},
+			success : function(res) {
+				let rec = $("#recommend").text()
+				rec = Number(rec)
+				rec += 1;
+				$("#recommend").text(rec)
 
-		function backtoList() {
-			history.back();
-			/* 거쳐온 페이지로 뒤로 가기 */
-		}
-
-		function recommendation() {
-			let bnum = $
-			{
-				viewcontent.bnum
 			}
-			bnum = Number(bnum)
-			console.log(bnum)
-			$.ajax({
-				url : "../../../recommendation",
-				data : {
-					bnum : bnum
-				},
-				success : function(res) {
-					let rec = $("#recommend").text()
-					rec = Number(rec)
-					rec += 1;
-					$("#recommend").text(rec)
+		});
+	}
+
+	function addfreereply() {
+		$.ajax({
+			url : '../../../addfreereply',
+			data : {
+				"replycontent" : $('[name=replycontent]').val(),
+				"bnum" : "${viewcontent.bnum}"
+			},
+			success : function(res) {
+				console.log(res);
+
+				getfreereply();
+			}
+		})
+
+	}
+
+	function getfreereply() {
+		$.ajax({
+			url : '../reply',
+			data : {
+				"bnum" : "${viewcontent.bnum}"
+			},
+			success : function(res) {
+				var html = '';
+				for (var i = 0; i < res.length; i++) {
+					var nick = res[i].nick;
+					var content = res[i].content;
+					html += '작성자 : ' + nick + '&nbsp;&nbsp;&nbsp;&nbsp;'
+							+ '내용 : ' + content + '<br>';
 
 				}
-			});
-		}
+				$('#reply_list').empty();
+				$('#reply_list').append(html);
 
-		function addfreereply() {
-			$.ajax({
-				url : '../../../addfreereply',
-				data : {
-					"replycontent" : $('[name=replycontent]').val(),
-					"bnum" : "${viewcontent.bnum}"
-				},
-				success : function(res) {
-					console.log(res);
+			}
+		})
 
-					getfreereply();
-				}
-			})
+	}
 
-		}
+	getfreereply();
 
-		function getfreereply() {
-			$.ajax({
-				url : '../reply',
-				data : {
-					"bnum" : "${viewcontent.bnum}"
-				},
-				success : function(res) {
-					var html = '';
-					for (var i = 0; i < res.length; i++) {
-						var nick = res[i].nick;
-						var content = res[i].content;
-						html += '작성자 : ' + nick + '&nbsp;&nbsp;&nbsp;&nbsp;'
-								+ '내용 : ' + content + '<br>';
+	function deletefreeboard() {
+		$.ajax({
+			url : 'deletefreeboard',
+			data : {
+				"bnum" : "${viewcontent.bnum}"
+			},
+			success : function(res) {
+				console.log(res, "srgdg")
+				location = "../";
 
-					}
-					$('#reply_list').empty();
-					$('#reply_list').append(html);
+			}
 
-				}
-			})
+		})
 
-		}
+	}
+</script>
 
-		getfreereply();
-
-		function deletefreeboard() {
-			$.ajax({
-				url : 'deletefreeboard',
-				data : {
-					"bnum" : "${viewcontent.bnum}"
-				},
-				success : function(res) {
-					console.log(res,"srgdg")
-					location = "../";
-
-				}
-
-			})
-
-		}
-	</script>
-
-	<style>
+<style>
 #mainNav {
 	background-color: #212529
 }
