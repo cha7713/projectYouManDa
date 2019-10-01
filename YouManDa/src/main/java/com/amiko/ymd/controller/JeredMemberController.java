@@ -105,17 +105,21 @@ public class JeredMemberController {
 		return a;
 	}
 	
+	//게시글 쓰기get
 	@RequestMapping(value = "englishhome/freeboard/freeboardwrite", method = RequestMethod.GET)
 	public String freeboardWriteGET() {
 		return "freeboardwrite";
 	}
 	
+	// 게시글 쓰기post
 	@RequestMapping(value = "englishhome/freeboard/freeboardwrite", method = RequestMethod.POST)
 	public String freeboardWritePost(@RequestParam Map<String, Object> map) {
 		jeredMemberService.insertFreeBoard(map);
 		return "redirect:/englishhome/freeboard";
 	}
 	
+	
+	// 지정 게시물 조인시 동작
 	@RequestMapping(value="englishhome/freeboard/freeboardin/{bnum}", method=RequestMethod.GET)
 	public String selectFreeBoardOne(Model model,@PathVariable("bnum") int bnum,HttpServletRequest req, HttpServletResponse res) {
 		model.addAttribute("viewcontent",jeredMemberService.selectFreeBoardOne(bnum));
