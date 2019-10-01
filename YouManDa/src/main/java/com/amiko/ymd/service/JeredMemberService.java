@@ -81,8 +81,12 @@ public class JeredMemberService {
 	}
 
 	public Map<String, Object> selectFreeBoardOne(int bnum){
-		jeredMemberDao.updateHit(bnum);
+		//jeredMemberDao.updateHit(bnum);
 		return jeredMemberDao.selectFreeBoardOne(bnum);
+	}
+	
+	public int updateHit(int bnum) {
+		return jeredMemberDao.updateHit(bnum);
 	}
 	
 	public int freeBoardEdit(Map<String, Object> map) {
