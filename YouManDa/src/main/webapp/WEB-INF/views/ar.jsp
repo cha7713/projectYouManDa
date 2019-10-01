@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
-<html lang="en">
+
 <head>
 <meta charset="utf-8">
 
@@ -23,11 +23,10 @@
 	href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap"
 	rel="stylesheet">
 </head>
-<html>
 
 <body>
-<h3>YouManDa</h3>
-	<h1 style="text-align: center; margin-top:5%">친구신청 목록</h1>
+<h3 style="margin-top:2%;margin-left:2%;">YouManDa</h3>
+	<h2 style="text-align: center; margin-top:3%; color:#ffffff;">친구신청 목록</h2>
 
 		<div class="container">
 			<ul class="list-group">
@@ -122,4 +121,8 @@ h3 {
 	color: #fed136;
 	font-size: 27px;
 }
+body{
+	background-color:#000000;
+}
+
 </style>
