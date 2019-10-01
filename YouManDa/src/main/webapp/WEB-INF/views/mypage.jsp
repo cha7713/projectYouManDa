@@ -52,10 +52,10 @@
 
 
 	<h1>마이 페이지</h1>
-	<button id="check" onclick="checkMyPost()" class="btn btn-dark btn-sm">내
-		게시물 확인</button>
-	<button id="check2" onclick="checkMyReply()" class="btn btn-dark btn-sm">내
-		댓글 확인</button>
+	<button id="check" onclick="checkMyPost()" class="btn btn-dark btn-sm">
+		등록한 게시글</button>
+	<button id="check2" onclick="checkMyReply()" class="btn btn-dark btn-sm">
+		등록한 댓글</button>
 	<br>
 	<br>
 	<br>
@@ -166,7 +166,7 @@ h1 {
 }
 
 #check {
-	margin-left: 44%
+	margin-left: 43%
 }
 #check2 {
 	margin-left: 1%

@@ -1,13 +1,67 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-³» ´ñ±Û È®ÀÎ
-<table border="1">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link
+	href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap"
+	rel="stylesheet">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+		<div class="container">
+			<a class="navbar-brand" href="/ymd/">YouManDa</a> <i
+				class="fas fa-bars"></i>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav text-uppercase ml-auto">
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/ymd/englishhome/freeboard">ììœ ê²Œì‹œíŒ</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#portfolio">ì •ë³´ê²Œì‹œíŒ</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#services">ëª¨ì„ê²Œì‹œíŒ</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/ymd/mypage/${id}">ìµëª…ê²Œì‹œíŒ</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/ymd/logout" id="logout">ì¥í„°</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#services">ê°™ì´ì‚´ì</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/ymd/mypage/${id}">ë§ˆì´í˜ì´ì§€</a></li>
+						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+							href="/ymd/logout" id="logout">ë¡œê·¸ì•„ì›ƒ</a></li>
+					
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+<div class="container">
+<div style="margin-top:10%; "></div>
+<img src="https://ssl.pstatic.net/static/cafe/cafe_pc/default/cafe_profile_77.png" width="80" height="80"><span style="font-size:50px"> ${id}</span> <br>
+<table class="table">
+<br>
+<div>
+<a href="/ymd/checkMyPost">ë“±ë¡í•œ ê²Œì‹œê¸€</a>
+<span class="bar" aria-hidden="true">|</span>
+<a href="/ymd/checkMyReply">ë“±ë¡í•œ ëŒ“ê¸€</a>
+</div>
 	<tr>
-		<th>°Ô½Ã±Û Á¦¸ñ ¾î¶»°Ô °¡Á®¿ÀÁö..</th>
-		<th>´ñ±Û³»¿ë</th>
+		<th>ì œëª©</th>
+		<th>ëŒ“ê¸€ë‚´ìš©</th>
 
 	</tr>
 
@@ -22,7 +76,7 @@
 
 
 
-<input type="button" value="µÚ·Î°¡±â" onclick="backToMypage()">
+<input type="button" value="ë’¤ë¡œê°€ê¸°" onclick="backToMypage()"class="btn btn-dark btn-sm">
 
 
 <script>
@@ -30,3 +84,100 @@
 		history.back();
 		}
 </script>
+<style>
+@media ( min-width :992px) {
+	#mainNav {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		transition: padding-top .3s, padding-bottom .3s;
+		border: none;
+		background-color: #000000;
+	}
+	#mainNav .navbar-nav .nav-item .nav-link {
+		padding: 1.1em 1em !important
+	}
+}
+
+#check {
+	margin-left: 44%
+}
+#check2 {
+	margin-left: 1%
+}
+#mainNav {
+	background-color: #212529
+}
+
+#mainNav .navbar-toggler {
+	font-size: 12px;
+	right: 0;
+	padding: 13px;
+	text-transform: uppercase;
+	color: #fff;
+	border: 0;
+	background-color: #fed136;
+	font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', 
+}
+
+#mainNav .navbar-brand {
+	color: #fed136;
+	font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont,
+		'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+		'Noto Color Emoji'
+}
+
+#mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus,
+	#mainNav .navbar-brand:hover {
+	color: #fec503
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+	font-size: 90%;
+	font-weight: 400;
+	padding: .75em 0;
+	letter-spacing: 1px;
+	color: #fff;
+	font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover
+	{
+	color: #fed136
+}
+
+@media ( min-width :992px) {
+	#mainNav {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		transition: padding-top .3s, padding-bottom .3s;
+		border: none;
+		background-color: #000000;
+	}
+	#mainNav .navbar-brand {
+		font-size: 1.75em;
+		transition: all .3s
+	}
+	#mainNav .navbar-nav .nav-item .nav-link {
+		padding: 1.1em 1em !important
+	}
+	#mainNav.navbar-shrink {
+		padding-top: 0;
+		padding-bottom: 0;
+		background-color: #212529
+	}
+	#mainNav.navbar-shrink .navbar-brand {
+		font-size: 1.25em;
+		padding: 12px 0
+	}
+}
+a{
+	color:black;
+}
+
+
+</style>

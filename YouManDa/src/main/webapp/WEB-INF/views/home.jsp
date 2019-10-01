@@ -44,7 +44,7 @@
 	href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap"
 	rel="stylesheet" type='text/css'>
 <!-- Custom styles for this template -->
-<link href="resources/css/agency.min2.css?var=5" rel="stylesheet">
+<link href="resources/css/agency.min2.css?var=6" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -307,8 +307,7 @@
 		})
 	</script>
 	<!-- Bootstrap core JavaScript -->
-	<!--   <script src="resources/vendor/jquery/jquery.min.js"></script> -->
-	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- 	  <script src="resources/vendor/jquery/jquery.min.js"></script> -->
 
 	<!-- Plugin JavaScript -->
 	<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
