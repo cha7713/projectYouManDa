@@ -58,10 +58,8 @@
 	<ul class="list-group">
 		<form method="post">
 			<li class="list-group-item">아이디 : ${personalinfo.id}</li>
-			<li class="list-group-item">이름 : <input type="text" name="name"
-				value="${personalinfo.name}"></li>
-			<li class="list-group-item">닉네임 : <input type="text" name="nick"
-				value="${personalinfo.nick}"></li>
+			<li class="list-group-item">이름 : <input type="text" name="name" value="${personalinfo.name}"></li>
+			<li class="list-group-item">닉네임 : <input type="text" name="nick" value="${personalinfo.nick}"><span id="nick"></span></li>
 			<li class="list-group-item">성별 : <c:choose>
 					<c:when test="${personalinfo.sex} == 1">
 			MALE<br>
@@ -105,6 +103,30 @@
 	function backToMypage() {
 		location = "../mypage/${personalinfo.id}"
 	}
+
+	$("[name=nick]").focusout(()=>{
+		$.ajax({
+	        url:"nickDup",
+	        data : {nick : $("[name=nick]").val()},
+	        success: function(res){
+	            console.log(res);
+	           
+	           if(res==0 && $("[name=nick]").val() !="" ){
+	        	   $("#nick").text("사용가능한 닉네임 입니다") 
+	        	   $("#nick").css("color","blue")
+	        	   isNick = 1
+	           }else {
+	        	   $("#nick").text("이미 존재하는 닉네임 입니다")
+	        	   $("#nick").css("color","red")
+	        	   isNick = 0
+			}
+	        } 
+	    });
+	})
+
+
+
+	
 </script>
 
 <style>

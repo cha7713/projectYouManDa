@@ -296,7 +296,6 @@
 			
 		})
 		
-</nav>
 	</script>
 </body>
 <style>
