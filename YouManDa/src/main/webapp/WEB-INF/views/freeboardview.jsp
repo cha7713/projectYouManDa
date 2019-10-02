@@ -112,7 +112,7 @@
 
 	<div class="container">
 		<div class="input-group mb-3" style="margin-top: 2%">
-			<input type="text" class="form-control" placeholder="댓글을 입력하세요.">
+			<input type="text" class="form-control" name="replycontent" placeholder="댓글을 입력하세요.">
 			<div class="input-group-append">
 				<button class="btn btn-dark btn-sm" type="submit" value="등록"
 					onclick="addfreereply()">등록</button>
