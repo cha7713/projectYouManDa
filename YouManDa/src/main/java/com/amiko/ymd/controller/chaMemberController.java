@@ -114,6 +114,9 @@ public class chaMemberController {
 			session.removeAttribute("loginList");
 			session.setAttribute("loginList", loginId);
 			
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			System.out.println(loginId);
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 			return "home";
 		} else {
 			model.addAttribute("msg", "로그인 실패");

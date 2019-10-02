@@ -70,19 +70,19 @@
 	});
     
  
+   let nick;
 	$.ajax({
 		url : "userNick",
 		success : function(res) {
 			nick = res
 			$('#user').text(res)
+		    $("#title").text(nick)
 		}
 	});
-	   let nick;
-	    $("#title").text(nick)
 </script>
 </head>
 <body>
-대화상대:<h3 id="title"></h3>
+<h3 id="title"></h3>
 <input type="text" id="message"/>
 <input type="button" id="sendBtn" value="전송"/>
 <div id="data"></div>
