@@ -254,7 +254,7 @@ h1 {
 	margin-top: 60px;
 	font-size: 100px;
 	text-align: center;
-	font-family: 'Sawarabi Mincho', sans-serif;
+	font-family: 'Ma Shan Zheng', cursive;
 }
 .row{
 	margin-left:15%

@@ -34,7 +34,7 @@ $(document).ready(function() {
 					    data : {id :res[i].id2},
 					    success: function(res){
 					        console.log(res);
-				        	$('#req').append('<td>'+'<span>'+res.name+'</span>님의 친구신청입니다'+'</td><td>'+'<button onclick="ok('+j+')">수락</button></td><td><button onclick="reject('+j+')">거절</button></td><br>')
+				        	$('#req').append('<tr><td>'+'<span>'+res.name+'</span>님의 친구신청입니다'+'</td><td>'+'<button onclick="ok('+j+')">수락</button></td><td><button onclick="reject('+j+')">거절</button></td></tr>')
 			     		 } 
 					});
 	        	})(i);

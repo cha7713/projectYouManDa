@@ -9,17 +9,7 @@
 
 <html>
 <head>
-
-
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-
-
-<title>YouManDa</title>
-
+<head>
 <!-- Bootstrap core CSS -->
 <link href="resources/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -48,6 +38,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="resources/css/agency.min2.css?var=6" rel="stylesheet">
+</head>
+
 </head>
 
 <body id="page-top">

@@ -3,7 +3,7 @@ body {
 	font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont,
 		'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
 		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Color Emoji', 'Cute Font', cursive, 'Yeon Sung', cursive, 'Mansalva', cursive;
+		'Noto Color Emoji', 'Cute Font', cursive, 'Yeon Sung', cursive, 'Mansalva', cursive, 'Sawarabi Mincho', sans-serif;
 }
 
 .title{
@@ -32,7 +32,6 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI',
 		Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
 		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', 'Cute Font', cursive,
-		'Yeon Sung', cursive 'Mansalva', cursive;
 }
 
 .page-section {
@@ -289,21 +288,22 @@ section.jap{
 	font-size: 150px;
 	margin-top: 20%;
 	color: #ffffff;
-	font-family: 'Sawarabi Mincho', sans-serif;
+	font-family:'Sawarabi Mincho', sans-serif;
+	
 }
 
 
-#first .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content
-	{
-	font-size: 20px;
-	position: absolute;
-	top: 50%;
-	width: 100%;
-	height: 20px;
-	margin-top: -12px;
-	text-align: center;
-	color: #fff
-}
+/* #first .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content */
+/* 	{ */
+/* 	font-size: 20px; */
+/* 	position: absolute; */
+/* 	top: 50%; */
+/* 	width: 100%; */
+/* 	height: 20px; */
+/* 	margin-top: -12px; */
+/* 	text-align: center; */
+/* 	color: #fff */
+/* } */
 
 
 .footer {
