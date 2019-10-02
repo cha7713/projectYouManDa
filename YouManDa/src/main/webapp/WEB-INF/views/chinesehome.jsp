@@ -49,7 +49,7 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="/ymd/englishhome/freeboard">일어권 홈</a></li>
+						href="/ymd/englishhome/freeboard">중어권 홈</a></li>
 					<c:if test="${id==null}">
 						<li class="nav-item"><a class="nav-link js-scroll-trigger"
 							href="/ymd/login">로그인</a></li>
@@ -92,19 +92,19 @@
 	<!-- 몸통 -->
 	<section class="bg-light page-section" id="portfolio">
 		<div class="container">
-			<div class="row">
+	
 				<div class="col-lg-12 text-center">
 					<h1 class="section-heading text-uppercase" style="color: black;">汉语</h1>
 					<h3 class="section-subheading text-muted">Lorem ipsum dolor
 						sit amet consectetur.</h3>
 				</div>
-			</div>
+			
 			<div class="row">
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a class="portfolio-link">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
-								<i class="fas fa-plus fa-3x"></i>
+								<a class="fas fa-plus fa-3x" href="/ymd/englishhome/freeboard"></a>
 							</div>
 						</div>
 					</a>
@@ -255,5 +255,8 @@ h1 {
 	font-size: 100px;
 	text-align: center;
 	font-family: 'Sawarabi Mincho', sans-serif;
+}
+.row{
+	margin-left:15%
 }
 </style>
