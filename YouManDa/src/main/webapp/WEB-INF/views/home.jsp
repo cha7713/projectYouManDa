@@ -275,40 +275,7 @@
 		</div>
 	</footer>
 
-	<script>
-		$(document).ready(function() {
-			var w = $(this).width();
-			var size_eng = $('section.eng').css('background-size');
-			size_eng = w + "px ";
-			$('section.eng').css('background-size', size_eng)
-
-			var size_cng = $('section.cng').css('background-size');
-			size_cng = w + "px ";
-			$('section.cng').css('background-size', size_cng)
-
-			var size_jap = $('section.jap').css('background-size');
-			size_jap = w + "px ";
-			$('section.jap').css('background-size', size_jap)
-		})
-
-		$(window).resize(function() {
-			var w = $(this).width();
-			//   		var section_eng = $('section.eng').height();
-			var size_eng = $('section.eng').css('background-size');
-			size_eng = w + "px " + "500px";
-			$('section.eng').css('background-size', size_eng)
-
-			//   		var section_cng = $('section.cng').height();
-			var size_cng = $('section.cng').css('background-size');
-			size_cng = w + "px " + "500px";
-			$('section.cng').css('background-size', size_cng)
-
-			//   		var section_jap = $('section.jap').height();
-			var size_jap = $('section.jap').css('background-size');
-			size_jap = w + "px " + "500px";
-			$('section.jap').css('background-size', size_jap)
-		})
-	</script>
+	
 
 
 

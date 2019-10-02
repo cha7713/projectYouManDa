@@ -22,8 +22,6 @@
 <link href="resources/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 
-<!-- Custom styles for this template -->
-<link href="resources/css/join.css?var=9" rel="stylesheet">
 </head>
 <body>
 	<div class="container" style="margin-left:120%">
@@ -91,10 +89,10 @@
 					<input name="birthday" type="date" required="required">
 					<br> 
 					주소 
+					<input type="button" class="address"  onclick="searchaddress()" value="검색"><br>
 					<input name="address" type="text">
 					<br> 
 					상세주소<input name="add2" type="text" ><br>
-					<input type="button" class="address"  onclick="searchaddress()" value="주소검색"><br>
 					email <input name="email" id="email" type="email">
 					<span id="emailCheck"></span>
 					<br> 
@@ -298,7 +296,75 @@
 			
 		})
 		
-	</script>
 </nav>
+	</script>
 </body>
-</html>
+<style>
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+#mainNav .navbar-brand {
+	color: #fed136;
+	font-family: 'Kaushan Script';
+	margin-top: 100px;
+	font-size: 60px;
+}
+
+.placeholder {
+	color: #444;
+}
+
+#slick-login input[type="text"], #slick-login input[type="password"],#slick-login input[type="email"],#slick-login input[type="date"],#slick-login select[name="lang"],#slick-login select[name="sex"] {
+	width: 99%;
+	height: 50px;
+	positon: absolute;
+	margin-top: 7px;
+	font-size: 14px;
+	color: #444;
+
+}
+
+#slick-login input[name="p1"], #slick-login input[name="p2"], #slick-login input[name="p3"]{
+	width: 31.3%;
+	height: 40px;
+	positon: absolute;
+	margin-top: 7px;
+	font-size: 14px;
+	color: #444;
+	outline: none;
+
+}
+
+
+
+#slick-login input[type="submit"] {
+	width: 99%;
+	height: 50px;
+	margin-top: 7px;
+	color: #000000;
+	font-size: 18px;
+	background-color: #fed136;
+
+}
+
+#slick-login input[type="button"] {
+	width: 10%;
+	height: 30px;
+	margin-top: 7px;
+	color: #000000;
+	font-size: 18px;
+	background-color: #fed136;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+</style>

@@ -26,8 +26,6 @@
 <link href="resources/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 
-<!-- Custom styles for this template -->
-<link href="resources/css/login.css?var=2" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
@@ -40,96 +38,138 @@
 			<br> <input type="password" name="pw" class="placeholder"
 				placeholder="비밀번호"> <br> <input type="submit"
 				value="로그인" id="submit">
-
-			<hr>
-
-			<a id="custom-login-btn" href="javascript:loginWithKakao()">
-			 <img class="img" src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg"
-				 />
-			</a> <a href="http://developers.kakao.com/logout"></a>
-			
+		</form>
+		
+		<a id="custom-login-btn" href="javascript:loginWithKakao()"> <img
+			class="img"
+			src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" />
+		</a> <a href="http://developers.kakao.com/logout"></a>
 
 
-			<div class="row">
-				<div class="find">
 
-					<a href="/ymd/join">회원가입</a> <span class="bar" aria-hidden="true">|</span>
+		<div class="row">
+			<div class="find">
 
-					<a href="/ymd/insertId" onclick="findpw()">비밀번호 찾기</a>
+				<a href="/ymd/join">회원가입</a> <span class="bar" aria-hidden="true">|</span>
 
+				<a href="/ymd/insertId" onclick="findpw()">비밀번호 찾기</a>
 
-				</div>
 			</div>
+		</div>
+
+	</div>
 
 
-</form>
 
 
 
-			<script>
-				//<![CDATA[
-				// 사용할 앱의 JavaScript 키를 설정해 주세요.
-				Kakao.init('602456200ebdad0c58f3bd1860bcd80d');
-				// 카카오 로그인 버튼을 생성합니다.
-				function loginWithKakao() {
-					Kakao.Auth.loginForm({
-						success : function(authObj) {
-							console.log(JSON.stringify(authObj));
+	<script>
+		//<![CDATA[
+		// 사용할 앱의 JavaScript 키를 설정해 주세요.
+		Kakao.init('602456200ebdad0c58f3bd1860bcd80d');
+		// 카카오 로그인 버튼을 생성합니다.
+		function loginWithKakao() {
+			Kakao.Auth.loginForm({
+				success : function(authObj) {
+					console.log(JSON.stringify(authObj));
 
-							Kakao.API.request({
-								url : '/v2/user/me',
-								success : function(res) {
-									var id = res.id;
+					Kakao.API.request({
+						url : '/v2/user/me',
+						success : function(res) {
+							var id = res.id;
 
-									$.ajax({
-										url : "kakaoDup",
-										data : {
-											kakao : id
-										},
-										success : function(res) {
-											console.log(res);
-
-											if (res == 0) {
-												location = 'join?kakao=' + id
-														+ ''
-											} else if (res == 1) {
-												location = 'loginKakao?kakao='
-														+ id + ''
-											}
-										}
-									});
-
+							$.ajax({
+								url : "kakaoDup",
+								data : {
+									kakao : id
 								},
-								fail : function(error) {
-									alert(JSON.stringify(error));
+								success : function(res) {
+									console.log(res);
+
+									if (res == 0) {
+										location = 'join?kakao=' + id + ''
+									} else if (res == 1) {
+										location = 'loginKakao?kakao=' + id
+												+ ''
+									}
 								}
 							});
 
-							// 			        let userCode = JSON.stringify(authObj);
-
 						},
-						fail : function(err) {
-							alert(JSON.stringify(err));
+						fail : function(error) {
+							alert(JSON.stringify(error));
 						}
 					});
-				}
-				//]]>
-				function findpw() {
-					location = "insertId";
-				}
 
-				function msg() {
-					var abc = '${msg}';
-					if (abc != "") {
-						alert(abc)
-					}
-				};
-				msg()
-			</script>
-	</div>
-	</form>
-	
+					// 			        let userCode = JSON.stringify(authObj);
+
+				},
+				fail : function(err) {
+					alert(JSON.stringify(err));
+				}
+			});
+		}
+		//]]>
+		function findpw() {
+			location = "insertId";
+		}
+
+		function msg() {
+			var abc = '${msg}';
+			if (abc != "") {
+				alert(abc)
+			}
+		};
+		msg()
+	</script>
 </body>
 
 
-</html>
+<style>
+#mainNav .navbar-brand {
+	color: #fed136;
+	font-family: 'Kaushan Script';
+	margin-top: 100px;
+}
+
+#mainNav .navbar-brand {
+	font-size: 60px;
+}
+
+.placeholder {
+	color: #444;
+}
+
+#slick-login input[type="text"], #slick-login input[type="password"] {
+	width: 30%;
+	height: 5%;
+	positon: absolute;
+	margin-top: 20px;
+	margin-left: 35%;
+	font-size: 14px;
+}
+
+#slick-login input[type="submit"] {
+	width: 30%;
+	height: 5%;
+	margin-left: 35%;
+	margin-top: 20px;
+	font-size: 18px;
+	background-color: #fed136;
+}
+
+.img {
+	width: 30%;
+	height: 5%;
+	margin-left: 35%;
+}
+
+.find {
+	line-height: 14px;
+	padding-top: 20px;
+	text-align: center;
+	color: #8e8e8e;
+	border-top-width: 1px;
+	margin-left: 42%;
+}
+</style>

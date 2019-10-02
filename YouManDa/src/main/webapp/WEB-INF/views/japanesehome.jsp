@@ -2,33 +2,38 @@
 <%@ page pageEncoding="utf-8"%>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <html lang="en">
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<link
-	href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap"
-	rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
-<!-- Custom styles for this template -->
-<link href="resources/css/agency.min.css?var=9" rel="stylesheet">
+<head>
 <!-- Bootstrap core CSS -->
 <link href="resources/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
-<title>로그인</title>
+
+<!-- Custom fonts for this template -->
+<link href="resources/vendor/fontawesome-free/css/all.min.css"
+	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Kaushan+Script'
+	rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic'
+	rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700'
+	rel='stylesheet' type='text/css'>
+<link
+	href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap"
+	rel="stylesheet" type='text/css'>
+<link
+	href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap"
+	rel="stylesheet" type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="resources/css/agency.min2.css?var=6" rel="stylesheet">
 </head>
+
 <body>
 
 
@@ -208,256 +213,6 @@
 
 
 
-
-
-<!-- 	<!-- Portfolio Modals --> 
-
-<!-- 	<!-- Modal 1 --> 
-<!-- 	<div class="portfolio-modal modal fade" id="portfolioModal1" -->
-<!-- 		tabindex="-1" role="dialog" aria-hidden="true"> -->
-<!-- 		<div class="modal-dialog"> -->
-<!-- 			<div class="modal-content"> -->
-<!-- 				<div class="close-modal" data-dismiss="modal"> -->
-<!-- 					<div class="lr"> -->
-<!-- 						<div class="rl"></div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 				<div class="container"> -->
-<!-- 					<div class="row"> -->
-<!-- 						<div class="col-lg-8 mx-auto"> -->
-<!-- 							<a id="board"></a> -->
-<!-- 							Project Details Go Here -->
-<!-- 							<script> -->
-<!-- // 								$.ajax({ -->
-<!-- // 									url : "englishhome/freeboard", -->
-
-<!-- // 									success : function(res) { -->
-<!-- // 										console.log(res); -->
-<!-- // 										$('#board').load( -->
-<!-- // 												"englishhome/freeboard"); -->
-										
-<!-- // 									} -->
-<!-- // 								}); -->
-<!-- 							</script> -->
-
-
-<!-- 							<button class="btn btn-primary" data-dismiss="modal" -->
-<!-- 								type="button"> -->
-<!-- 								<i class="fas fa-times"></i> 닫기 -->
-<!-- 							</button> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-
-
-<!-- 	<!-- Modal 2 --> 
-<!-- 	<div class="portfolio-modal modal fade" id="portfolioModal2" -->
-<!-- 		tabindex="-1" role="dialog" aria-hidden="true"> -->
-<!-- 		<div class="modal-dialog"> -->
-<!-- 			<div class="modal-content"> -->
-<!-- 				<div class="close-modal" data-dismiss="modal"> -->
-<!-- 					<div class="lr"> -->
-<!-- 						<div class="rl"></div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 				<div class="container"> -->
-<!-- 					<div class="row"> -->
-<!-- 						<div class="col-lg-8 mx-auto"> -->
-<!-- 							<a id="board"></a> -->
-<!-- 							Project Details Go Here -->
-<!-- 							<script> -->
-<!-- // 								$.ajax({ -->
-<!-- // 									url : "englishhome/freeboard", -->
-
-<!-- // 									success : function(res) { -->
-<!-- // 										console.log(res); -->
-<!-- // 										$('#board').load( -->
-<!-- // 												"englishhome/freeboard"); -->
-<!-- // 										location: "englishhome/freeboard"; -->
-<!-- // 									} -->
-<!-- // 								}); -->
-<!-- 							</script> -->
-
-
-<!-- 							<button class="btn btn-primary" data-dismiss="modal" -->
-<!-- 								type="button"> -->
-<!-- 								<i class="fas fa-times"></i> 닫기 -->
-<!-- 							</button> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-
-<!-- 	<!-- Modal 3 --> 
-<!-- 	<div class="portfolio-modal modal fade" id="portfolioModal3" -->
-<!-- 		tabindex="-1" role="dialog" aria-hidden="true"> -->
-<!-- 		<div class="modal-dialog"> -->
-<!-- 			<div class="modal-content"> -->
-<!-- 				<div class="close-modal" data-dismiss="modal"> -->
-<!-- 					<div class="lr"> -->
-<!-- 						<div class="rl"></div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 				<div class="container"> -->
-<!-- 					<div class="row"> -->
-<!-- 						<div class="col-lg-8 mx-auto"> -->
-<!-- 							<a id="board"></a> -->
-<!-- 							Project Details Go Here -->
-<!-- 							<script> -->
-<!-- // 								$.ajax({ -->
-<!-- // 									url : "englishhome/freeboard", -->
-
-<!-- // 									success : function(res) { -->
-<!-- // 										console.log(res); -->
-<!-- // 										$('#board').load( -->
-<!-- // 												"englishhome/freeboard"); -->
-										
-<!-- // 									} -->
-<!-- // 								}); -->
-<!-- 							</script> -->
-
-
-<!-- 							<button class="btn btn-primary" data-dismiss="modal" -->
-<!-- 								type="button"> -->
-<!-- 								<i class="fas fa-times"></i> 닫기 -->
-<!-- 							</button> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-
-
-<!-- 	<!-- Modal 4 --> 
-<!-- 	<div class="portfolio-modal modal fade" id="portfolioModal4" -->
-<!-- 		tabindex="-1" role="dialog" aria-hidden="true"> -->
-<!-- 		<div class="modal-dialog"> -->
-<!-- 			<div class="modal-content"> -->
-<!-- 				<div class="close-modal" data-dismiss="modal"> -->
-<!-- 					<div class="lr"> -->
-<!-- 						<div class="rl"></div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 				<div class="container"> -->
-<!-- 					<div class="row"> -->
-<!-- 						<div class="col-lg-8 mx-auto"> -->
-<!-- 							<a id="board"></a> -->
-<!-- 							Project Details Go Here -->
-<!-- 							<script> -->
-<!-- // 								$.ajax({ -->
-<!-- // 									url : "englishhome/freeboard", -->
-
-<!-- // 									success : function(res) { -->
-<!-- // 										console.log(res); -->
-<!-- // 										$('#board').load( -->
-<!-- // 												"englishhome/freeboard"); -->
-<!-- // 										location: "englishhome/freeboard"; -->
-<!-- // 									} -->
-<!-- // 								}); -->
-<!-- 							</script> -->
-
-
-<!-- 							<button class="btn btn-primary" data-dismiss="modal" -->
-<!-- 								type="button"> -->
-<!-- 								<i class="fas fa-times"></i> 닫기 -->
-<!-- 							</button> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-
-
-<!-- 	<!-- Modal 5 --> 
-<!-- 	<div class="portfolio-modal modal fade" id="portfolioModal5" -->
-<!-- 		tabindex="-1" role="dialog" aria-hidden="true"> -->
-<!-- 		<div class="modal-dialog"> -->
-<!-- 			<div class="modal-content"> -->
-<!-- 				<div class="close-modal" data-dismiss="modal"> -->
-<!-- 					<div class="lr"> -->
-<!-- 						<div class="rl"></div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 				<div class="container"> -->
-<!-- 					<div class="row"> -->
-<!-- 						<div class="col-lg-8 mx-auto"> -->
-<!-- 							<a id="board"></a> -->
-<!-- 							Project Details Go Here -->
-<!-- 							<script> -->
-<!-- // 								$.ajax({ -->
-<!-- // 									url : "englishhome/freeboard", -->
-
-<!-- // 									success : function(res) { -->
-<!-- // 										console.log(res); -->
-<!-- // 										$('#board').load( -->
-<!-- // 												"englishhome/freeboard"); -->
-<!-- // 										location: "englishhome/freeboard"; -->
-<!-- // 									} -->
-<!-- // 								}); -->
-<!-- 							</script> -->
-
-
-<!-- 							<button class="btn btn-primary" data-dismiss="modal" -->
-<!-- 								type="button"> -->
-<!-- 								<i class="fas fa-times"></i> 닫기 -->
-<!-- 							</button> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-
-
-<!-- 	<!-- Modal 6 --> 
-<!-- 	<div class="portfolio-modal modal fade" id="portfolioModal6" -->
-<!-- 		tabindex="-1" role="dialog" aria-hidden="true"> -->
-<!-- 		<div class="modal-dialog"> -->
-<!-- 			<div class="modal-content"> -->
-<!-- 				<div class="close-modal" data-dismiss="modal"> -->
-<!-- 					<div class="lr"> -->
-<!-- 						<div class="rl"></div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 				<div class="container"> -->
-<!-- 					<div class="row"> -->
-<!-- 						<div class="col-lg-8 mx-auto"> -->
-<!-- 							<a id="board"></a> -->
-<!-- 							Project Details Go Here -->
-<!-- 							<script> -->
-<!-- // 								$.ajax({ -->
-<!-- // 									url : "englishhome/freeboard", -->
-
-<!-- // 									success : function(res) { -->
-<!-- // 										console.log(res); -->
-<!-- // 										$('#board').load( -->
-<!-- // 												"englishhome/freeboard"); -->
-<!-- // 										location: "englishhome/freeboard"; -->
-<!-- // 									} -->
-<!-- // 								}); -->
-<!-- 							</script> -->
-
-
-<!-- 							<button class="btn btn-primary" data-dismiss="modal" -->
-<!-- 								type="button"> -->
-<!-- 								<i class="fas fa-times"></i> 닫기 -->
-<!-- 							</button> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-
-
-
 	<!-- Bootstrap core JavaScript -->
 	<script src="resources/vendor/jquery/jquery.min.js"></script>
 	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -496,7 +251,7 @@
 }
 
 h1 {
-	margin-top: 70px;
+	margin-top: 60px;
 	font-size: 100px;
 	text-align: center;
 	font-family: 'Sawarabi Mincho', sans-serif;
