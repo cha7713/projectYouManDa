@@ -30,9 +30,9 @@ public class EchoHandler extends TextWebSocketHandler {
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
 		Map<String, Object> map = session.getAttributes();
 		String userId = (String) map.get("id");
-		System.out.println("濡쒓렇�씤 �븳 �븘�씠�뵒1 : " + userId);
+		System.out.println("로그인아이디1 : " + userId);
 		int lang = (int) map.get("lang");
-		System.out.println("濡쒓렇�씤 �븳 �븘�씠�뵒1 : " + lang);
+		System.out.println("언어1 : " + lang);
 
 		// 留듭쓣 �벝�븣 諛⑸쾿
 		ids.put(userId, session.getId());
@@ -104,9 +104,9 @@ public class EchoHandler extends TextWebSocketHandler {
 	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
 		Map<String, Object> map = session.getAttributes();
 		String userId = (String) map.get("id");
-		System.out.println("濡쒓렇�씤 �븳 �븘�씠�뵒2 : " + userId);
+		System.out.println("로그인 아이디2 : " + userId);
 		int lang = (int) map.get("lang");
-		System.out.println("濡쒓렇�씤 �븳 �븘�씠�뵒2 : " + lang);
+		System.out.println("언어2 : " + lang);
 
 		// Map �궘�젣
 		WebSocketSession session_id = sessions.get(userId);

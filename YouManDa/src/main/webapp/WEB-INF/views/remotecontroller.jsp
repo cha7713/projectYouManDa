@@ -149,6 +149,9 @@
 		       
 		        //sock.close();
 		    }
+	     function onClose(evt){
+	    	 child_window.document.querySelector("#data").innerHTML += "상대방이 나갔습니다.<br/>";
+  }
 	</script>
 </body>
 

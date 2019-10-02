@@ -57,7 +57,7 @@
         sock.send("chatPopupOn/%&%/${frid}/%&%/${id}");
 	}
     opener.onMessage();
-    
+    opener.onClose();
     
     
     
