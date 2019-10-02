@@ -54,5 +54,29 @@ public class U0MemberController {
 
 		return "japanesehome";
 	}
+	
+	
+	@RequestMapping(value="/admin/contract/getContractList", method=RequestMethod.GET)
+
+	public String getContractList(@RequestParam(value="page", defaultValue="1") int page,
+
+	Model model,
+
+	Contract contract) {
+
+	System. out.println( "03.프로젝트 조회 처리+페이징  getContractList ContractController.java");
+
+	List<Contract> contractList = contractService.getContractList(page,contract);
+
+	model.addAttribute("contractList", contractList);
+
+	model.addAttribute("endPage",contractService.getEndPage()); //마지막 페이지
+
+	        model.addAttribute("currentPage",page); //현재 페이지
+
+	return "/admin/contract/getContractList";
+
+	}
+
 
 }
