@@ -74,7 +74,7 @@
 
 							}
 						if(temp==1){
-							$('#frList').append("<li onclick='pop(\""+res[i].frid+"\")'>" + res[i].nick + "(접속중)</li>"+"<button onclick='popup3(\""+res[i].nick+"\", true)'>채팅</button>")
+							$('#frList').append("<li onclick='pop(\""+res[i].frid+"\")'>" + res[i].nick + "(접속중)</li>"+"<button onclick='popup3(\""+res[i].frid+"\", true)'>채팅</button>")
 
 							}
 				}
