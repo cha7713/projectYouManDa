@@ -4,44 +4,40 @@
 <html lang="en">
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<link
-	href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap"
-	rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap"
-	rel="stylesheet">
-<!-- Custom styles for this template -->
-<link href="resources/css/agency.min.css?var=9" rel="stylesheet">
 <!-- Bootstrap core CSS -->
 <link href="resources/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
-<title>로그인</title>
+
+<!-- Custom fonts for this template -->
+<link href="resources/vendor/fontawesome-free/css/all.min.css"
+	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Kaushan+Script'
+	rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic'
+	rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700'
+	rel='stylesheet' type='text/css'>
+<link
+	href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap"
+	rel="stylesheet" type='text/css'>
+<link
+	href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap"
+	rel="stylesheet" type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="resources/css/agency.min2.css?var=6" rel="stylesheet">
 </head>
 
 	
 <input type="button" value="MyPage" id="MyPage" onclick="mypage()"><br>
 
 
-<input type="button" value="freeboard" id="freeboard" onclick="freeboard()"><br>
-<input type="button" value="homeboard" id="homeboard" onclick="homeboard()"><br>
-<input type="button" value="infoboard" id="infoboard" onclick="infoboard()"><br>
-<input type="button" value="marketboard" id="marketboard" onclick="marketboard()"><br>
-<input type="button" value="meetboard" id="meetboard" onclick="meetboard()"><br>
-<input type="button" value="nonameboard" id="nonameboard" onclick="nonameboard()"><br>
 
 
 <html>
@@ -552,7 +548,7 @@
 }
 
 h1 {
-	margin-top: 70px;
+	margin-top: 60px;
 	font-size: 100px;
 	text-align: center;
 	font-family: 'Kosugi Maru', sans-serif;
