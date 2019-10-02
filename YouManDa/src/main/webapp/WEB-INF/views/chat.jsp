@@ -55,18 +55,34 @@
     function onChat(){
         /*채팅창을 켰다 */
         sock.send("chatPopupOn/%&%/${frid}/%&%/${id}");
+        opener.addFriend('${frid}');
 	}
-    opener.onMessage();
-    opener.onClose();
+//     opener.onMessage();
+//     opener.onClose();
     
     
+    window.addEventListener('beforeunload', function (e) {
+	  // Cancel the event
+	  e.preventDefault();
+	  // Chrome requires returnValue to be set
+	  e.returnValue = '';
+	  sock.send(nick+"님이 대화방을 나갔습니다./%&%/${frid}/%&%/${id}");
+	});
     
-    
-    
+ 
+   let nick;
+	$.ajax({
+		url : "userNick",
+		success : function(res) {
+			nick = res
+			$('#user').text(res)
+		    $("#title").text(nick)
+		}
+	});
 </script>
 </head>
 <body>
-대화상대:<h3>${frid}</h3>
+<h3 id="title"></h3>
 <input type="text" id="message"/>
 <input type="button" id="sendBtn" value="전송"/>
 <div id="data"></div>

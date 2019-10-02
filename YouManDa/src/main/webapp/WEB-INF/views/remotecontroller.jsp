@@ -104,13 +104,18 @@
 	}
 		});
 
+		let nick;
 		$.ajax({
 			url : "userNick",
 			success : function(res) {
+				nick = res
 				$('#user').text(res)
 			}
 		});
-		
+		var friendList = [];
+		function addFriend(frid) {
+			friendList.push(frid);
+		}
 		function pop(i) {
 			var url = "/ymd/msgInput?frid="+i;
 			var name = "msg";
@@ -134,7 +139,7 @@
 	    	return sock;
 	    }
 	    sock.onmessage=onMessage;
-
+		sock.onclose=onClose;
 		 function onMessage(evt){
 		        let data = evt.data;
 		        console.log("remote", data);
@@ -144,14 +149,17 @@
 					popup3(msg[1], false)
 				}else{
 					console.log("data = ", data)
-					child_window.document.querySelector("#data").innerHTML += data+"<br/>";
+					child_window.document.querySelector("#data").innerHTML += msg[0]+"<br/>";
 				}
 		       
 		        //sock.close();
 		    }
 	     function onClose(evt){
-	    	 child_window.document.querySelector("#data").innerHTML += "상대방이 나갔습니다.<br/>";
+	    	 sock.send("close/%&%/"+friendList[0]+"/%&%/${id}");
   }
+	     function printA() {
+	    	 console.log('창 종료')
+	     }
 	</script>
 </body>
 

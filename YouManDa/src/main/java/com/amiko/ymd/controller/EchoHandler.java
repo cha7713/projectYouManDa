@@ -68,6 +68,8 @@ public class EchoHandler extends TextWebSocketHandler {
 			System.out.println("@@@1");
 			targetSession.sendMessage(new TextMessage("onChat/%&%/"+msg[2]));
 			System.out.println("@@@2");
+		}else if(msg[0].equals("close")) {
+			targetSession.sendMessage(new TextMessage("상대방이 나갔습니다"));
 		}else {
 			
 			targetSession.sendMessage(new TextMessage(message.getPayload()));
@@ -108,12 +110,14 @@ public class EchoHandler extends TextWebSocketHandler {
 		int lang = (int) map.get("lang");
 		System.out.println("언어2 : " + lang);
 
-		// Map �궘�젣
+		// Map 삭제
 		WebSocketSession session_id = sessions.get(userId);
 		ids.remove(userId);
 		sessions.remove(session_id);
 
-		logger.info("{} �뿰寃� �걡源�.", session_id);
+		
+		
+		logger.info("{} 연결끊김", session.getId());
 	}
 
 }
