@@ -45,5 +45,9 @@
 		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> branch 'master' of https://github.com/cha7713/projectYouManDa.git
 </projectDescription>

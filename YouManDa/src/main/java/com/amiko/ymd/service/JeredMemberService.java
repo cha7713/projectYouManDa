@@ -117,4 +117,27 @@ public class JeredMemberService {
 		return jeredMemberDao.searchFreeBoardList(search_option, keyword);
 	}
 
+	public void insertfreelike(Map<String, Object> map) {
+		int bnum = (int)map.get("bnum");
+		//jeredMemberDao.readfreelike(map);
+		jeredMemberDao.insertfreelike(map);
+		jeredMemberDao.countfreelike(bnum);
+
+	}
+	
+	public void deletefreelike(Map<String, Object> map) {
+		int bnum = (int)map.get("bnum");
+		//jeredMemberDao.readfreelike(map);
+		jeredMemberDao.deletefreelike(map);
+		jeredMemberDao.countfreelike(bnum);
+	}
+	
+	public Map<String,Object> readfreelike(Map<String, Object> map) {
+		return jeredMemberDao.readfreelike(map);
+		
+	}
+	
+	
+	
+	
 }

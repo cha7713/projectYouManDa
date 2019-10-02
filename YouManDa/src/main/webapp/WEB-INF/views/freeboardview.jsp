@@ -84,7 +84,7 @@
 			<span class="bar" aria-hidden="true">|</span>
 			조회수 ${viewcontent.hit}
 			<span class="bar" aria-hidden="true">|</span>
-			추천 <p id="recommend">${viewcontent.recommend}</p>
+			추천 ${viewcontent.recomend}
 			
 			<div id="reply_list" style="background-color:#f9f9f9; margin-top:2%"></div>
 			<div class ="filter-30 board-box-line-dashed">
@@ -133,25 +133,28 @@
 	}
 
 	function recommendation() {
-		let bnum = $
-		{
-			viewcontent.bnum
-		}
-		bnum = Number(bnum)
-		console.log(bnum)
+		//let bnum = ${viewcontent.bnum}
+		//bnum = Number(bnum)
+		//console.log(bnum)
 		$.ajax({
 			url : "../../../recommendation",
 			data : {
-				bnum : bnum
+				"bnum" : "${viewcontent.bnum}"
 			},
 			success : function(res) {
-				let rec = $("#recommend").text()
-				rec = Number(rec)
-				rec += 1;
-				$("#recommend").text(rec)
+// 				let rec = $("#recommend").text()
+// 				rec = Number(rec)
+// 				rec += 1;
+// 				$("#recommend").text(rec)
+				if(res == 1){
+					alert("추천완료");
+					}else{
+						alert("이미 추천 하셨습니다.");
+						}
 
 			}
 		});
+		
 	}
 
 	function addfreereply() {
