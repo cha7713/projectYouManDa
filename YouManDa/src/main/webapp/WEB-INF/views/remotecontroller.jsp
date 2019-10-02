@@ -39,6 +39,7 @@
 			<p id="frList"></p>
 		</div>
 	</div>
+	<script type="text/javascript" src="<c:url value="resources/jquery/sockjs.js"/>"></script>
 
 	<script>
 		$(function() {
@@ -73,7 +74,7 @@
 
 							}
 						if(temp==1){
-							$('#frList').append("<li onclick='pop(\""+res[i].frid+"\")'>" + res[i].nick + "(접속중)</li>")
+							$('#frList').append("<li onclick='pop(\""+res[i].frid+"\")'>" + res[i].nick + "(접속중)</li>"+"<button onclick='popup3(\""+res[i].nick+"\", true)'>채팅</button>")
 
 							}
 				}
@@ -116,6 +117,38 @@
 			var option = "width = 500, height = 500, top = 100, left = 200, location = no"
 			window.open(url, name, option);
 		}
+		
+		var child_window;
+		
+		function popup3(i, option) {
+			 var url = "/ymd/chat?frid="+i+ '&on=' + option;
+	            var name = "chat";
+	            var option = "width = 500, height = 500, top = 100, left = 200, location = no"
+	            child_window = window.open(url, name, option);
+		}
+		var sock;
+	    //웸소켓을 지정한 url로 연결한다.
+	    sock = new SockJS("<c:url value='/echo' />");
+	    
+	    function getSock() {
+	    	return sock;
+	    }
+	    sock.onmessage=onMessage;
+
+		 function onMessage(evt){
+		        let data = evt.data;
+		        console.log("remote", data);
+		        let msg = data.split("/%&%/")
+		        if(msg[0]=='onChat') {
+		        	console.log("aaa",msg[0])
+					popup3(msg[1], false)
+				}else{
+					console.log("data = ", data)
+					child_window.document.querySelector("#data").innerHTML += data+"<br/>";
+				}
+		       
+		        //sock.close();
+		    }
 	</script>
 </body>
 
