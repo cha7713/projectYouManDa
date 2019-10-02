@@ -75,17 +75,16 @@
 		url : "userNick",
 		success : function(res) {
 			nick = res
-			$('#user').text(res)
-		    $("#title").text(nick)
+			
 		}
 	});
 </script>
 </head>
 <body>
-<h3 id="title"></h3>
+
+<div id="data" style="height:300px"></div>
 <input type="text" id="message"/>
 <input type="button" id="sendBtn" value="전송"/>
-<div id="data"></div>
 </body>
 </html>
 
