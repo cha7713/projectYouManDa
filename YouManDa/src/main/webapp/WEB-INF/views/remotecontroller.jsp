@@ -104,9 +104,11 @@
 	}
 		});
 
+		let nick;
 		$.ajax({
 			url : "userNick",
 			success : function(res) {
+				nick = res
 				$('#user').text(res)
 			}
 		});
