@@ -55,14 +55,20 @@
     function onChat(){
         /*채팅창을 켰다 */
         sock.send("chatPopupOn/%&%/${frid}/%&%/${id}");
+        opener.addFriend('${frid}');
 	}
-    opener.onMessage();
-    opener.onClose();
+//     opener.onMessage();
+//     opener.onClose();
     
     
-    
-    
-    
+    window.addEventListener('beforeunload', function (e) {
+	  // Cancel the event
+	  e.preventDefault();
+	  // Chrome requires returnValue to be set
+	  e.returnValue = '';
+	  sock.send("${id}님이 대화방을 나갔습니다./%&%/${frid}/%&%/${id}");
+	});
+    	
 </script>
 </head>
 <body>
