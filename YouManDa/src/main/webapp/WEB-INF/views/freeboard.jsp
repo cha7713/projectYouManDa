@@ -35,84 +35,106 @@
 						href="/ymd/mypage/${id}">익명게시판</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/logout" id="logout">장터</a></li>
-						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="#services">같이살자</a></li>
-						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="/ymd/mypage/${id}">마이페이지</a></li>
-						<li class="nav-item"><a class="nav-link js-scroll-trigger"
-							href="/ymd/logout" id="logout">로그아웃</a></li>
-				
-					</ul>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/ymd/logout" id="logout">로그아웃</a></li>
+
+				</ul>
 			</div>
 
 		</div>
 	</nav>
-	
-			
-<div class="container">
-	<h1>자유게시판</h1>
-	<table class="table table-bordered">
 
-		<tr>
 
-			<th>말머리</th>
-			<th>제목</th>
-			<th>글쓴이</th>
-			<th>작성일</th>
-			<th>조회</th>
-			<th>추천</th>
+	<div class="container">
+		<h1>자유게시판</h1>
+		<table class="table table-bordered">
 
-		</tr>
-		<br>
-	
-		<c:forEach items="${fblist}" var="list">
 			<tr>
-				<td>${list.header}</td>
-				<td onclick="viewthispost(${list.bnum})">${list.title}</td>
-				<td>${list.id}</td>
-				<td>${list.bdate}</td>
-				<td>${list.hit}</td>
-				<td>${list.recomend}</td>
-			</tr>
-		</c:forEach>
-	</table>
-		<input type='button' value='글쓰기' id='write' onclick='writing()'
-			class="btn btn-outline-warning btn-sm">
-			
-		<form name="form1" action='list.do'>
-			
-			<select name="search_option">
-				<option value="user_id"
-				<c:if test="${map.search_option == 'id'}">selected</c:if>
-				>작성자</option>
-				
-				<option value="title"
-				<c:if test="${map.search_option == 'title'}">selected</c:if>
-				>제목</option>
-				
-				<option value="content"
-				<c:if test="${map.search_option == 'content'}">selected</c:if>
-				>내용</option>
-				
-				<option value="all"
-				<c:if test="${map.search_option == 'all'}">selected</c:if>
-				>작성자+내용+제목</option>
-						
-			</select>
-				
-		<input type='text' placeholder='검색어를 입력하세요' value="${map.keyword}" name='keyword'>
-		<input type='submit' value='조회'>
-		
-		</form>
-		
 
+				<th>말머리</th>
+				<th>제목</th>
+				<th>글쓴이</th>
+				<th>작성일</th>
+				<th>조회</th>
+				<th>추천</th>
+
+			</tr>
+			<br>
+
+			<c:forEach items="${fblist}" var="list">
+				<tr>
+					<td>${list.header}</td>
+					<td onclick="viewthispost(${list.bnum})">${list.title}</td>
+					<td>${list.id}</td>
+					<td>${list.bdate}</td>
+					<td>${list.hit}</td>
+					<td>${list.recomend}</td>
+				</tr>
+			</c:forEach>
+		</table>
+		<input type='button' value='글쓰기' id='write' onclick='writing()'
+			class="btn btn-dark btn-sm">
+
+		<c:if test="${currentPage>1}">
+			<a href="freeboard?bnum=${currentPage-1}"><button type="button"
+					class="btn btn-dark">이전</button></a>
+
+		</c:if>
+
+		<c:if test="${currentPage<endPage}">
+			<a href="freeboard?bnum=${currentPage+1}" class="btn btn-dark">다음</a>
+		</c:if>
+
+		<form name="form1" action='list.do'>
+
+			<select name="search_option" class="form-control"
+				style="width: 15%; height: 4%">
+
+				<option value="user_id"
+					<c:if test="${map.search_option == 'id'}">selected</c:if>>작성자</option>
+
+				<option value="title"
+					<c:if test="${map.search_option == 'title'}">selected</c:if>>제목</option>
+
+				<option value="content"
+					<c:if test="${map.search_option == 'content'}">selected</c:if>>내용</option>
+
+				<option value="all"
+					<c:if test="${map.search_option == 'all'}">selected</c:if>>작성자+내용+제목</option>
+
+
+				<%-- 				<input type='text' placeholder='검색어를 입력하세요' value="${map.keyword}" --%>
+				<!-- 				name='keyword' style="width: 15%; height: 5%"> <input -->
+				<!-- 				type='submit' value='조회' class="btn btn-dark btn-sm" -->
+				<!-- 				style="height: 5%"> -->
+
+
+
+
+			</select>
+		</form>
+
+		<div class="container mt-3">
+			<div class="input-group mb-3"
+				style="margin-left: 15%; margin-top: -5%; width: 25%; height: 4%">
+				<input type="text" class="form-control" placeholder="검색어를 입력하세요">
+				<div class="input-group-append">
+					<button class="btn btn-dark btn-sm" type="submit"
+						value="${map.keyword}">조회</button>
+				</div>
+			</div>
+		</div>
 
 	</div>
+
+
+
 	<br>
-<ul class="pagination">  
-    <li class="page-item"><a class="page-link" href="#">이전</a></li> 
-    <li class="page-item2"><a class="page-link" href="#">다음</a></li>  
-</ul>
+
 
 </body>
 
@@ -143,7 +165,7 @@
 	background-color: #fed136;
 	font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI',
 		Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
-		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', 
+		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji',
 }
 
 #mainNav .navbar-brand {
@@ -213,7 +235,6 @@ h1 {
 	text-align: center
 }
 
-
 @media ( min-width :992px) {
 	#mainNav {
 		padding-top: 5px;
@@ -232,11 +253,8 @@ h1 {
 	margin-left: 94.5%;
 }
 
-
-#page-item2{
-	flaot : right;
+#page-item2 {
+	flaot: right;
 	margin-top: -10px
 }
-
-
 </style>
