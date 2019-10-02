@@ -478,6 +478,8 @@ public class chaMemberController {
 	@RequestMapping(value = "/chat", method = RequestMethod.GET)
 	public String chat(Model model,HttpServletRequest req ) {
 		
+		String frid =req.getParameter("frid");
+		model.addAttribute("frid",frid);
 		return "chat";
 	
 	}
