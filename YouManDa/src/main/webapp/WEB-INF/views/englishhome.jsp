@@ -151,7 +151,7 @@
 					<a class="portfolio-link">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
-								<i class="fas fa-plus fa-3x"></i>
+								<a class="fas fa-plus fa-3x"href="/ymd/englishhome/freeboard"></a>
 							</div>
 						</div>
 					</a>
@@ -552,5 +552,8 @@ h1 {
 	font-size: 100px;
 	text-align: center;
 	font-family: 'Kosugi Maru', sans-serif;
+}
+.row{
+	margin-left:15%
 }
 </style>
