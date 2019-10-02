@@ -78,8 +78,33 @@
 	</table>
 		<input type='button' value='글쓰기' id='write' onclick='writing()'
 			class="btn btn-outline-warning btn-sm">
-		<input type='text' placeholder='검색어를 입력하세요' id='textforsearching'>
-		<input type='button' value='검색' onclick='searchingtext()'>
+			
+		<form name="form1" action='list.do'>
+			
+			<select name="search_option">
+				<option value="user_id"
+				<c:if test="${map.search_option == 'id'}">selected</c:if>
+				>작성자</option>
+				
+				<option value="title"
+				<c:if test="${map.search_option == 'title'}">selected</c:if>
+				>제목</option>
+				
+				<option value="content"
+				<c:if test="${map.search_option == 'content'}">selected</c:if>
+				>내용</option>
+				
+				<option value="all"
+				<c:if test="${map.search_option == 'all'}">selected</c:if>
+				>작성자+내용+제목</option>
+						
+			</select>
+				
+		<input type='text' placeholder='검색어를 입력하세요' value="${map.keyword}" name='keyword'>
+		<input type='submit' value='조회'>
+		
+		</form>
+		
 
 
 	</div>
