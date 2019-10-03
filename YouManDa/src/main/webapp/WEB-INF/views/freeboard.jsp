@@ -2,22 +2,22 @@
 <%@ page pageEncoding="utf-8"%>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <link
 	href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap"
 	rel="stylesheet">
-</head>
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+<script
+	src='https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
+<script
+	src='https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js'></script>
+​
+
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
@@ -51,7 +51,7 @@
 
 	<div class="container">
 		<h1>자유게시판</h1>
-		<table class="table table-bordered">
+		<table class="table table-bordered" id="target">
 
 			<tr>
 
@@ -63,7 +63,7 @@
 				<th>추천</th>
 
 			</tr>
-			<br>
+		
 
 			<c:forEach items="${fblist}" var="list">
 				<tr>
@@ -76,18 +76,9 @@
 				</tr>
 			</c:forEach>
 		</table>
+
 		<input type='button' value='글쓰기' id='write' onclick='writing()'
 			class="btn btn-dark btn-sm">
-
-		<c:if test="${currentPage>1}">
-			<a href="freeboard?bnum=${currentPage-1}"><button type="button"
-					class="btn btn-dark">이전</button></a>
-
-		</c:if>
-
-		<c:if test="${currentPage<endPage}">
-			<a href="freeboard?bnum=${currentPage+1}" class="btn btn-dark">다음</a>
-		</c:if>
 
 		<form name="form1" action='list.do'>
 
@@ -105,14 +96,6 @@
 
 				<option value="all"
 					<c:if test="${map.search_option == 'all'}">selected</c:if>>작성자+내용+제목</option>
-
-
-				<%-- 				<input type='text' placeholder='검색어를 입력하세요' value="${map.keyword}" --%>
-				<!-- 				name='keyword' style="width: 15%; height: 5%"> <input -->
-				<!-- 				type='submit' value='조회' class="btn btn-dark btn-sm" -->
-				<!-- 				style="height: 5%"> -->
-
-
 
 
 			</select>
@@ -138,7 +121,7 @@
 
 </body>
 
-</html>
+
 
 <script>
     function writing(){
@@ -147,13 +130,12 @@
 	function viewthispost(bnum){
 		location= "freeboard/freeboardin/"+bnum;
 	}
-	
+
+
 </script>
 
 <style>
-#mainNav {
-	background-color: #212529
-}
+
 
 #mainNav .navbar-toggler {
 	font-size: 12px;
@@ -176,11 +158,6 @@
 		'Noto Color Emoji'
 }
 
-#mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus,
-	#mainNav .navbar-brand:hover {
-	color: #fec503
-}
-
 #mainNav .navbar-nav .nav-item .nav-link {
 	font-size: 90%;
 	font-weight: 400;
@@ -197,31 +174,6 @@
 	color: #fed136
 }
 
-@media ( min-width :992px) {
-	#mainNav {
-		padding-top: 10px;
-		padding-bottom: 10px;
-		transition: padding-top .3s, padding-bottom .3s;
-		border: none;
-		background-color: #000000;
-	}
-	#mainNav .navbar-brand {
-		font-size: 1.75em;
-		transition: all .3s
-	}
-	#mainNav .navbar-nav .nav-item .nav-link {
-		padding: 1.1em 1em !important
-	}
-	#mainNav.navbar-shrink {
-		padding-top: 0;
-		padding-bottom: 0;
-		background-color: #212529
-	}
-	#mainNav.navbar-shrink .navbar-brand {
-		font-size: 1.25em;
-		padding: 12px 0
-	}
-}
 
 .navbar-brand {
 	font-family: 'Kaushan Script', cursive;
