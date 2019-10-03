@@ -76,8 +76,7 @@ public class JeredMemberController {
 		model.addAttribute("checkfreeboardReply", jeredMemberService.checkMyReplyInFreeboard(map));
 		return "checkMyReply";	
 	}
-	
-	
+		
 	@RequestMapping(value="deleteMyAccount", method = RequestMethod.GET)
 	public String deleteMyAccount (@RequestParam Map<String,Object> map, HttpSession session) {
 		String id = (String) session.getAttribute("id");
@@ -110,13 +109,11 @@ public class JeredMemberController {
 		jeredMemberService.insertFreeBoard(map);
 		return "redirect:/englishhome/freeboard";
 	}
-	
-	
+		
 	// 지정 게시물 조인시 동작
 	@RequestMapping(value="englishhome/freeboard/freeboardin/{bnum}", method=RequestMethod.GET)
 	public String selectFreeBoardOne(Model model,@PathVariable("bnum") int bnum,HttpServletRequest req, HttpServletResponse res) {
 		model.addAttribute("viewcontent",jeredMemberService.selectFreeBoardOne(bnum));
-		
 //		Map<String, Object> map = new HashMap<>();
 //		map.put("bnum", bnum);
 //		model.addAttribute("viewreply",jeredMemberService.selectreply(map));
@@ -187,10 +184,33 @@ public class JeredMemberController {
 	
 	@RequestMapping(value="recommendation")
 	@ResponseBody
-	public String recommemdation(Model model,@RequestParam("bnum") int bnum) {
-		int result = jeredMemberService.recommendation(bnum);
-		return "1";
+	public String recommemdation(Model model,@RequestParam("bnum") int bnum, HttpSession session, HttpServletRequest req) {
+		Map<String, Object> map = new HashMap<>();
+		String id = (String) session.getAttribute("id");
+		int lang = (int) session.getAttribute("lang");
+		System.out.println(id);
+		System.out.println(bnum);
+		map.put("id", id);
+		map.put("bnum", bnum);
+		map.put("lang", lang);
+		
+		Map<String,Object> mapc = jeredMemberService.readfreelike(map);
+		if(mapc != null) {
+			return "0";
+		}else {
+			jeredMemberService.insertfreelike(map);
+			return "1";
+		}
+		
+		
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -224,7 +244,7 @@ public class JeredMemberController {
 	}
 	
 	@RequestMapping("englishhome/list.do")
-		public ModelAndView list( // RequestParam으로 옵션,키워드 기본값 설정
+	public ModelAndView list( // RequestParam으로 옵션,키워드 기본값 설정
 		
 				@RequestParam(defaultValue="") String search_option, //기본 검색 옵션값을 작성자로 한다.
 
@@ -249,6 +269,7 @@ public class JeredMemberController {
 		
 		return mav;
 	}
+	
 	
 	
 }

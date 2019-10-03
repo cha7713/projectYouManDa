@@ -50,6 +50,7 @@ public class JeredMemberDao {
 	}
 	
 	public Map<String, Object> selectFreeBoardOne(int bnum){
+		//ss.selectOne("JeredMember.countfreelike", bnum);
 		return ss.selectOne("JeredMember.selectFreeBoardOne", bnum);
 	}
 	
@@ -86,6 +87,24 @@ public class JeredMemberDao {
 		map.put("search_option", search_option);
 		map.put("keyword", keyword);
 		return ss.selectList("JeredMember.searchingPost", map);
+	}
+	
+	
+	// 좋아요 추가
+	public void insertfreelike(Map<String,Object> map) {
+		ss.insert("JeredMember.insertfreelike", map);
+	}
+	// 좋아요 삭제
+	public void deletefreelike(Map<String, Object> map) {
+		ss.delete("JeredMember.deletefreelike", map);
+	}
+	// 좋아요 갯수 확인
+	public int countfreelike(int bnum) {
+		return ss.update("JeredMember.countfreelike", bnum);
+	}
+	// 좋아요 눌렸는지 확인
+	public Map<String,Object> readfreelike(Map<String,Object> map) {
+		return ss.selectOne("JeredMember.readfreelike", map);
 	}
 	
 }

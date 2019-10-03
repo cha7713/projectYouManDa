@@ -149,7 +149,7 @@
 					popup3(msg[1], false)
 				}else{
 					console.log("data = ", data)
-					child_window.document.querySelector("#data").innerHTML += msg[0]+"<br/>";
+					child_window.document.querySelector("#data").innerHTML +=msg[2]+":"+msg[0]+"<br/>";
 				}
 		       
 		        //sock.close();

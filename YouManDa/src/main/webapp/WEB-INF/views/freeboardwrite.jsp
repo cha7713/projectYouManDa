@@ -58,7 +58,7 @@
 			title : <select name="header">
 						<option value="[자유게시판]">[자유게시판]</option>
 					</select>
-			<br><input type="text" name="title" placeholder="제목을 입력하시오">
+			<br><input type="text" name="title" placeholder="제목을 입력하시오" required="required">
 			<textarea id="summernote" name="content""></textarea>
 			<input type="button" value="취소" style="float: right;" onclick="backtoList()"> 
 			<input type="submit" value="작성완료"	style="float: right;">
