@@ -6,12 +6,12 @@
 
 # 사용기술
 
-Language : Java, JSP
+* Language : Java, JSP
 
-Framework : Spring
+* Framework : Spring
 
-DataBase : MySQL
+* DataBase : MySQL
 
-Server : Apache Tomcat
+* Server : Apache Tomcat
 
-Design : HTML, Bootstrap
+* Design : HTML, Bootstrap
